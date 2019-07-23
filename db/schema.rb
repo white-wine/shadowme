@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_144246) do
     t.date "date"
     t.bigint "user_id"
     t.integer "status"
+    t.text "intro_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["professional_id"], name: "index_bookings_on_professional_id"
@@ -79,6 +80,11 @@ ActiveRecord::Schema.define(version: 2019_07_23_144246) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "user_type"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "birth"
+    t.string "user_description"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
