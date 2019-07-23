@@ -1,4 +1,4 @@
-puts "cleaning db"
+puts "Destroy all old seeds"
 Career.destroy_all
 Category.destroy_all
 
@@ -6,7 +6,13 @@ Category.destroy_all
 # Professional
 # career = Career
 # Category
-CATEGORY = [
+# Review
+# Booking
+# Message
+# ## ---------------------------------
+## ---------------------------------
+
+CATEGORIES = [
 	{
 		title: "Agriculture",
 		description: "A program that focuses on the general principles and practice of agricultural research and production and that may prepare individuals to apply this knowledge to the solution of practical agricultural problems. Includes instruction in basic animal, plant, and soil science; animal husbandry and plant cultivation; soil conservation; and agricultural operations such as farming, ranching, and agricultural business. Is Agriculture the right major for you?",
@@ -32,7 +38,7 @@ CATEGORY = [
 
 	{
 		title: "Health",
-		description: "",
+		description: "A program of study that prepares individuals to assume roles as health/wellness professionals in private business and industry, community organizations, and health care settings.",
 		image: "https://hhp-blog.s3.amazonaws.com/2018/02/iStock-639896942.jpg"
 
 	},
@@ -53,9 +59,8 @@ CATEGORY = [
 		description: "Degrees in information technology typically cover computer science and software engineering. ... There are a variety of different paths in the career field, including becoming a systems analyst, a programmer or a support specialist.",
 		image: "https://sloanreview.mit.edu/content/uploads/2016/08/FR-Winston-Technology-Business-World-Challenges-1200.jpg"
 	},
-
 ]
-CAREER = [
+CAREERS = [
 	[
 		{
 			title:"Agricultural Worker",
@@ -84,10 +89,10 @@ CAREER = [
 			image: "https://res.cloudinary.com/hnpb47ejt/image/upload/v1544491110/rs7qdbrgyiqfwxzrolto.jpg",
 
 		},
-		{      title:"Dairy Farmer",
+		{
+      title:"Dairy Farmer",
 			description:"A dairy farmer is someone who owns or manages a farm where cows are raised for the production of milk and other dairy products. These farmers are involved in a wide range of activities for the purpose of increasing milk production. Milk which is produced on these farms is sold commercially to regional dairy companies for pasteurization and processing.",
 			image: "https://res.cloudinary.com/hnpb47ejt/image/upload/v1543951585/igcasgqqk7l4qyraief9.jpg",
-
 		},
 		{
 			title:"Farm Equipment Mechanic",
@@ -145,7 +150,7 @@ CAREER = [
 		{
 			title:"Digital Designer",
 			description:"Work with artists and illustrators to produce digital animation for various projects, such as websites, online magazines, advertisement materials, and videos. They are usually responsible for creating templates and mock-ups to review with artists and management before submitting the finished product.",
-			image: "https://creativebeacon.com/wp-content/uploads/2017/08/digital-designer.jpg"]
+			image: "https://creativebeacon.com/wp-content/uploads/2017/08/digital-designer.jpg"
 		}
 	],
 	[
@@ -178,8 +183,10 @@ CAREER = [
 			title:"Graduate Teaching Assistant",
 			description:"Assist faculty or other instructional staff in postsecondary institutions by performing teaching or teaching-related duties, such as teaching lower level courses, developing teaching materials, preparing and giving examinations, and grading examinations or papers.",
 			image: "https://www.thoughtco.com/thmb/2ggG64ZZF05Qh8gQe8XTXqLEP-U=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/200290882-001-56a18eaf3df78cf7726bff8c.jpg"
-		}],
-		[{
+		}
+	],
+	[
+		{
 			title:"Aerospace Engineer",
 			description:"Aerospace engineers use advanced education and experience in mechanical, electrical, materials or computer engineering disciplines to plan and construct spacecraft and aircraft. When dealing with spacecraft, these professionals are called astronautical engineers.",
 			image: "https://www.economist.com/sites/default/files/images/print-edition/20180324_WBP001_0.jpg"
@@ -221,14 +228,14 @@ CAREER = [
 		},
 		{
 			title:"Explosives Worker",
-			description:"",
+			description:"Place and detonate explosives to demolish structures or to loosen, remove, or displace earth, rock, or other materials. May perform specialized handling, storage, and accounting procedures. Includes seismograph shooters.",
 			image: "https://www.convergencetraining.com/videos/newvids/commercial-explosives-safety-Full.jpg"
 		}
 	],
 	[
 		{
 			title:"Doctor",
-			description:"",
+			description:"Medical Doctors perform health assessments, run diagnostic tests, prescribe medication, create treatment plans and provide health and wellness advice to patients. Medical Doctors can specialize in specific areas of health, such as dermatology, neurology, gastroenterology or gynecology.",
 			image: "https://i2-prod.mirror.co.uk/interactives/article12645227.ece/ALTERNATES/s615/doctor.jpg"
 		},
 		{
@@ -321,12 +328,12 @@ CAREER = [
 		},
 		{
 			title:"Computer Scientist",
-			description:"",
+			description:"Also called computer and information scientists, can work for government agencies and private software publishers, engineering firms or academic institutions. Businesses and government agencies usually employ these scientists to develop new products or solve computing problems.",
 			image: "https://www.bestvalueschools.com/wp-content/uploads/2016/02/what-is-the-employment-outlook-for-computer-science.jpg"
 		},
 		{
 			title:"Geneticist",
-			description:"",
+			description:"Research laboratories employ scientists to understand gene behavior, gene duplication, physical characteristics and diseases. ... Genetic scientists in a clinical setting use their knowledge to guide and treat patients with hereditary diseases or disorders.",
 			image: "https://conceptodefinicion.de/wp-content/uploads/2011/03/Gen%C3%A9tica-2.jpg"
 		},
 		{
@@ -400,21 +407,28 @@ CAREER = [
 			title:"Programmer",
 			description:"While software developers design applications, it’s programmers who write the code needed for programs to function. Programmers also test software and update existing software. Many are employed by software companies. Necessary soft skills include problem solving, reading comprehension, active listening, attention to detail, and critical thinking. You might consider entering this field if you enjoy working with code for extended periods and testing the power of programming languages. As experience is an important asset, it’s helpful to do an internship or gain other hands-on experience while completing your formal education.",
 			image: "https://blog.uwohoo.com/wp-content/uploads/2019/03/Good-programmer.jpeg"
-		}]
+		},
 	]
-
 ]
 
-# Review
-# Booking
-# Message
-# ## ---------------------------------
+puts "Create new seeds"
 
+CATEGORIES.each_with_index do |category, index|
 
+  puts ""
+	c = Category.new(category)
+  c.save!
+  puts " - created #{c.title}"
 
+	CAREERS[index].each do |career|
+    car = Career.new(career)
+		car.category = c
+		car.save!
 
+    puts "   - added career #{car.title}"
+	end
 
+end
 
-
-## ---------------------------------
-
+puts ""
+puts "Finished seeding process"
