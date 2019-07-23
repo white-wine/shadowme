@@ -4,7 +4,7 @@ class CreateCareers < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :description
       t.references :category, foreign_key: true
-
+      t.string :image
       t.timestamps
     end
   end

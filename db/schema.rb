@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_144246) do
     t.string "title"
     t.text "description"
     t.bigint "category_id"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_careers_on_category_id"
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_144246) do
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -85,6 +87,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_144246) do
     t.string "last_name"
     t.string "birth"
     t.string "user_description"
+    t.string "avatar"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

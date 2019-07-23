@@ -1,5 +1,6 @@
 class ProfessionalsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
 
   end
@@ -21,10 +22,6 @@ class ProfessionalsController < ApplicationController
   end
 
   def update
-
-  end
-
-  def destroy
 
   end
 
