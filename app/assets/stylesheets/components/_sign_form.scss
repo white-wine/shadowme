@@ -66,12 +66,12 @@
     outline: none;
   }
 
-  button.ghost {
+  .ghost {
     background-color: transparent;
     border-color: #FFFFFF;
   }
 
-  form {
+  .form {
     background-color: #FFFFFF;
     display: flex;
     align-items: center;
@@ -82,11 +82,8 @@
     text-align: center;
   }
 
-  input {
-    background-color: #eee;
+  .input {
     border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
     width: 100%;
   }
 
