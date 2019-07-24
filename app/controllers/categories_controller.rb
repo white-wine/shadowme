@@ -6,8 +6,10 @@ class CategoriesController < ApplicationController
   end
 
   def show
-
+    @category = Category.find(params[:id])
+    @careers = Career.where(category: @category)
   end
+
 
   private
 
