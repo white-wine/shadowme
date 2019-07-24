@@ -4,7 +4,9 @@ Category.destroy_all
 User.destroy_all
 start = Time.now
 
-POSITION = ["assistant", "executive", "manager", "director", "chief", "supervisor", "coordinator", "specialist"]
+REVIEWS = ["A great experience with very knowledgeable local guides, well organised and executed.", "Amazing experience!", "Best experience ever!", "I really think it's an amazing career!", "I learned a lot!", "I had a wonderful experience shadowing this professional", "I absolutely love this career", "Everything went very smoothly", "It was great, fast, easy experience.", "I would recommend you guys to anyone."]
+
+POSITIONS = ["assistant", "executive", "manager", "director", "chief", "supervisor", "coordinator", "specialist"]
 CATEGORIES = [
 	{
 		title: "Agriculture",
@@ -420,7 +422,7 @@ def create_user(career)
       first_name: faker_male.split.first,
       last_name: Faker::Name.last_name,
       birth: Faker::Date.backward(365 * rand(35..65)),
-      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITION.sample.capitalize,
+      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         avatar: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
         password: 123456
@@ -440,7 +442,7 @@ def create_user(career)
       first_name: faker_female.split.first,
       last_name: Faker::Name.last_name,
       birth: Faker::Date.backward(365 * rand(35..60)),
-      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITION.sample.capitalize,
+      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
         password: 123456
@@ -459,6 +461,15 @@ def create_user(career)
   end
 end
 
+def create_review(booking, student)
+  review = Review.new(
+    content: REVIEWS.sample,
+    user: student,
+    booking: booking,
+    rating: rand(3..5)
+    )
+  puts "Review for #{booking.professional.user.first_name} #{booking.professional.user.last_name} by #{booking.user.first_name} #{booking.user.last_name}: #{review.content} Rating: #{review.rating}"
+end
 
 ## CREATE BOOKING
 def create_booking(professional, student)
@@ -472,6 +483,8 @@ def create_booking(professional, student)
   booking.user = student
   booking.save
   puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
+  create_review(booking, student)
+
 end
 
 
