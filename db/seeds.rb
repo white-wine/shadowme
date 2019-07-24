@@ -1,8 +1,9 @@
 puts "Destroy all old seeds"
 Career.destroy_all
 Category.destroy_all
-
 User.destroy_all
+
+
 POSITION = ["assistant", "executive", "manager", "director", "chief", "supervisor", "coordinator", "specialist"]
 CATEGORIES = [
 	{
@@ -403,9 +404,6 @@ CAREERS = [
   ]
 ]
 
-
-
-
 def faker_male
   Faker::Name.male_first_name
 end
@@ -413,9 +411,104 @@ end
 def faker_female
   Faker::Name.female_first_name
 end
+## CREATE PRO USER
+def create_user(career)
+
+  2.times do
+    male_user = User.new(
+      user_type: 1,
+      first_name: faker_male.split.first,
+      last_name: Faker::Name.last_name,
+      birth: "",
+      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITION.sample.capitalize,
+        # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
+        avatar: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
+        password: 123456
+        )
+    male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + "@mail.com"
+    puts male_user.first_name
+    puts male_user.last_name
+    puts male_user.email
+    puts male_user.user_description
+    puts male_user.avatar
+    male_user.save!
+
+    create_professional(male_user, career)
+
+    fem_user = User.new(
+      user_type: 1,
+      first_name: faker_female.split.first,
+      last_name: Faker::Name.last_name,
+      birth: "",
+      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITION.sample.capitalize,
+        # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
+        avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
+        password: 123456
+        )
+    fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + "@mail.com"
+    puts fem_user.first_name
+    puts fem_user.last_name
+    puts fem_user.email
+    puts fem_user.user_description
+    puts fem_user.avatar
+
+    fem_user.save!
+
+    create_professional(fem_user, career)
+
+  end
+end
 
 
-def create(user, career)
+## CREATE BOOKING
+def create_booking(professional, student)
+  booking = Booking.new(
+    professional: professional,
+    date: Faker::Date.forward(rand(1..100)),
+    status: rand(0..1),
+    intro_message: "I'm insterested on " + professional.career.title + " career."
+
+    )
+  booking.user = student
+  booking.save
+end
+
+
+## CREATE STUDENT USER
+def create_student_user(professional)
+  2.times do
+    fem_student = User.new(
+      user_type: 0,
+      first_name: Faker::Name.female_first_name,
+      last_name: Faker::Name.last_name,
+      birth: "",
+      user_description: Faker::Nation.nationality + ", " + Faker::Educator.secondary_school + " student.",
+      password: 123456,
+      avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg"
+      )
+    fem_student.email = fem_student.first_name.downcase + fem_student.last_name.downcase + rand(90..99).to_s + "@mail.com"
+    fem_student.save
+    create_booking(professional, fem_student)
+
+
+    male_student = User.new(
+      user_type: 0,
+      first_name: Faker::Name.male_first_name,
+      last_name: Faker::Name.last_name,
+      birth: "",
+      user_description: Faker::Nation.nationality + ", " + Faker::Educator.secondary_school + " student.",
+      password: 123456,
+      avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg"
+      )
+    male_student.email = male_student.first_name.downcase + male_student.last_name.downcase + rand(90..99).to_s + "@mail.com"
+    male_student.save
+    create_booking(professional, male_student)
+
+  end
+end
+
+## CREATE PROFESSOINAL CARD
+def create_professional(user, career)
   pro = Professional.new(
     location: Faker::Address.state,
     specialty: Faker::Educator.university + " " + career.title,
@@ -423,7 +516,7 @@ def create(user, career)
     resume: career.description,
     company_logo: Faker::Company.logo
     )
-  puts "Professional"
+  puts "CREATING PROFESSIONALS"
   pro.user = user
   puts pro.location
   puts pro.experience_in_years
@@ -432,11 +525,13 @@ def create(user, career)
   pro.career = career
 
   pro.save!
-
+  create_student_user(pro)
 end
 
-puts "Create new seeds"
+puts "CREATE CATEGORIES"
 
+
+## CREATE CATEGORIES
 CATEGORIES.each_with_index do |category, index|
 
   puts ""
@@ -444,62 +539,20 @@ CATEGORIES.each_with_index do |category, index|
   c.save!
   puts " - created #{c.title}"
 
-  CAREERS[index].each do |career|
-    car = Career.new(career)
-    car.category = c
-    car.save!
 
-    puts "   - added career #{car.title}"
+# CREATE CAREERS
+CAREERS[index].each do |career|
+  car = Career.new(career)
+  car.category = c
+  car.save!
 
-    2.times do
-      male_user = User.new(
-        user_type: 1,
-        first_name: faker_male.split.first,
-        last_name: Faker::Name.last_name,
-        birth: "",
-        user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITION.sample.capitalize,
-      # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
-      avatar: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
-      password: 123456
-      )
-      male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + "@mail.com"
-      puts male_user.first_name
-      puts male_user.last_name
-      puts male_user.email
-      puts male_user.user_description
-      puts male_user.avatar
-      male_user.save!
-
-      create(male_user, car)
-
-      puts "-------------------"
-      fem_user = User.new(
-        user_type: 1,
-        first_name: faker_female.split.first,
-        last_name: Faker::Name.last_name,
-        birth: "",
-        user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITION.sample.capitalize,
-      # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
-      avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
-      password: 123456
-      )
-      fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + "@mail.com"
-      puts fem_user.first_name
-      puts fem_user.last_name
-      puts fem_user.email
-      puts fem_user.user_description
-      puts fem_user.avatar
-
-      fem_user.save!
-
-      create(fem_user, car)
-
-    end
-  end
+  puts "   - added career #{car.title}"
+  create_user(car)
+  puts "-------------------"
+end
 
 end
 
-puts ""
 puts "Finished seeding process"
 # User
 # Professional
