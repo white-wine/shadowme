@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-
+    @careers = Career.where(category: params[:category])
   end
 
   private
