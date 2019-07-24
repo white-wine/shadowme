@@ -5,7 +5,6 @@ class CareersController < ApplicationController
   end
 
   def show
-
   end
 
   private

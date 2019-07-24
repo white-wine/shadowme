@@ -1,0 +1,24 @@
+<%= link_to root_path, class:"career-description-connection" do %>
+  <div class="career-card">
+   <%= image_tag @career.image, class:"career-img" %>
+   <div class="career-description">
+    <div>
+      <h2><%= @career.title %></h2>
+      <div class="career-tags">
+        <span class="career-tag">AGRICULTURE</span>
+        <span class="career-tag">FARM</span>
+        <span class="career-tag">FRUITS</span>
+      </div>
+      <p><%= @career.description.truncate(100) %></p>
+    </div>
+    <div class="career-icons">
+       <div class="career-icon">
+          <i class="fas fa-dollar-sign"></i> <%= rand(50000..100000)%> (salary per year)
+       </div>
+       <div class="career-icon">
+          <i class="fas fa-users"></i> <%= @career.professionals.count %> Professionals
+       </div>
+    </div>
+    </div>
+  </div>
+<% end %>
