@@ -4,7 +4,7 @@ Category.destroy_all
 User.destroy_all
 start = Time.now
 
-REVIEWS = ["A great experience with very knowledgeable local guides, well organised and executed.", "Amazing experience!", "Best experience ever!", "I really think it's an amazing career!", "I learned a lot!", "I had a wonderful experience shadowing this professional", "I absolutely love this career", "Everything went very smoothly", "It was great, fast, easy experience.", "I would recommend you guys to anyone."]
+REVIEWS = ["A great experience with very knowledgeable local guides, well organised and executed.", "Amazing career", "So interesting!", "I learnt a lot about the process", "Amazing experience!", "Best experience ever!", "I really think it's an amazing career!", "I learned a lot!", "I had a wonderful experience shadowing this professional", "I absolutely love this career", "Everything went very smoothly", "It was great, fast, easy experience.", "I would recommend you guys to anyone."]
 
 POSITIONS = ["assistant", "executive", "manager", "director", "chief", "supervisor", "coordinator", "specialist"]
 CATEGORIES = [
@@ -558,17 +558,17 @@ CATEGORIES.each_with_index do |category, index|
   puts " - created Category: #{c.title}"
 
 
-# CREATE CAREERS
-CAREERS[index].each do |career|
-  car = Career.new(career)
-  car.category = c
-  car.save!
+  # CREATE CAREERS
+  CAREERS[index].each do |career|
+    car = Career.new(career)
+    car.category = c
+    car.save!
 
-  puts "   - added Career: #{car.title}"
-  create_user(car)
-  puts "-------------------"
-end
-  puts ""
+    puts "   - added Career: #{car.title}"
+    create_user(car)
+    puts "-------------------"
+  end
+    puts ""
 
 end
 
