@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_144246) do
     t.bigint "professional_id"
     t.date "date"
     t.bigint "user_id"
-    t.integer "status"
+    t.integer "booking_status"
     t.text "intro_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

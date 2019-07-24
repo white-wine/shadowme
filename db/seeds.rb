@@ -2,7 +2,7 @@ puts "Destroy all old seeds"
 Career.destroy_all
 Category.destroy_all
 User.destroy_all
-
+start = Time.now
 
 POSITION = ["assistant", "executive", "manager", "director", "chief", "supervisor", "coordinator", "specialist"]
 CATEGORIES = [
@@ -419,7 +419,7 @@ def create_user(career)
       user_type: 1,
       first_name: faker_male.split.first,
       last_name: Faker::Name.last_name,
-      birth: "",
+      birth: Faker::Date.backward(365 * rand(35..65)),
       user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITION.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         avatar: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
@@ -439,7 +439,7 @@ def create_user(career)
       user_type: 1,
       first_name: faker_female.split.first,
       last_name: Faker::Name.last_name,
-      birth: "",
+      birth: Faker::Date.backward(365 * rand(35..60)),
       user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITION.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
@@ -465,12 +465,13 @@ def create_booking(professional, student)
   booking = Booking.new(
     professional: professional,
     date: Faker::Date.forward(rand(1..100)),
-    status: rand(0..1),
+    booking_status: rand(0..2),
     intro_message: "I'm insterested on " + professional.career.title + " career."
 
     )
   booking.user = student
   booking.save
+  puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
 end
 
 
@@ -481,13 +482,14 @@ def create_student_user(professional)
       user_type: 0,
       first_name: Faker::Name.female_first_name,
       last_name: Faker::Name.last_name,
-      birth: "",
+      birth: Faker::Date.backward(365 * rand(15..20)),
       user_description: Faker::Nation.nationality + ", " + Faker::Educator.secondary_school + " student.",
       password: 123456,
       avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg"
       )
     fem_student.email = fem_student.first_name.downcase + fem_student.last_name.downcase + rand(90..99).to_s + "@mail.com"
     fem_student.save
+    puts "Creating account for #{fem_student.first_name} #{fem_student.last_name}"
     create_booking(professional, fem_student)
 
 
@@ -495,13 +497,15 @@ def create_student_user(professional)
       user_type: 0,
       first_name: Faker::Name.male_first_name,
       last_name: Faker::Name.last_name,
-      birth: "",
+      birth: Faker::Date.backward(365 * rand(15..20)),
       user_description: Faker::Nation.nationality + ", " + Faker::Educator.secondary_school + " student.",
       password: 123456,
       avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg"
       )
     male_student.email = male_student.first_name.downcase + male_student.last_name.downcase + rand(90..99).to_s + "@mail.com"
     male_student.save
+    puts "Creating account for #{male_student.first_name} #{male_student.last_name}"
+
     create_booking(professional, male_student)
 
   end
@@ -516,14 +520,15 @@ def create_professional(user, career)
     resume: career.description,
     company_logo: Faker::Company.logo
     )
-  puts "CREATING PROFESSIONALS"
+  puts "CREATING PROFESSIONAL"
   pro.user = user
-  puts pro.location
-  puts pro.experience_in_years
-  puts pro.resume
-  puts pro.specialty
+  puts "Location: #{pro.location}"
+  puts "#{pro.experience_in_years} years of experience"
+  puts "Resume #{pro.resume}"
+  puts "Company logo: #{pro.company_logo}"
+  puts "Specialty #{pro.specialty}"
   pro.career = career
-
+  puts
   pro.save!
   create_student_user(pro)
 end
@@ -537,7 +542,7 @@ CATEGORIES.each_with_index do |category, index|
   puts ""
   c = Category.new(category)
   c.save!
-  puts " - created #{c.title}"
+  puts " - created Category: #{c.title}"
 
 
 # CREATE CAREERS
@@ -546,10 +551,11 @@ CAREERS[index].each do |career|
   car.category = c
   car.save!
 
-  puts "   - added career #{car.title}"
+  puts "   - added Career: #{car.title}"
   create_user(car)
   puts "-------------------"
 end
+  puts ""
 
 end
 
@@ -566,3 +572,6 @@ puts "Finished seeding process"
 
 # https://randomuser.me/api/portraits/med/women/99.jpg
 # https://randomuser.me/api/portraits/med/men/99.jpg
+end_time = Time.now
+result = end_time - start
+puts "#{result} seconds"
