@@ -1,4 +1,4 @@
-<div id="banner-carousel" class="carousel slide" data-ride="carousel">
+<div id="banner-carousel" class="banner-carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="banner-container" >
       <h1>Explore before Choosing a Career Path </h1>
@@ -24,9 +24,32 @@
   </a>
 </div>
 
+<div class="about-us-container text-center">
+  <div class="about-us-wrapper" >
+    <div class="about-us-img">
+    </div>
+    <div class="about-us-content" >
+      <h2>About Us</h2>
+      <p>At shadow me, we help students figure out a career path. We do so by offering a in person experience with professionals. By doing so, it gives students an idea of what they will be doing.</p>
+
+      <p>At shadow me, Professionals can dedicate some of their time to help students figure out what to do career wise.</p>
+    </div>
+  </div>
+</div>
 
 
-
+<div class="container">
+  <h2 class="home-title">Top 4 categories</h2>
+  <div class="row">
+    <% @categories.each do |category| %>
+    <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
+      <div class="category-card m-1" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(40, 40, 40, 0.1)), url('<%= category.image %>');">
+         <p><%= category.title %> </p>
+       </div>
+     </div>
+    <% end %>
+  </div>
+</div>
 
 
 
