@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'carrierwave', '~> 1.2'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'bootsnap', require: false
 gem 'devise'
@@ -22,6 +20,8 @@ gem 'webpacker'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
+gem 'carrierwave', '~> 1.2'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'pry-byebug'

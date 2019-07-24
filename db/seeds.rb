@@ -424,7 +424,7 @@ def create_user(career)
       birth: Faker::Date.backward(365 * rand(35..65)),
       user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
-        avatar: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
+        photo: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
         password: 123456
         )
     male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + "@mail.com"
@@ -432,7 +432,7 @@ def create_user(career)
     puts male_user.last_name
     puts male_user.email
     puts male_user.user_description
-    puts male_user.avatar
+    puts male_user.photo
     male_user.save!
 
     create_professional(male_user, career)
@@ -444,7 +444,7 @@ def create_user(career)
       birth: Faker::Date.backward(365 * rand(35..60)),
       user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
-        avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
+        photo: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
         password: 123456
         )
     fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + "@mail.com"
@@ -452,7 +452,7 @@ def create_user(career)
     puts fem_user.last_name
     puts fem_user.email
     puts fem_user.user_description
-    puts fem_user.avatar
+    puts fem_user.photo
 
     fem_user.save!
 
@@ -498,7 +498,7 @@ def create_student_user(professional)
       birth: Faker::Date.backward(365 * rand(15..20)),
       user_description: Faker::Nation.nationality + ", " + Faker::Educator.secondary_school + " student.",
       password: 123456,
-      avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg"
+      photo: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg"
       )
     fem_student.email = fem_student.first_name.downcase + fem_student.last_name.downcase + rand(90..99).to_s + "@mail.com"
     fem_student.save
@@ -513,7 +513,7 @@ def create_student_user(professional)
       birth: Faker::Date.backward(365 * rand(15..20)),
       user_description: Faker::Nation.nationality + ", " + Faker::Educator.secondary_school + " student.",
       password: 123456,
-      avatar: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg"
+      photo: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg"
       )
     male_student.email = male_student.first_name.downcase + male_student.last_name.downcase + rand(90..99).to_s + "@mail.com"
     male_student.save
