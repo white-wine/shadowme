@@ -2,7 +2,6 @@
   background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(40, 40, 40, 0.1));
   width: 300px;
   height: 400px;
-  text-align: center;
 
   & p {
     position: absolute;
@@ -10,6 +9,7 @@
     font-size: 25px !important;
     font-weight: 400 !important;
     color: white !important;
+    text-decoration: none;
   }
 }
 
@@ -133,12 +133,28 @@
     font-size: 40px;
     font-weight: 400;
     color: white;
+    text-align: center;
   }
 }
+
 
 .home-title {
   margin-bottom: 0px !important;
   padding-bottom: 50px !important;
   font-size: 50px !important;
+}
+
+
+//Career Categories
+.category-title {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.row {
+  margin-bottom: 100px;
+
 }
 

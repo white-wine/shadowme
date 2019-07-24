@@ -1,1 +1,17 @@
-<h1>hello</h1>
+<div class="container">
+  <h2 class="category-title">Career Categories</h2>
+  <div class="row">
+    <% @categories.each do |category| %>
+    <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
+      <%= link_to category_path(category), class:"hover" do %>
+      <div class="category-card m-1 mb-5" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(22,24,25)), url('<%= category.image %>');">
+
+       <p><%= category.title %></p>
+
+     </div>
+     <% end %>
+   </div>
+   <% end %>
+ </div>
+
+</div>
