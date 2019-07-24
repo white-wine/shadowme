@@ -7,6 +7,7 @@ class CreateProfessionals < ActiveRecord::Migration[5.2]
       t.string :specialty
       t.text :resume
       t.integer :experience_in_years
+      t.string :company_logo
 
       t.timestamps
     end

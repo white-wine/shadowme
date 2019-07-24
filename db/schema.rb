@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_144246) do
     t.bigint "professional_id"
     t.date "date"
     t.bigint "user_id"
-    t.integer "status"
+    t.integer "booking_status"
     t.text "intro_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_144246) do
     t.string "specialty"
     t.text "resume"
     t.integer "experience_in_years"
+    t.string "company_logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["career_id"], name: "index_professionals_on_career_id"
@@ -82,7 +83,8 @@ ActiveRecord::Schema.define(version: 2019_07_23_144246) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "user_type"
+
+    t.integer "user_type"
     t.string "first_name"
     t.string "last_name"
     t.string "birth"
