@@ -4,7 +4,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.references :professional, foreign_key: true
       t.date :date
       t.references :user, foreign_key: true
-      t.integer :status
+      t.integer :booking_status
       t.text :intro_message
 
       t.timestamps
