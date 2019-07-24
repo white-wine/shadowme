@@ -3,17 +3,19 @@
     <div class="banner-container" >
       <h1>Explore before Choosing a Career Path </h1>
       <p>Get the Opportinity to have an in person experience
-         with Professionals all over the world.</p>
+      with Professionals all over the world.</p>
+
       <a class="button-1" href="#">Explore</a>
     </div>
+
     <div class="carousel-item active">
       <img src="https://images.pexels.com/photos/429248/pexels-photo-429248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://images.pexels.com/photos/429248/pexels-photo-429248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100" alt="">
+      <img src="https://cdtalaw.com/wp-content/uploads/2019/03/When-Should-You-Do-an-Internship-as-a-Law-Student.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://images.pexels.com/photos/429248/pexels-photo-429248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100" alt="...">
+      <img src="https://images.unsplash.com/flagged/photo-1553028826-ccdfc006d078?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -24,11 +26,11 @@
   </a>
 </div>
 
-<div class="about-us-container text-center">
-  <div class="about-us-wrapper" >
-    <div class="about-us-img">
+<div class="container about-us-wrapper">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-5 cta-img" style="background-image: url('<%= asset_path('about-us-image.png') %>');">
     </div>
-    <div class="about-us-content" >
+    <div class="col-12 col-sm-12 col-md-8 col-lg-6 offset-lg-1 about-us">
       <h2>About Us</h2>
       <p>At shadow me, we help students figure out a career path. We do so by offering a in person experience with professionals. By doing so, it gives students an idea of what they will be doing.</p>
 
@@ -37,18 +39,30 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="overflow: hidden;">
+      <%= render "pages/testimonies" %>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <h2 class="home-title">Top 4 categories</h2>
   <div class="row">
     <% @categories.each do |category| %>
     <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
+      <%= link_to category_path(category) do %>
       <div class="category-card m-1" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(40, 40, 40, 0.1)), url('<%= category.image %>');">
-         <p><%= category.title %> </p>
-       </div>
+
+       <p><%= category.title %></p>
+
      </div>
-    <% end %>
-  </div>
+     <% end %>
+   </div>
+   <% end %>
+ </div>
+
 </div>
 
 
