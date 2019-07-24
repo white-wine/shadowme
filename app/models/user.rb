@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, PhotoUploader
+
   has_many :professionals, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :messages, dependent: :destroy
