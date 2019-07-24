@@ -11,6 +11,7 @@ before_action :set_category, only: [:show]
     @career = @careers.first
   end
 
+
   private
 
   def set_category
