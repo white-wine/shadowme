@@ -6,4 +6,6 @@ class PagesController < ApplicationController
     topFour = ['Engineering', 'Education', 'Arts', 'Health']
     @categories = allCategories.select{ |item| topFour.include?(item.title)  }
   end
+  def index
+  end
 end
