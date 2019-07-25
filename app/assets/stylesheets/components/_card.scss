@@ -2,7 +2,6 @@
   background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(40, 40, 40, 0.1));
   width: 300px;
   height: 400px;
-  text-align: center;
 
   & p {
     position: absolute;
@@ -17,7 +16,6 @@
   position: absolute;
   width: 300px;
   height: 400px;
-  margin-right: 50px;
   background-position: 40% 20%;
   background-image: image_url("andy-lee-OjvZ_2vSruk-unsplash.jpg");
   background-size: cover;
@@ -28,7 +26,6 @@
   width: 300px;
   height: 400px;
   margin-left: 400px;
-  margin-right: 50px;
   background-position: 40% 40%;
   background-image: image_url("benjamin-parker-NohB3FJSY90-unsplash.jpg");
   background-size: cover;
@@ -39,20 +36,8 @@
   width: 300px;
   height: 400px;
   margin-left: 800px;
-  margin-right: 50px;
   background-position: 40% 50%;
   background-image: image_url("charles-kVg2DQTAK7c-unsplash.jpg");
-  background-size: cover;
-}
-
-.testimony-card4 {
-  position: absolute;
-  width: 300px;
-  height: 400px;
-  margin-left: 1200px;
-  margin-right: 50px;
-  background-position: 40% 50%;
-  background-image: image_url("dominic-blignaut-Wwir9Xis204-unsplash.jpg");
   background-size: cover;
 }
 
@@ -60,7 +45,6 @@
   position: absolute;
   width: 300px;
   height: 400px;
-  margin-right: 50px;
   background-image: image_url("hiep-duong-GtbEnMvoQ4M-unsplash.jpg");
   background-size: cover;
 }
@@ -70,7 +54,6 @@
   width: 300px;
   height: 400px;
   margin-left: 400px;
-  margin-right: 50px;
   background-image: image_url("luis-villasmil-6qf1uljGpU4-unsplash.jpg");
   background-size: cover;
 }
@@ -80,19 +63,8 @@
   width: 300px;
   height: 400px;
   margin-left: 800px;
-  margin-right: 50px;
   background-position: 40% 50%;
   background-image: image_url("max-ilienerwise-1mfJelUoTPQ-unsplash.jpg");
-  background-size: cover;
-}
-
-.testimony-card8 {
-  position: absolute;
-  width: 300px;
-  height: 400px;
-  margin-left: 1200px;
-  margin-right: 50px;
-  background-image: image_url("nicolas-horn-MTZTGvDsHFY-unsplash.jpg");
   background-size: cover;
 }
 
@@ -105,7 +77,7 @@
 }
 
 .testimony-carousel {
-  transition: transform 3s ease, opacity 0s ease-out !important;
+  transition: transform 3s ease, opacity 0.5s ease-out !important;
 }
 
 .testimony-carousel2 {
@@ -118,7 +90,11 @@
 
 }
 
-
+.no-hover {
+  &:hover {
+    text-decoration: none;
+  }
+}
 // CARDS OF CATEGORY
 
 .category-card {
@@ -129,12 +105,18 @@
   display: flex;
   align-items: flex-end;
   text-align: center;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(6, 6, 6, 0.56);
+  border-radius: 5px;
+
   p {
     font-size: 40px;
     font-weight: 400;
     color: white;
-  }
+    text-align: center;
+    }
 }
+
 
 .home-title {
   margin-bottom: 0px !important;
@@ -142,3 +124,22 @@
   font-size: 50px !important;
 }
 
+
+//Career Categories
+.category-title {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.row {
+  margin-bottom: 100px;
+
+}
+
+.category-card:hover {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+}
