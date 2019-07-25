@@ -467,6 +467,7 @@ def create_review(booking, student)
     booking: booking,
     rating: rand(3..5)
     )
+  review.save
   puts "Review for #{booking.professional.user.first_name} #{booking.professional.user.last_name} by #{booking.user.first_name} #{booking.user.last_name}: #{review.content} Rating: #{review.rating}"
 end
 

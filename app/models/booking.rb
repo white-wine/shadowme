@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  has_many :reviews
   has_many :messages, dependent: :destroy
   belongs_to :professional
   belongs_to :user
