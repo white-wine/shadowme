@@ -691,3 +691,7 @@ Professional.all.each do |pro|
 
   end
 end
+
+end_time = Time.now
+result = end_time - start
+puts "#{result} seconds"
