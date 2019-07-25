@@ -26,16 +26,14 @@
               <span>SALES</span>
           </div>
           <div class="pro_reviews">
-            <span class="reviews_title">25 Reviews</span>
+            <span class="reviews_title"><%= professional.reviews.count pluralize(professional.reviews.count, 'Review') %></span>
             <div class="pro_review">
-              <div class="review_one">
-                <%= image_tag(professional.user.photo, class:"review_avatar") %>
-                <span class="text_review">texto...</span>
-              </div>
-              <div class="review_two">
-                <%= image_tag(professional.user.photo, class:"review_avatar") %>
-                <span class="text_review">texto...</span>
-              </div>
+              <% professional.reviews.last(2).each do |review| %>
+                <div class="review_one">
+                  <%= image_tag(review.user.photo, class:"review_avatar") %>
+                  <span class="text_review"><%= review.content %></span>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>

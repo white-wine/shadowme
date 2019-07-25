@@ -2,21 +2,21 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    authorize @booking
     @message = Message.new()
     @review = Review.new()
+
   end
 
   def create
-    @professional = Professional.find(params[:professional_id])
+    @professional = Professional.find(params["professional_id"])
     @booking = Booking.new(booking_params)
-    authorize @booking
     @booking.professional = @professional
-    @booking.user = current_user if @professional.user != current_user
+    @booking.user = current_user if @booking.professional.user != current_user
     @booking.booking_status = 0
     if @booking.save
-      redirect_to @booking
+      redirect_to booking_path(@booking)
     else
+      raise
       render "professionals/show"
     end
   end

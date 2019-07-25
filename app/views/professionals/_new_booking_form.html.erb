@@ -1,0 +1,14 @@
+<h1><strong>BOOKING FORM</strong></h1>
+<div class= "sf">
+<%= form_for([professional, booking], html: { autocomplete: 'off' }) do |f| %>
+<div class="form-group">
+  <%= f.label :date, "Date:" %>
+  <%= f.date_field :date, as: :string, required: true, class: "form-control mb-3" %>
+  <%= f.label :intro_message, "Introduce yourself and talk about the reasons of why you want to shadow this professional:" %>
+
+  <%= f.text_field :intro_message %>
+
+  <%= f.submit   'Confirm', class: "btn btn-primary"%>
+<% end %>
+</div>
+</div>
