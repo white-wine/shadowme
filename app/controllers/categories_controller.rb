@@ -7,8 +7,7 @@ before_action :set_category, only: [:show]
   end
 
   def show
-    @careers = @category.careers
-    @career = @careers.first
+    @careers = Career.where(category:@category)
   end
 
 

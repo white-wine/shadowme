@@ -48,7 +48,6 @@ class ProfessionalsController < ApplicationController
 
   def set_professional
     @professional = Professional.find(params[:id])
-    authorize @professional
   end
 
 
