@@ -5,5 +5,5 @@ class Booking < ApplicationRecord
   enum booking_status: {pending: 0, confirmed: 1, declined: 2}
   validates :date, presence: true
   validates :intro_message, presence: true
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 end
