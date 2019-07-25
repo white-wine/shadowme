@@ -1,0 +1,114 @@
+
+.professional_card{
+  background-color: #FFFFFF;
+  height: auto;
+  width: 350px;
+  margin: 10vh auto;
+  border-radius: 25px;
+  padding-bottom: 1px;
+  box-shadow: 2px 2px 5px #2524243d;
+}
+
+
+.pro_job {
+  h2 {
+  text-align: center;
+  width: 100%;
+  padding: 30px 0;
+  font-weight: 600;
+}
+}
+
+.job_details {
+  display: flex;
+  margin: auto 22px;
+  justify-content: space-between;
+}
+
+.pro-banner {
+  height: 100px;
+  background-color: black;
+}
+
+.pro_photo {
+  display: block;
+  position: relative;
+  background-color: #E6EBEE;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: -75px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow:  2px 2px 5px #252424;
+}
+
+.company_logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+
+}
+
+.logo-wrapper{
+  width: 100px;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pro_separation-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pro_separation {
+  width: 250px;
+  border-bottom: 1px solid black;
+}
+
+
+.pro_details{
+  margin-left: 22px;
+}
+
+.pro_expertise {
+  span {
+  font-weight: 550;
+  }
+}
+
+.reviews_title {
+  font-weight: 550;
+  font-size: 12px;
+}
+
+.review_avatar {
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+  margin: 5px 5px;
+}
+
+.text_review {
+  font-size: 11px;
+  width: 250px;
+  border-left: 1px solid lightgrey;
+  padding-left: 1em;
+}
+
+.pro_tags {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  span {
+    background-color: rgba(0,0,0,0.8);
+    padding: 3px 15px;
+    border-radius: 4px;
+    font-size: 10px;
+    color: white;
+  }
+}
