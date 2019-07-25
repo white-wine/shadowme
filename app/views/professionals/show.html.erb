@@ -1,28 +1,52 @@
-
 <div class="container">
   <div class="row">
-    <div class="col-12">
-
-      <div class='booking-wrapper'>
-        <%= form_for([@professional, @booking], html: { autocomplete: 'off' }) do |f| %>
-          <div class="form-group">
-            <h1>Would you like to ShadowMe?</h1>
-            <label for="tab-select">Select a Week:</label>
-            <%= f.date_field :date, as: :string, required: true, class: "form-control", id: "tab-select" %>
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="tab-message">Message</label>
-
-            <%= f.text_area :intro_message, class: "form-control form-control-sm", id: "tab-message", rows: 5, placeholder: "Type here..." %>
-
-          <button type="submit" class="btn btn-danger btn-space">Submit</button>
-          <%= link_to professional_path(params[:id]) do %>
-          </div>
-          <% end %>
-        <% end %>
-      </div>
+    <div class="col-xs-12 col-md-6">
+      <ol>
+        <%= render "shared/professional_card",  professional: @professional %>
+      </ol>
     </div>
+
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+
+        <%= render 'professionals/new_booking_form', professional: @professional, booking: @booking %>
+
+    </div>
+
   </div>
 </div>
 
+<p><strong>List of reviews content and ratings</strong></p>
+
+<ul>
+  <% @professional.bookings.each do |booking| %>
+  <%  booking.reviews.each do |review|   %>
+  <li>Content: <%= review.content %>, rating: <%= review.rating %>, written by: <%= review.user.first_name %> <%= review.user.last_name %>, created at <%= Faker::Date.backward(rand(10..100)) %></li>
+  <% end %>
+  <% end %>
+</ul>
+
+
+<p><strong>Professional rating average: </strong>
+
+  <%
+  c = 0
+  amount_of_reviews = 0
+  @professional.bookings.each do |booking|
+    booking.reviews.each do |review|
+      amount_of_reviews += 1
+      c += review.rating
+    end
+  end
+  if c != 0 && amount_of_reviews != 0
+
+  average = c / amount_of_reviews
+end
+  %>
+  <%= average %>
+</p>
+
+<%= link_to "Back to professionals list of the same career", career_path(@professional.career) %>
+<%= link_to "Back to careers list of the same category", category_path(@professional.career.category) %>
+<%= link_to "Back to homepage", root_path %>

@@ -1,0 +1,147 @@
+<h1>My profile</h1>
+
+<% if !@current_user.photo.nil? %>
+<p><strong>Your avatar</strong></p>
+<%= image_tag current_user.photo, class:"career-img" %>
+<% end %>
+
+<p><strong></strong> <%= current_user.first_name %></p>
+<p><strong></strong> <%= current_user.last_name %></p>
+<p><strong></strong> <%= current_user.email %></p>
+
+
+
+
+<h1><strong>Pending Booking List</strong>
+
+
+
+
+
+
+ <!-- if user owns a professionals -->
+
+ <% if !current_user.professionals.first.nil? %>
+
+
+
+
+</h1>
+
+
+<!-- show list of bookings -->
+<ul>
+  <!-- show details of each booking -->
+  <% current_user.professionals.first.bookings.each do |booking| %>
+<% if booking.date > Date.today %>
+  <!-- if booking owner has photo, show photo -->
+  <% if !booking.user.photo.nil? %>
+  <%= image_tag booking.user.photo, class:"career-img" %>
+  <% end %>
+
+  <!-- booking details -->
+  <p><strong>Name of the one who booked:</strong> <%= booking.user.first_name %></strong> <%= booking.user.last_name %></p>
+  <p><strong>Self introduction message:</strong> <%= booking.intro_message%></p>
+  <p><strong>Student description:</strong> <%= booking.user.user_description%></p>
+  <p><strong>Email of the one who booked:</strong> <%= booking.user.email %></p>
+  <p><strong>Booking date:</strong> <%= booking.date %></p>
+
+
+
+  <ul>
+    <!-- show reviews of each booking -->
+
+
+<% end %>
+
+
+
+
+  </ul>
+
+  <% end %>
+<% else %>
+<p>You don't have PROFESSIONALS</p>
+  <% end %>
+
+<h1><strong>Booking history</strong></h1>
+
+
+
+
+ <!-- if user owns a professionals -->
+
+ <% if !current_user.professionals.first.nil? %>
+
+
+ <p><strong>My rating average: </strong>
+
+
+  <%
+# if his/her professoinal has any bookings
+if !current_user.professionals.first.bookings.nil?
+  c = 0
+  amount_of_reviews = 0
+
+
+# show the rating average
+
+current_user.professionals.first.bookings.each do |booking|
+  booking.reviews.each do |review|
+    amount_of_reviews += 1
+    c += review.rating
+  end
+end
+if c != 0 && amount_of_reviews != 0
+
+  average = c / amount_of_reviews
+end
+%>
+<%= average %>
+
+<% end %>
+</p>
+
+
+<!-- show list of bookings -->
+<ul>
+  <!-- show details of each booking -->
+  <% current_user.professionals.first.bookings.each do |booking| %>
+<% if booking.date < Date.today %>
+  <!-- if booking owner has photo, show photo -->
+  <% if !booking.user.photo.nil? %>
+  <%= image_tag booking.user.photo, class:"career-img" %>
+  <% end %>
+
+  <!-- booking details -->
+  <p><strong>Name of the one who booked:</strong> <%= booking.user.first_name %></strong> <%= booking.user.last_name %></p>
+  <p><strong>Self introduction message:</strong> <%= booking.intro_message%></p>
+  <p><strong>Student description:</strong> <%= booking.user.user_description%></p>
+  <p><strong>Email of the one who booked:</strong> <%= booking.user.email %></p>
+  <p><strong>Booking date:</strong> <%= booking.date %></p>
+
+
+
+  <ul>
+    <!-- show reviews of each booking -->
+
+    <%  booking.reviews.each do |review|   %>
+
+    <li>Content: <%= review.content %>, rating: <%= review.rating %>, written by: <%= review.user.first_name %> <%= review.user.last_name %>, created at <%= Faker::Date.backward(rand(10..100)) %></li>
+
+
+    <% end %>
+
+
+
+<% end %>
+
+
+
+
+  </ul>
+
+  <% end %>
+<% else %>
+<p>You don't have PROFESSIONALS</p>
+  <% end %>

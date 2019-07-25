@@ -406,6 +406,7 @@ CAREERS = [
   ]
 ]
 
+
 def faker_male
   Faker::Name.male_first_name
 end
@@ -467,6 +468,7 @@ def create_review(booking, student)
     booking: booking,
     rating: rand(3..5)
     )
+  review.save
   puts "Review for #{booking.professional.user.first_name} #{booking.professional.user.last_name} by #{booking.user.first_name} #{booking.user.last_name}: #{review.content} Rating: #{review.rating}"
 end
 
@@ -588,3 +590,104 @@ puts "Finished seeding process"
 end_time = Time.now
 result = end_time - start
 puts "#{result} seconds"
+
+
+
+
+
+my_user = User.new(
+  email: "lux@mail.com",
+  user_type: 1,
+  first_name: "Lux",
+  last_name: "Le Wagon",
+  birth: Faker::Date.backward(365 * 25),
+  user_description: "Ruby Fullstack Developer - Argentina",
+  photo: "https://avatars1.githubusercontent.com/u/46462316?v=4",
+  password: 123456
+  )
+my_user.save!
+pro = Professional.new(
+  location: "Argentina, Buenos Aires",
+  specialty: "Ruby Fullstack Developer - Le Wagon",
+  experience_in_years: 2,
+  resume: "Change your life, learn to code.",
+  company_logo: "https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-fe76916e1b923ade71e253ae6dc031d936e5e8eebac4e26b0fbac650ea6ee360.png",
+  career: Career.all.last,
+  user: my_user
+  )
+puts "CREATING PROFESSIONAL FOR TESTING"
+pro.save!
+4.times do
+  create_booking(pro, User.all.sample)
+end
+
+my_user = User.new(
+  email: "faby@mail.com",
+  user_type: 1,
+  first_name: "Faby",
+  last_name: "Le Wagon",
+  birth: Faker::Date.backward(365 * 25),
+  user_description: "Ruby Fullstack Developer - Argentina",
+  photo: "https://avatars2.githubusercontent.com/u/50439580?v=4",
+  password: 123456
+  )
+my_user.save!
+pro = Professional.new(
+  location: "Argentina, Buenos Aires",
+  specialty: "Ruby Fullstack Developer - Le Wagon",
+  experience_in_years: 2,
+  resume: "Change your life, learn to code.",
+  company_logo: "https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-fe76916e1b923ade71e253ae6dc031d936e5e8eebac4e26b0fbac650ea6ee360.png",
+  career: Career.all.last,
+  user: my_user
+  )
+puts "CREATING PROFESSIONAL FOR TESTING"
+pro.save!
+4.times do
+  create_booking(pro, User.all.sample)
+end
+
+my_user = User.new(
+  email: "sole@mail.com",
+  user_type: 1,
+  first_name: "Sole",
+  last_name: "Le Wagon",
+  birth: Faker::Date.backward(365 * 25),
+  user_description: "Ruby Fullstack Developer - Argentina",
+  photo: "https://avatars0.githubusercontent.com/u/48864600?v=4",
+  password: 123456
+  )
+my_user.save!
+pro = Professional.new(
+  location: "Argentina, Buenos Aires",
+  specialty: "Ruby Fullstack Developer - Le Wagon",
+  experience_in_years: 2,
+  resume: "Change your life, learn to code.",
+  company_logo: "https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-fe76916e1b923ade71e253ae6dc031d936e5e8eebac4e26b0fbac650ea6ee360.png",
+  career: Career.all.last,
+  user: my_user
+  )
+puts "CREATING PROFESSIONAL FOR TESTING"
+pro.save!
+4.times do
+  create_booking(pro, User.all.sample)
+end
+
+
+
+Professional.all.each do |pro|
+  3.times do
+    booking = Booking.new(
+      professional: pro,
+      date: Faker::Date.backward(rand(1..100)),
+      booking_status: rand(0..2),
+      intro_message: "I'm insterested on " + pro.career.title + " career."
+
+      )
+    booking.user = User.all.sample
+    booking.save
+    puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
+    create_review(booking, User.all.sample)
+
+  end
+end
