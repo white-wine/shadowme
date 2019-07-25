@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :bookings, only: [:index]
     resources :professionals, only: [:index, :destroy]
-    resources :profile, only: [:index, :update]
+    resources :profile, only: [:index, :update, :edit]
 
   end
-
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
