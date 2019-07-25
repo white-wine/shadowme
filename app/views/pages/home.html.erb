@@ -53,7 +53,7 @@
     <% @categories.each do |category| %>
     <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
       <%= link_to category_path(category) do %>
-      <div class="category-card m-1" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(40, 40, 40, 0.1)), url('<%= category.image %>');">
+      <div class="category-card m-1" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
 
        <p><%= category.title %></p>
 
