@@ -26,7 +26,7 @@
               <span>SALES</span>
           </div>
           <div class="pro_reviews">
-            <span class="reviews_title"><%= professional.reviews.count pluralize(professional.reviews.count, 'Review') %></span>
+            <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
             <div class="pro_review">
               <% professional.reviews.last(2).each do |review| %>
                 <div class="review_one">
