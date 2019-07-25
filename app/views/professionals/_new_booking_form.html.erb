@@ -1,14 +1,17 @@
 <h1><strong>BOOKING FORM</strong></h1>
-<div class= "sf">
-<%= form_for([professional, booking], html: { autocomplete: 'off' }) do |f| %>
-<div class="form-group">
-  <%= f.label :date, "Date:" %>
-  <%= f.date_field :date, as: :string, required: true, class: "form-control mb-3" %>
-  <%= f.label :intro_message, "Introduce yourself and talk about the reasons of why you want to shadow this professional:" %>
+<div class='booking-wrapper'>
+  <%= form_for([professional, booking], html: { autocomplete: 'off' }) do |f| %>
+    <div class="form-group">
+      <h1>Would you like to ShadowMe?</h1>
+      <label for="tab-select">Select a Week:</label>
+      <%= f.date_field :date, as: :string, required: true, class: "form-control", id: "tab-select" %>
+      <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="tab-message">Message</label>
 
-  <%= f.text_field :intro_message %>
+      <%= f.text_area :intro_message, class: "form-control form-control-sm", id: "tab-message", rows: 5, placeholder: "Type here..." %>
 
-  <%= f.submit   'Confirm', class: "btn btn-primary"%>
-<% end %>
-</div>
+    <button type="submit" class="btn btn-danger btn-space">Submit</button>
+  <% end %>
 </div>
