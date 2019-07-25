@@ -26,7 +26,14 @@
               <span>SALES</span>
           </div>
           <div class="pro_reviews">
-            <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
+            <div class="d-flex justify-content-between pr-3">
+              <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
+              <div>
+                <% 5.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+              </div>
+            </div>
             <div class="pro_review">
               <% professional.reviews.last(2).each do |review| %>
                 <div class="review_one">

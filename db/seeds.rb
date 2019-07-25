@@ -587,9 +587,7 @@ puts "Finished seeding process"
 
 # https://randomuser.me/api/portraits/med/women/99.jpg
 # https://randomuser.me/api/portraits/med/men/99.jpg
-end_time = Time.now
-result = end_time - start
-puts "#{result} seconds"
+
 
 
 
@@ -691,3 +689,6 @@ Professional.all.each do |pro|
 
   end
 end
+end_time = Time.now
+result = end_time - start
+puts "#{result} seconds"
