@@ -1,4 +1,9 @@
 <h1>Booking ID:<strong> <%= @booking.id %></strong></h1>
+<p><strong>Professional Owner Avatar</strong>:</p>
+
+<% if !@booking.user.photo.nil? %>
+<%= image_tag @booking.user.photo, class:"career-img" %>
+<% end %>
 
 <p><strong>Booking date</strong>e<%= @booking.date %></p>
 <p><strong>Name of the one who booked:</strong> <%= @booking.user.first_name %></strong> <%= @booking.user.last_name %></p>
@@ -19,11 +24,30 @@
 <p><strong>Professional Owner Avatar</strong>:  <%= image_tag @booking.professional.user.photo, class:"career-img" %></p>
 
 <p><strong>Professional years of experience: </strong><%= @booking.professional.experience_in_years%> years</p>
-<p><strong>Professional years of experience: </strong><%=
-c = 0
-@booking.reviews.each do |review|
 
-  c += review.rating
-  puts c
+<p>list of reviews content and ratings</p>
+
+<ul>
+  <%  @booking.reviews.each do |review|   %>
+  <li>Content: <%= review.content %>, rating: <%= review.rating %> </li>
+  <% end %>
+</ul>
+
+
+<p><strong>Professional rating average: </strong>
+
+  <%
+  c = 0
+  amount_of_reviews = @booking.reviews.count
+  @booking.reviews.each do |review|
+    c += review.rating
+  end
+  if c != 0 && amount_of_reviews != 0
+  average = c / amount_of_reviews
 end
-  %> years</p>
+  %>
+  <%= average %>
+</p>
+
+<%= link_to "Back to professional card", professional_path(@booking.professional) %>
+<%= link_to "Back to homepage", root_path %>
