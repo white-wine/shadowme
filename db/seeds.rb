@@ -416,7 +416,7 @@ end
 ## CREATE PRO USER
 def create_user(career)
 
-  2.times do
+
     male_user = User.new(
       user_type: 1,
       first_name: faker_male.split.first,
@@ -458,7 +458,6 @@ def create_user(career)
 
     create_professional(fem_user, career)
 
-  end
 end
 
 def create_review(booking, student)
@@ -565,6 +564,7 @@ CATEGORIES.each_with_index do |category, index|
     car.save!
 
     puts "   - added Career: #{car.title}"
+    create_user(car)
     create_user(car)
     puts "-------------------"
   end
