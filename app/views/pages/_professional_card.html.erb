@@ -1,0 +1,44 @@
+<div class="professional_card">
+  <div class="pro-banner">
+    </div>
+    <div class="pro-photo_avatar" >
+    <%= image_tag(professional.user.photo, class:"pro_photo") %>
+    </div>
+    <div class="pro_data">
+      <div class="pro_job">
+        <h2><%= professional.user.first_name %> <%= professional.user.last_name %></h2>
+        <div class="job_details">
+        <p><%= professional.user.user_description %></p>
+          <div class="logo-wrapper">
+          <%= image_tag(professional.company_logo, class:"company_logo") %>
+          </div>
+        </div>
+        <div class="pro_separation-wrapper">
+          <div class="pro_separation"></div>
+        </div>
+        <div class="pro_details">
+          <p><%= professional.specialty %></p>
+
+          <div class="pro_expertise">
+            <span>Career Expertise</span>
+            </div>
+            <div class="pro_tags">
+              <span>MANAGEMENT</span>
+              <span>FINANCE</span>
+              <span>SALES</span>
+          </div>
+          <div class="pro_reviews">
+            <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
+            <div class="pro_review">
+              <% professional.reviews.last(2).each do |review| %>
+                <div class="review_one">
+                  <%= image_tag(review.user.photo, class:"review_avatar") %>
+                  <span class="text_review"><%= review.content %></span>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

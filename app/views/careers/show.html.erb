@@ -2,7 +2,9 @@
   <div class="row">
   <div class="col-xs-12 col-md-6">
         <% @professionals.each do |professional| %>
+
       <%= render "shared/professional_card",  professional: professional  %>
+
     <% end %>
   </div>
   </div>

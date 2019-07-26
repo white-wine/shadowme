@@ -2,9 +2,9 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    @message = Message.new()
     @review = Review.new()
-
+    @messages = Message.where(booking: @booking)
+    @message = Message.new()
   end
 
   def create
