@@ -682,7 +682,7 @@ Professional.all.each do |pro|
       intro_message: "I'm insterested on " + pro.career.title + " career."
 
       )
-    booking.user = User.all.sample
+    booking.user = User.where(user_type: 0).sample
     booking.save
     puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
     create_review(booking, User.all.sample)
