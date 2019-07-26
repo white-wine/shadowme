@@ -30,8 +30,12 @@
             <div class="d-flex justify-content-between pr-3">
               <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
               <div>
-                <% 5.times do %>
+                <% empty_stars = 5 - professional.average_rating  %>
+                <% professional.average_rating.times do %>
                   <i class="fas fa-star"></i>
+                <% end %>
+                <% empty_stars.times do %>
+                  <i class="far fa-star"></i>
                 <% end %>
               </div>
             </div>
@@ -39,7 +43,7 @@
               <% professional.reviews.last(2).each do |review| %>
                 <div class="review_one">
                   <%= image_tag(review.user.photo, class:"review_avatar") %>
-                  <span class="text_review"><%= review.content %></span>
+                  <span class="text_review"><%= review.content.truncate(45, omission: "... (more)") %></span>
                 </div>
               <% end %>
             </div>

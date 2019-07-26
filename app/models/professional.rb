@@ -3,4 +3,12 @@ class Professional < ApplicationRecord
   has_many :reviews, through: :bookings, dependent: :destroy
   belongs_to :career
   belongs_to :user
+
+  def average_rating
+    if self.reviews.size > 0
+      self.reviews.average(:rating).to_i
+    else
+      0
+    end
+  end
 end
