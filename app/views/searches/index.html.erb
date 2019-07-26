@@ -1,0 +1,45 @@
+<h1>Searches#index</h1>
+<p>Find me in app/views/searches/index.html.erb</p>
+
+<%= form_tag searches_path, method: :get do %>
+  <%= text_field_tag :q, params[:q]  %>
+  <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]) %>
+  <%= submit_tag "buscar" %>
+<% end %>
+
+<% if @results %>
+<ul>
+<% @results.each do |result| %>
+ <li><%= result.searchable %></li>
+<% end %>
+</ul>
+<% end %>
+
+<% if @careers %>
+<ul>
+<% @careers.each do |career| %>
+ <li><%= career.title %></li>
+<% end %>
+</ul>
+<% end %>
+
+
+<% if @categories %>
+<ul>
+<% @categories.each do |category| %>
+ <li><%= category.title %></li>
+<% end %>
+</ul>
+<% end %>
+
+<% if @users %>
+<ul>
+<% @users.each do |user| %>
+ <li><%= user.first_name %> <%= user.last_name %></li>
+<% end %>
+</ul>
+<% end %>
+
+
+
+
