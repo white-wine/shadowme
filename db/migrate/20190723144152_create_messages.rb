@@ -4,7 +4,6 @@ class CreateMessages < ActiveRecord::Migration[5.2]
       t.text :content
       t.string :identifier
       t.references :sender
-      t.references :target
       t.references :booking, foreign_key: true
 
       t.timestamps
