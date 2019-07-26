@@ -1,11 +1,13 @@
+<h2 class="category-title">Professionals in <strong> <%= Career.find(params[:id]).title %> </strong>career</h2>
+
 <div class="container">
   <div class="row">
-  <div class="col-xs-12 col-md-6">
         <% @professionals.each do |professional| %>
 
+  <div class="col-xs-12 col-md-6 col-xl-4">
       <%= render "shared/professional_card",  professional: professional  %>
 
-    <% end %>
   </div>
+    <% end %>
   </div>
 </div>
