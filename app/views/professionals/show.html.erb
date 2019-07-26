@@ -7,7 +7,7 @@
       <p><strong>Description: </strong>
         <%= image_tag @professional.company_logo, alt: "alttext", class:"avatar" %><%= @professional.user.user_description %></p>
 
-        <p><strong>Birth: </strong><%= @professional.user.birth %></p>
+        <p><strong>Birth: </strong><%= Date.today - @professional.user.birth %></p>
         <p><strong>Career description: </strong><%= @professional.career.description %></p>
         <p><strong>Professional rating average: </strong>
 
