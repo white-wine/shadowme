@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
   devise_for :users
   namespace :admin do
     resources :bookings, only: [:index]
     resources :professionals, only: [:index, :destroy]
     resources :profile, only: [:index, :update, :edit]
+
 
   end
 
@@ -26,6 +28,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
     resources :messages, only: [:create]
   end
-
+  resources :searches, only: [:index]
 
 end
