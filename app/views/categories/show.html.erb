@@ -1,9 +1,9 @@
+<h2 class="category-title">Career Categories</h2>
 <div class="container">
   <div class="row">
-  <div class="col-xs-12 col-md-6">
-    <% @careers.each do |career| %>
-      <%= render "career_card",  career: career  %>
-    <% end %>
+  <% @careers.each do |career| %>
+  <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
+    <%= render "career_card",  career: career  %>
   </div>
-  </div>
-</div>
+  <% end %>
+</div></div>

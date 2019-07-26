@@ -422,7 +422,7 @@ def create_user(career)
       user_type: 1,
       first_name: faker_male.split.first,
       last_name: Faker::Name.last_name,
-      birth: Faker::Date.backward(365 * rand(35..65)),
+      birth: (Date.today - (365 * rand(25..50))),
       user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         photo: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
@@ -442,7 +442,7 @@ def create_user(career)
       user_type: 1,
       first_name: faker_female.split.first,
       last_name: Faker::Name.last_name,
-      birth: Faker::Date.backward(365 * rand(35..60)),
+      birth: (Date.today - (365 * rand(25..50))),
       user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         photo: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
@@ -587,9 +587,7 @@ puts "Finished seeding process"
 
 # https://randomuser.me/api/portraits/med/women/99.jpg
 # https://randomuser.me/api/portraits/med/men/99.jpg
-end_time = Time.now
-result = end_time - start
-puts "#{result} seconds"
+
 
 
 
@@ -684,10 +682,13 @@ Professional.all.each do |pro|
       intro_message: "I'm insterested on " + pro.career.title + " career."
 
       )
-    booking.user = User.all.sample
+    booking.user = User.where(user_type: 0).sample
     booking.save
     puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
     create_review(booking, User.all.sample)
 
   end
 end
+end_time = Time.now
+result = end_time - start
+puts "#{result} seconds"

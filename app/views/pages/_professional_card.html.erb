@@ -1,29 +1,24 @@
-<%= link_to professional_path(professional), class:"career-description-connection" do %>
 <div class="professional_card">
   <div class="pro-banner">
-  </div>
-  <div class="pro-photo_avatar" >
+    </div>
+    <div class="pro-photo_avatar" >
     <%= image_tag(professional.user.photo, class:"pro_photo") %>
-  </div>
-  <div class="pro_data">
-    <div class="pro_job">
-      <h2><%= professional.user.first_name %> <%= professional.user.last_name %></h2>
-      <div class="job_details">
+    </div>
+    <div class="pro_data">
+      <div class="pro_job">
+        <h2><%= professional.user.first_name %> <%= professional.user.last_name %></h2>
+        <div class="job_details">
         <p><%= professional.user.user_description %></p>
-        <div class="logo-wrapper">
+          <div class="logo-wrapper">
           <%= image_tag(professional.company_logo, class:"company_logo") %>
+          </div>
         </div>
-      </div>
-      <div class="pro_separation-wrapper">
-        <div class="pro_separation"></div>
-      </div>
-      <div class="pro_details">
-        <p><%= professional.specialty %></p>
-
-        <div class="pro_expertise">
-          <span>Career Expertise</span>
+        <div class="pro_separation-wrapper">
+          <div class="pro_separation"></div>
         </div>
         <div class="pro_details">
+          <p><%= professional.specialty %></p>
+
           <div class="pro_expertise">
             <span>Career Expertise</span>
             </div>
@@ -33,14 +28,7 @@
               <span>SALES</span>
           </div>
           <div class="pro_reviews">
-            <div class="d-flex justify-content-between pr-3">
-              <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
-              <div>
-                <% 5.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-              </div>
-            </div>
+            <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
             <div class="pro_review">
               <% professional.reviews.last(2).each do |review| %>
                 <div class="review_one">
@@ -49,10 +37,8 @@
                 </div>
               <% end %>
             </div>
-            <% end %>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
