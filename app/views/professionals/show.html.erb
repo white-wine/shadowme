@@ -1,14 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <ol>
-        <%= render "shared/professional_card",  professional: @professional %>
-      </ol>
+    <div class="col-xs-12 col-md-6 col-6">
+      <%= image_tag @professional.user.photo, alt: "alttext", class:"" %>
+
+      <p><strong>Name:</strong> <%= @professional.user.first_name %> <%= @professional.user.last_name %></p>
+      <p><strong>Description: </strong> <%= @professional.user.user_description %></p>
+      <p><strong>Birth: </strong><%= @professional.user.birth %></p>
+      <p><strong>Career description: </strong><%= @professional.career.description %></p>
     </div>
 
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-md-6 col -6">
 
         <%= render 'professionals/new_booking_form', professional: @professional, booking: @booking %>
 
