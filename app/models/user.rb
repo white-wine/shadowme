@@ -28,4 +28,8 @@ class User < ApplicationRecord
      return "#{first_name.capitalize}"
    end
  end
+
+ def professional
+   professionals.first
+ end
 end
