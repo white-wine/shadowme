@@ -49,13 +49,11 @@ ActiveRecord::Schema.define(version: 2019_07_24_223520) do
     t.text "content"
     t.string "identifier"
     t.bigint "sender_id"
-    t.bigint "target_id"
     t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_messages_on_booking_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
-    t.index ["target_id"], name: "index_messages_on_target_id"
   end
 
   create_table "professionals", force: :cascade do |t|
