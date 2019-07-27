@@ -13,13 +13,13 @@ class User < ApplicationRecord
   include PgSearch::Model
   multisearchable against: [ :first_name, :last_name ]
   pg_search_scope :search_by_name_or_specialty,
-    against: [ :first_name, :last_name ],
-    associated_against: {
-      professionals: [ :specialty ]
-    },
-    using: {
-      tsearch: { prefix: true }
-    }
+  against: [ :first_name, :last_name ],
+  associated_against: {
+    professionals: [ :specialty ]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
 
   def identifier
    if (first_name).nil?
@@ -29,7 +29,15 @@ class User < ApplicationRecord
    end
  end
 
- def professional
+ def self.from_omniauth(auth)
+    # Creates a new user only if it doesn't exist
+    where(email: auth.info.email).first_or_initialize do |user|
+      user.name = auth.info.name
+      user.email = auth.info.email
+    end
+  end
+
+  def professional
    professionals.first
  end
 end
