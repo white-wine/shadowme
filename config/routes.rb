@@ -29,6 +29,11 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
   resources :searches, only: [:index]
+  resources :donations, only: [:new, :create] do
+    resources :payments, only: [:new, :create]
+  end
+
+
 
   get "auth/:provider/callback", to: "sessions#googleAuth"
   get "auth/failure", to: redirect('pages#home')
