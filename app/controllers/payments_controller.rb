@@ -1,9 +1,10 @@
 class PaymentsController < ApplicationController
   def new
-  @donation = Donation.find(params[:donation_id])
+    @donation = Donation.find(params[:donation_id])
   end
 
   def create
+  @donation = Donation.find(params[:donation_id])
   customer = Stripe::Customer.create(
     source: params[:stripeToken],
     email:  params[:stripeEmail]
@@ -13,7 +14,7 @@ class PaymentsController < ApplicationController
     customer:     customer.id,   # You should store this customer id and re-use it.
     amount:       @donation.amount_cents,
     description:  "Payment for donation",
-    currency:     @donation.amount_cents.currency
+    currency:     "ARS"
   )
 
   @donation.update(payment: charge.to_json, state: 'paid')
