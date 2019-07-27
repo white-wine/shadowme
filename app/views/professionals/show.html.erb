@@ -1,3 +1,4 @@
+
 <div class="form-description-container">
   <div class="container pro-title">
   <div class="row pro-row">
@@ -14,9 +15,11 @@
       <p><strong>Description: </strong>
         <%= image_tag @professional.company_logo, alt: "alttext", class:"avatar" %><%= @professional.user.user_description %></p>
         <p><strong>Age: </strong><%= (Date.today - @professional.user.birth.to_date).to_i / 365 %> Years old</p>
+
         <p><strong>Career description: </strong><%= @professional.career.description %></p>
         <div class="star-wrapper">
         <p><strong>Professional rating average: </strong>
+
           </p>
           <div class="average-stars">
               <% empty_stars = 5 - @professional.average_rating  %>
@@ -36,7 +39,6 @@
                      <p><%= review.user.first_name %> <%= review.user.last_name %></p>
                     <p><%= image_tag(review.user.photo, class:"review_avatar") %><strong> <%= review.content %></strong>
                     </p>
-
                     <div class="stars-with-date">
                       <p><%= Faker::Date.backward(rand(10..100)).strftime("%b %d %Y") %></p>
                       <div class="stars">

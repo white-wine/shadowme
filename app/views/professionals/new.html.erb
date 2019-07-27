@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="form-container">
+    <h1>Create pro profile</h1>
+    <%= simple_form_for(@professional) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.association :career %>
+      <%= f.input :location %>
+      <%= f.input :specialty %>
+      <%= f.input :resume %>
+      <%= f.input :experience_in_years %>
+      <%= f.input :company_logo %>
+    </div>
+
+    <div class="form-actions ">
+      <%= f.button :submit, class:"btn-search-animals"  %>
+    </div>
+    <div class="form-back">
+     <%= link_to 'Back', admin_profile_index_path, class:"btn-search-animals" %>
+   </div>
+
+   <% end %>
+ </div>
+</div>

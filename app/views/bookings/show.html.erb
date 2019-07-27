@@ -1,7 +1,7 @@
 <h1>Booking ID:<strong> <%= @booking.id %></strong></h1>
 <%= render 'messages/chat', message: @message, messages: @messages %>
 
-<p><strong>Professional Owner Avatar</strong>:</p>
+<p><strong>Avatar of the one who booked</strong>:</p>
 
 <% if !@booking.user.photo.nil? %>
 <%= image_tag @booking.user.photo, class:"career-img" %>

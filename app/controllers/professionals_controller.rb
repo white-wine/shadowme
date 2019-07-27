@@ -13,17 +13,16 @@ class ProfessionalsController < ApplicationController
 
   def new
     @professional = Professional.new
-    authorize @professional
+    @user = User.new
   end
 
   def create
     @professional = Professional.new(professional_params)
-    authorize @professional
     @professional.user = current_user
     if @professional.save
       redirect_to professional_path(@professional)
     else
-      render new
+      render :new
     end
   end
 
@@ -32,6 +31,12 @@ class ProfessionalsController < ApplicationController
 
 
   def update
+
+    # if @user.update(user_params)
+    #   redirect_to @user, notice: 'Your user was successfully updated.'
+    # else
+    #   render :edit
+    # end
     if @professional.update(professional_params)
       redirect_to @professional, notice: 'Your professional was successfully updated.'
     else
@@ -52,7 +57,7 @@ class ProfessionalsController < ApplicationController
 
 
   def professional_params
-    params.require(:professional).permit(:career, :location, :resume, :experience_in_years, :company_logo)
+    params.require(:professional).permit(:location, :resume, :experience_in_years, :company_logo, :career_id, :specialty)
   end
 
   def storable_location?
