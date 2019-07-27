@@ -1,0 +1,15 @@
+<h1>Donation </h1>
+<%= form_tag donation_payments_path(@donation) do %>
+  <article>
+    <label class="amount">
+      <span>Amount: <%= humanized_money_with_symbol(@donation.amount_cents) %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="Donation"
+    data-email="sebas"
+    data-amount="<%= @donation.amount %>"
+    data-currency="<%= @donation.amount.currency %>"></script>
+<% end %>
