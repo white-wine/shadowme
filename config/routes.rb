@@ -30,7 +30,11 @@ Rails.application.routes.draw do
   end
   resources :searches, only: [:index]
 
+  get "auth/:provider/callback", to: "sessions#googleAuth"
+  get "auth/failure", to: redirect('pages#home')
+
   post '/confirm_booking', to: 'bookings#confirm'
   post '/decline_booking', to: 'bookings#decline'
 
 end
+

@@ -11,7 +11,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :birth
       t.string :user_description
-
+      t.string :google_token
+      t.string :google_refresh_token
 
       ## Recoverable
       t.string   :reset_password_token
