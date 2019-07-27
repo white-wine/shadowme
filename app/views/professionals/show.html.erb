@@ -1,78 +1,70 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-6">
-      <% if !@professional.user.photo.nil? %>
 
+<div class="form-description-container">
+  <div class="container pro-title">
+  <div class="row pro-row">
+    <div class="col-xs-12 col-md-6 offset-md-1 col-6 offset-lg-1 pro-name">
+        <h1><%= @professional.user.first_name%>'s Profile</h1>
+      </div>
+  </div>
+</div>
+  <div class="container professional-description">
+    <div class="row pro-row">
+    <div class="col-xs-12 col-md-6 offset-md-1 col-6 offset-lg-1 pro-profile">
       <%= image_tag @professional.user.photo, alt: "alttext", class:"" %>
-      <% end %>
-      <% if !@professional.user.first_name.nil? %>
-
-
-      <p><strong>Name:</strong> <%= @professional.user.first_name %>
-
-      <% end %>
-      <% if !@professional.user.last_name.nil? %>
-
-      <%= @professional.user.last_name %></p>
-      <% end %>
-
+      <p><strong>Name:</strong> <%= @professional.user.first_name %> <%= @professional.user.last_name %></p>
       <p><strong>Description: </strong>
         <%= image_tag @professional.company_logo, alt: "alttext", class:"avatar" %><%= @professional.user.user_description %></p>
-      <% if !@professional.user.birth.nil? %>
+        <p><strong>Age: </strong><%= (Date.today - @professional.user.birth.to_date).to_i / 365 %> Years old</p>
 
-        <p><strong>Birth: </strong><%= (Date.today - @professional.user.birth.to_date).to_i / 365 %> Years old</p>
-        <% end %>
         <p><strong>Career description: </strong><%= @professional.career.description %></p>
+        <div class="star-wrapper">
         <p><strong>Professional rating average: </strong>
 
-          <%
-          c = 0
-          amount_of_reviews = 0
-          @professional.bookings.each do |booking|
-            booking.reviews.each do |review|
-              amount_of_reviews += 1
-              c += review.rating
-            end
-          end
-          if c != 0 && amount_of_reviews != 0
-
-            average = c / amount_of_reviews
-          end
-          %>
-          <%= average %>
-        </p>
-      </div>
-
-
-<% if @professional.user != current_user %>
-
-      <div class="col-xs-12 col-md-6 col -6">
-
+          </p>
+          <div class="average-stars">
+              <% empty_stars = 5 - @professional.average_rating  %>
+              <% @professional.average_rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% empty_stars.times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            </div>
+        </div>
+         <ul>
+          <div class="review-format">
+              <% @professional.bookings.each do |booking| %>
+                <%  booking.reviews.each do |review|   %>
+                  <div class="review">
+                     <p><%= review.user.first_name %> <%= review.user.last_name %></p>
+                    <p><%= image_tag(review.user.photo, class:"review_avatar") %><strong> <%= review.content %></strong>
+                    </p>
+                    <div class="stars-with-date">
+                      <p><%= Faker::Date.backward(rand(10..100)).strftime("%b %d %Y") %></p>
+                      <div class="stars">
+                        <% review.rating.times do %>
+                          <i class="fas fa-star"></i>
+                        <% end %>
+                        <% (5 - review.rating).times do %>
+                          <i class="far fa-star"></i>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+           </ul>
+        </div>
+      <div class="col-xs-12 col-md-4 col -4">
         <%= render 'professionals/new_booking_form', professional: @professional, booking: @booking %>
-
       </div>
-
-<% end %>
+    </div>
     </div>
   </div>
-
-  <p><strong>List of reviews content and ratings</strong></p>
-
-  <ul>
-    <% @professional.bookings.each do |booking| %>
-    <%  booking.reviews.each do |review|   %>
-    <li>Content: <%= review.content %>, rating: <%= review.rating %>, written by: <%= review.user.first_name %> <%= review.user.last_name %>, created at <%= Faker::Date.backward(rand(10..100)) %></li>
-    <% end %>
-    <% end %>
-  </ul>
-
-
-
-  <div class="container">
-    <div class="row">
-      <%= link_to "Back to professionals list of the same career", career_path(@professional.career), class:"btn btn-success" %>
-      <%= link_to "Back to homepage", root_path, class:"btn btn-success" %>
-      <%= link_to "Back to careers list of the same category", category_path(@professional.career.category), class:"btn btn-success" %>
+      <div class="row button-cluster">
+      <%= link_to "professionals list", career_path(@professional.career), class:"" %>
+      <%= link_to "homepage", root_path, class:"" %>
+      <%= link_to "careers list", category_path(@professional.career.category), class:"" %>
     </div>
-  </div>
 </div>

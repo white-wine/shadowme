@@ -125,3 +125,87 @@ transition: 1s ease;
 
 .pro_review {
 }
+
+.form-description-container {
+}
+
+
+.pro-profile {
+  background-color: #383535bf;
+    padding-top: 30px;
+    padding-left: 30px;
+    height: 502px;
+    border-radius: 8px;
+    color: white;
+    overflow-y: scroll;
+}
+
+.star-wrapper {
+  display: flex;
+}
+
+
+.average-stars {
+  margin-left: 50px;
+}
+
+
+.stars-with-date {
+ display: flex;
+ justify-content: space-between;
+}
+
+.stars {
+  text-align: right;
+}
+
+.review-format {
+  & p {
+    margin-bottom: 10px !important;
+    line-height: 1em !important;
+  }
+}
+
+.review {
+  width: 90%;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
+.button-cluster {
+  display: flex;
+  justify-content: space-evenly;
+  color: black !important;
+  margin-bottom: 50px !important;
+  margin-top: 50px !important;
+  margin: auto;
+  width: 100%;
+
+
+  & a {
+    color: black !important;
+  }
+
+  & a:hover {
+    text-decoration: none !important;
+    color: red !important;
+  }
+}
+
+.professional-description {
+  margin-top: 50px !important;
+}
+
+.pro-row {
+  margin-bottom: 0px !important;
+}
+
+.pro-title {
+  margin-top: 50px !important;
+}
+
+.pro-name {
+  padding-left: 0px !important;
+}

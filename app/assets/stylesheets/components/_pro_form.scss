@@ -1,8 +1,14 @@
 .form-control {
-line-height: 1.5;
-background-color: #403b3b;
-border: 1px solid #a5a5a7;
-color: white;
+  line-height: 1.5;
+  background-color: #403b3b;
+  border: 1px solid #a5a5a7;
+  color: white;
+
+  &:focus {
+     -moz-box-shadow: none !important;
+     -webkit-box-shadow: none !important;
+     box-shadow: none !important;
+  }
 }
 
 .container {
@@ -10,7 +16,6 @@ color: white;
 }
 
 .booking-wrapper {
-  width: 70%;
   border-radius: 8px;
   background-color: #383535bf;
   color: white;
@@ -46,11 +51,12 @@ color: white;
 #tab-select {
   background-color: #403b3b;
   &:focus {
-  outline:none !important;
+   outline:none !important;
    outline-width: 0 !important;
    box-shadow: none !important;
    -moz-box-shadow: none !important;
    -webkit-box-shadow: none !important;
+   box-shadow: none !important;
    border-color: #a5a5a7;
    color: white;
   }
