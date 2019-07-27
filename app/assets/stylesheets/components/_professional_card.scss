@@ -125,3 +125,19 @@ transition: 1s ease;
 
 .pro_review {
 }
+
+.form-description-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.pro-profile {
+  background-color: #383535bf;
+    padding-top: 30px;
+    padding-left: 30px;
+    height: 502px;
+    border-radius: 8px;
+    color: white;
+    overflow-y: scroll;
+}

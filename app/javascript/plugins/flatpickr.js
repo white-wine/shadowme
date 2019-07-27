@@ -25,4 +25,6 @@ const options =
 
 flatpickr(".datepicker", options)
 
-document.getElementById("booking-date").nextSibling.setAttribute("style", "background-color: #403b3b; border: 1px solid #a5a5a7; color: white;")
+document.getElementsByClassName("datepicker")[1].style.backgroundColor = "#403b3b";
+document.getElementsByClassName("datepicker")[1].style.color = "white";
+document.getElementsByClassName("datepicker")[1].style.border = "1px solid #a5a5a7";
