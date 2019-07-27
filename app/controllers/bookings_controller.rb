@@ -23,14 +23,12 @@ class BookingsController < ApplicationController
 
   def confirm
     @booking = Booking.find(params[:booking_id])
-    authorize @booking
     @booking.booking_status = 1
     @booking.save
   end
 
   def decline
     @booking = Booking.find(params[:booking_id])
-    authorize @booking
     @booking.booking_status = 2
     @booking.save
   end

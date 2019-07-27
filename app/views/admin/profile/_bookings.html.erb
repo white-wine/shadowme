@@ -1,0 +1,63 @@
+
+
+
+  <% if booking.date > Date.today %>
+  <!-- if booking owner has photo, show photo -->
+                <% if !booking.user.photo.nil? %>
+                <%= image_tag booking.user.photo, class:"career-img" %>
+                <% end %>
+
+  <!-- booking details -->
+
+          <div id="student-bookings">
+            <p><strong>Name of the one who booked:</strong> <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            <p><strong>Self introduction message:</strong> <%= booking.intro_message%></p>
+            <p><strong>Student description:</strong> <%= booking.user.user_description%></p>
+            <p><strong>Email of the one who booked:</strong> <%= booking.user.email %></p>
+            <p><strong>Booking date:</strong> <%= booking.date %></p>
+
+              <p class="confirmed_or_not"><strong>Booking confirmation:
+                                <% if booking.pending? %>
+                                "Pending confirmation"
+                                <% elsif booking.confirmed? %>
+                                "Booking confirmed"
+                                <% else %>
+                                "Booking declined"
+                                <% end %>
+              </p>
+            </div>
+
+
+            <div class="confirm-btn">
+                                  <% if booking.confirmed? %>
+
+                                  <%= form_with url: "/decline_booking" do |form| %>
+                                  <%= form.hidden_field :booking_id, value: booking.id %>
+                                  <%= form.submit "Decline", class: "btn btn-primary" %>
+                                  <% end %>
+                                  <% elsif booking.pending? %>
+
+                                  <%= form_with url: "/confirm_booking" do |form| %>
+                                  <%= form.hidden_field :booking_id, value: booking.id %>
+                                  <%= form.submit "Confirm", class: "btn btn-primary" %>
+                                  <% end %>
+
+                                  <%= form_with url: "/decline_booking" do |form| %>
+                                  <%= form.hidden_field :booking_id, value: booking.id %>
+                                  <%= form.submit "Decline", class: "btn btn-primary" %>
+                                  <% end %>
+
+                                  <% else %>
+
+
+
+
+                                  <% end %>
+            </div>
+
+
+          </strong>
+
+
+
+                                  <% end %>

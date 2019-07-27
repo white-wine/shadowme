@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # mount_uploader :photo, PhotoUploader
 
-  has_many :professionals, dependent: :destroy
+  has_one :professional, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :messages, dependent: :destroy
   enum user_type: {student: 0, professional: 1}

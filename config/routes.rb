@@ -28,4 +28,7 @@ Rails.application.routes.draw do
   end
 
 
+  post '/confirm_booking', to: 'bookings#confirm'
+  post '/decline_booking', to: 'bookings#decline'
+
 end
