@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
+gem 'letter_opener', group: :development
+gem 'postmark-rails'
+
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'bootsnap', require: false
 gem 'devise'

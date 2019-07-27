@@ -1,0 +1,39 @@
+<div id="student-bookings-<%= booking.id %>">
+    <p class="confirmed_or_not"><strong>Booking confirmation:
+      <% if booking.pending? %>
+      "Pending confirmation"
+      <% elsif booking.confirmed? %>
+      "Booking confirmed"
+      <% else %>
+      "Booking declined"
+      <% end %>
+    </p>
+  <div class="confirm-btn">
+    <% if booking.confirmed? %>
+
+    <%= form_with url: "/decline_booking" do |form| %>
+    <%= form.hidden_field :booking_id, value: booking.id %>
+    <%= form.submit "Decline", class: "btn btn-primary" %>
+    <% end %>
+
+    <% elsif booking.pending? %>
+
+    <%= form_with url: "/confirm_booking" do |form| %>
+    <%= form.hidden_field :booking_id, value: booking.id %>
+    <%= form.submit "Confirm", class: "btn btn-primary" %>
+    <% end %>
+
+    <%= form_with url: "/decline_booking" do |form| %>
+    <%= form.hidden_field :booking_id, value: booking.id %>
+    <%= form.submit "Decline", class: "btn btn-primary" %>
+    <% end %>
+
+    <% else %>
+
+    <% end %>
+
+
+
+
+</div>
+</div>
