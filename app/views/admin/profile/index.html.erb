@@ -33,9 +33,9 @@
 <ul>
   <!-- show details of each booking -->
   <% current_user.professional.bookings.each do |booking| %>
-<div id="student-bookings">
+
 <%= render 'bookings', booking: booking %>
-</div>
+
 
 
 </ul>

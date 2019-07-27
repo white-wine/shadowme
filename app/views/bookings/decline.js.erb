@@ -1,4 +1,4 @@
-var oldBooking = document.querySelector("#student-bookings-<%= @booking.id %> > p.confirmed_or_not > strong")
+var oldBooking = document.querySelector("#student-bookings-<%= @booking.id %>")
 oldBooking.outerHTML = "";
 
 var studentBookings = document.getElementById('student-bookings');
