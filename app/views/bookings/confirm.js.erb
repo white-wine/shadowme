@@ -1,0 +1,5 @@
+var oldBooking = document.querySelector("#student-bookings-<%= booking.id %>")
+oldBooking.outerHTML = "";
+
+var studentBookings = document.getElementById('student-bookings');
+studentBookings.insertAdjacentHTML('beforeend', '<%= j render "admin/profile/bookings.html", booking: @booking %>')

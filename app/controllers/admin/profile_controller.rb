@@ -5,7 +5,7 @@ class Admin::ProfileController < ApplicationController
       @bookings = @user.bookings
       @messages = @user.messages
     else
-      @professional = @user.professionals.first
+      @professional = @user.professional
     end
   end
 

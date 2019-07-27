@@ -30,4 +30,7 @@ Rails.application.routes.draw do
   end
   resources :searches, only: [:index]
 
+  post '/confirm_booking', to: 'bookings#confirm'
+  post '/decline_booking', to: 'bookings#decline'
+
 end

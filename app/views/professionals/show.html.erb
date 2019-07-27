@@ -1,15 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6 col-6">
-      <%= image_tag @professional.user.photo, alt: "alttext", class:"" %>
+      <% if !@professional.user.photo.nil? %>
 
-      <p><strong>Name:</strong> <%= @professional.user.first_name %> <%= @professional.user.last_name %></p>
+      <%= image_tag @professional.user.photo, alt: "alttext", class:"" %>
+      <% end %>
+      <% if !@professional.user.first_name.nil? %>
+
+
+      <p><strong>Name:</strong> <%= @professional.user.first_name %>
+
+      <% end %>
+      <% if !@professional.user.last_name.nil? %>
+
+      <%= @professional.user.last_name %></p>
+      <% end %>
+
       <p><strong>Description: </strong>
         <%= image_tag @professional.company_logo, alt: "alttext", class:"avatar" %><%= @professional.user.user_description %></p>
+      <% if !@professional.user.birth.nil? %>
 
         <p><strong>Birth: </strong><%= (Date.today - @professional.user.birth.to_date).to_i / 365 %> Years old</p>
+        <% end %>
         <p><strong>Career description: </strong><%= @professional.career.description %></p>
         <p><strong>Professional rating average: </strong>
+
           <%
           c = 0
           amount_of_reviews = 0
@@ -28,12 +43,16 @@
         </p>
       </div>
 
+
+<% if @professional.user != current_user %>
+
       <div class="col-xs-12 col-md-6 col -6">
 
         <%= render 'professionals/new_booking_form', professional: @professional, booking: @booking %>
 
       </div>
 
+<% end %>
     </div>
   </div>
 
