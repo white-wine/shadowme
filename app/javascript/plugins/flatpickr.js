@@ -1,5 +1,5 @@
 import flatpickr from "flatpickr"
-import "flatpickr/dist/themes/light.css"
+import "flatpickr/dist/themes/dark.css"
 
 const options =
 {
