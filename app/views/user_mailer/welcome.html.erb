@@ -1,0 +1,19 @@
+<p>Hi
+
+<% if !@user.first_name.nil? %>
+  <%= @user.first_name %>
+  <% if !@user.last_name.nil? %>
+    <%= @user.last_name %>
+  <% end %>
+  <% else %>
+  <%= @user.email.capitalize %>,
+
+
+<% end %>
+</p>
+
+
+
+<p>Today we'll talk about SMTP and Postmark!</p>
+
+<p>See ya!</p>

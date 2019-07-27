@@ -1,4 +1,3 @@
-<div id="student-bookings-<%= booking.id %>">
 
   <% if booking.date > Date.today %>
   <!-- if booking owner has photo, show photo -->
@@ -15,49 +14,10 @@
     <p><strong>Email of the one who booked:</strong> <%= booking.user.email %></p>
     <p><strong>Booking date:</strong> <%= booking.date %></p>
 
-    <p class="confirmed_or_not"><strong>Booking confirmation:
-      <% if booking.pending? %>
-      "Pending confirmation"
-      <% elsif booking.confirmed? %>
-      "Booking confirmed"
-      <% else %>
-      "Booking declined"
-      <% end %>
-    </p>
+
+    <%= render 'status', booking: booking %>
+
+
+
   </div>
-
-
-  <div class="confirm-btn">
-    <% if booking.confirmed? %>
-
-    <%= form_with url: "/decline_booking" do |form| %>
-    <%= form.hidden_field :booking_id, value: booking.id %>
-    <%= form.submit "Decline", class: "btn btn-primary" %>
-    <% end %>
-    <% elsif booking.pending? %>
-
-    <%= form_with url: "/confirm_booking" do |form| %>
-    <%= form.hidden_field :booking_id, value: booking.id %>
-    <%= form.submit "Confirm", class: "btn btn-primary" %>
-    <% end %>
-
-    <%= form_with url: "/decline_booking" do |form| %>
-    <%= form.hidden_field :booking_id, value: booking.id %>
-    <%= form.submit "Decline", class: "btn btn-primary" %>
-    <% end %>
-
-    <% else %>
-
-
-
-
-    <% end %>
-  </div>
-
-
-</strong>
-
-
-
 <% end %>
-</div>

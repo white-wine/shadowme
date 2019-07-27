@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   # mount_uploader :photo, PhotoUploader
+  after_create :send_welcome_email
 
   has_one :professional, dependent: :destroy
   has_many :bookings, dependent: :destroy
@@ -37,4 +38,9 @@ class User < ApplicationRecord
     end
   end
 
+  private
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
+  end
 end

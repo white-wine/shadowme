@@ -1,5 +1,6 @@
 var oldBooking = document.querySelector("#student-bookings-<%= @booking.id %>")
-oldBooking.outerHTML = "";
+oldBooking.outerHTML = ('<%= j render "admin/profile/status.html", booking: @booking %>');
 
-var studentBookings = document.getElementById('student-bookings');
-studentBookings.insertAdjacentHTML('beforeend', '<%= j render "admin/profile/bookings.html", booking: @booking %>')
+// var studentBookings = document.getElementById("#student-bookings-<%= @booking.id %>");
+
+// studentBookings.insertAdjacentHTML('beforeend', )
