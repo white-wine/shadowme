@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  # devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   namespace :admin do
     resources :bookings, only: [:index]
     resources :professionals, only: [:index, :destroy]
@@ -34,9 +36,7 @@ Rails.application.routes.draw do
   end
 
 
-
-  get "auth/:provider/callback", to: "sessions#googleAuth"
-  get "auth/failure", to: redirect('pages#home')
+  # devise :omniauthable, omniauth_providers: [:google_oauth2]
 
   post '/confirm_booking', to: 'bookings#confirm'
   post '/decline_booking', to: 'bookings#decline'
