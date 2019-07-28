@@ -25,6 +25,11 @@ const options =
 
 flatpickr(".datepicker", options)
 
-document.getElementsByClassName("datepicker")[1].style.backgroundColor = "#403b3b";
-document.getElementsByClassName("datepicker")[1].style.color = "white";
-document.getElementsByClassName("datepicker")[1].style.border = "1px solid #a5a5a7";
+const flatPickerNode = document.getElementsByClassName("datepicker")[1]
+
+if (flatPickerNode) {
+  flatPickerNode.style.backgroundColor = "#403b3b";
+  flatPickerNode.style.color = "white";
+  flatPickerNode.style.border = "1px solid #a5a5a7";
+}
+
