@@ -420,6 +420,7 @@ def create_user(career)
 
   male_user = User.new(
     user_type: 1,
+    account_status: 1,
     first_name: faker_male.split.first,
     last_name: Faker::Name.last_name,
     birth: (Date.today - (365 * rand(25..50))),
@@ -440,6 +441,7 @@ def create_user(career)
 
   fem_user = User.new(
     user_type: 1,
+    account_status: 1,
     first_name: faker_female.split.first,
     last_name: Faker::Name.last_name,
     birth: (Date.today - (365 * rand(25..50))),
@@ -498,6 +500,7 @@ def create_student_user(professional)
   2.times do
     fem_student = User.new(
       user_type: 0,
+    account_status: 1,
       first_name: Faker::Name.female_first_name,
       last_name: Faker::Name.last_name,
       birth: Faker::Date.backward(365 * rand(15..20)),
@@ -513,6 +516,7 @@ def create_student_user(professional)
 
     male_student = User.new(
       user_type: 0,
+    account_status: 1,
       first_name: Faker::Name.male_first_name,
       last_name: Faker::Name.last_name,
       birth: Faker::Date.backward(365 * rand(15..20)),
@@ -602,6 +606,7 @@ puts "Finished seeding process"
 my_user = User.new(
   email: "lux@mail.com",
   user_type: 1,
+    account_status: 1,
   first_name: "Lux",
   last_name: "Le Wagon",
   birth: Faker::Date.backward(365 * 25),
@@ -629,6 +634,7 @@ end
 my_user = User.new(
   email: "faby@mail.com",
   user_type: 1,
+    account_status: 1,
   first_name: "Faby",
   last_name: "Le Wagon",
   birth: Faker::Date.backward(365 * 25),
@@ -656,6 +662,7 @@ end
 my_user = User.new(
   email: "sole@mail.com",
   user_type: 1,
+    account_status: 1,
   first_name: "Sole",
   last_name: "Le Wagon",
   birth: Faker::Date.backward(365 * 25),

@@ -48,7 +48,15 @@ class User < ApplicationRecord
 
   def generate_validate_key
     user = User.last
-    user.account_status = 0
+    if user.photo.nil?
+      user.photo = "https://refilmery.com/wp-content/uploads/2016/05/avatar-inside-a-circle.png"
+    end
+    if user.account_status.nil?
+      user.account_status = 0
+    end
+    if user.first_name.nil?
+      user.first_name = user.email.split("@")[0].capitalize
+    end
     user.validation_key = Faker::Alphanumeric.alphanumeric 10
     user.save
   end

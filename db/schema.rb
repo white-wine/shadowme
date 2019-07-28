@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
     t.string "first_name"
     t.string "last_name"
     t.string "birth"
+    t.integer "account_status"
     t.string "validation_key"
     t.string "user_description"
     t.string "google_token"
