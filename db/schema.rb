@@ -55,12 +55,13 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
 
   create_table "messages", force: :cascade do |t|
     t.text "content"
-    t.bigint "user_id"
+    t.string "identifier"
+    t.bigint "sender_id"
     t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_messages_on_booking_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -119,7 +120,6 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
   add_foreign_key "bookings", "users"
   add_foreign_key "careers", "categories"
   add_foreign_key "messages", "bookings"
-  add_foreign_key "messages", "users"
   add_foreign_key "professionals", "careers"
   add_foreign_key "professionals", "users"
   add_foreign_key "reviews", "bookings"
