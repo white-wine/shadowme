@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Booking ID:<strong> <%= @booking.id %></strong></h1>
 <%= render 'messages/chat', message: @message, messages: @messages %>
 
@@ -7,7 +8,9 @@
 <%= image_tag @booking.user.photo, class:"career-img" %>
 <% end %>
 <p><strong>Booking date: </strong><%= @booking.start_book %></p>
-<p><strong>Booking amount of days: </strong><%= @booking.amount_of_days %></p>
+<p><strong>Booking end date: </strong><%= @booking.end_book %></p>
+<p><strong>Booking amount of days: </strong><%=  (@booking.end_book - @booking.start_book).to_i
+ %></p>
 <p><strong>Name of the one who booked:</strong> <%= @booking.user.first_name %></strong> <%= @booking.user.last_name %></p>
 <p><strong>Self introduction message:</strong> <%= @booking.intro_message%></p>
 <p><strong>Email of the one who booked:</strong> <%= @booking.user.email %></p>
@@ -16,7 +19,7 @@
 <br><br>
 
 <h2><strong>professional info: </strong> </h2>
-<p><strong>professional location: </strong><%= @booking.professional.location%></p>
+<p><strong>professional address: </strong><%= @booking.professional.address%></p>
 <p><strong>professional specialty: </strong><%= @booking.professional.specialty%></p>
 
 
@@ -52,4 +55,4 @@ end
 
 <%= link_to "Back to professional card", professional_path(@booking.professional) %>
 <%= link_to "Back to homepage", root_path %>
-<%= console %>
+</div>
