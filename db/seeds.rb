@@ -2,7 +2,7 @@ puts "Destroy all old seeds"
 Career.destroy_all
 Category.destroy_all
 User.destroy_all
-start = Time.now
+start_time = Time.now
 
 REVIEWS = ["A great experience with very knowledgeable local guides, well organised and executed.", "Amazing career", "So interesting!", "I learnt a lot about the process", "Amazing experience!", "Best experience ever!", "I really think it's an amazing career!", "I learned a lot!", "I had a wonderful experience shadowing this professional", "I absolutely love this career", "Everything went very smoothly", "It was great, fast, easy experience.", "I would recommend you guys to anyone."]
 
@@ -418,46 +418,48 @@ end
 def create_user(career)
 
 
-    male_user = User.new(
-      user_type: 1,
-      first_name: faker_male.split.first,
-      last_name: Faker::Name.last_name,
-      birth: (Date.today - (365 * rand(25..50))),
-      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
+  male_user = User.new(
+    user_type: 1,
+    account_status: 1,
+    first_name: faker_male.split.first,
+    last_name: Faker::Name.last_name,
+    birth: (Date.today - (365 * rand(25..50))),
+    user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         photo: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
         password: 123456
         )
-    male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + "@mail.com"
-    puts male_user.first_name
-    puts male_user.last_name
-    puts male_user.email
-    puts male_user.user_description
-    puts male_user.photo
-    male_user.save!
+  male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + "@mail.com"
+  puts male_user.first_name
+  puts male_user.last_name
+  puts male_user.email
+  puts male_user.user_description
+  puts male_user.photo
+  male_user.save!
 
-    create_professional(male_user, career)
+  create_professional(male_user, career)
 
-    fem_user = User.new(
-      user_type: 1,
-      first_name: faker_female.split.first,
-      last_name: Faker::Name.last_name,
-      birth: (Date.today - (365 * rand(25..50))),
-      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
+  fem_user = User.new(
+    user_type: 1,
+    account_status: 1,
+    first_name: faker_female.split.first,
+    last_name: Faker::Name.last_name,
+    birth: (Date.today - (365 * rand(25..50))),
+    user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         photo: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
         password: 123456
         )
-    fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + "@mail.com"
-    puts fem_user.first_name
-    puts fem_user.last_name
-    puts fem_user.email
-    puts fem_user.user_description
-    puts fem_user.photo
+  fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + "@mail.com"
+  puts fem_user.first_name
+  puts fem_user.last_name
+  puts fem_user.email
+  puts fem_user.user_description
+  puts fem_user.photo
 
-    fem_user.save!
+  fem_user.save!
 
-    create_professional(fem_user, career)
+  create_professional(fem_user, career)
 
 end
 
@@ -474,9 +476,13 @@ end
 
 ## CREATE BOOKING
 def create_booking(professional, student)
+  start = Faker::Date.forward(rand(2..20))
+  ending = start + rand(7..20)
   booking = Booking.new(
     professional: professional,
-    date: Faker::Date.forward(rand(1..100)),
+    start_book: start,
+    end_book: ending,
+    amount_of_days: (ending - start).round,
     booking_status: rand(0..2),
     intro_message: "I'm insterested on " + professional.career.title + " career."
 
@@ -494,6 +500,7 @@ def create_student_user(professional)
   2.times do
     fem_student = User.new(
       user_type: 0,
+    account_status: 1,
       first_name: Faker::Name.female_first_name,
       last_name: Faker::Name.last_name,
       birth: Faker::Date.backward(365 * rand(15..20)),
@@ -509,6 +516,7 @@ def create_student_user(professional)
 
     male_student = User.new(
       user_type: 0,
+    account_status: 1,
       first_name: Faker::Name.male_first_name,
       last_name: Faker::Name.last_name,
       birth: Faker::Date.backward(365 * rand(15..20)),
@@ -527,8 +535,10 @@ end
 
 ## CREATE PROFESSOINAL CARD
 def create_professional(user, career)
+  address = Faker::Address.full_address
   pro = Professional.new(
-    location: Faker::Address.state,
+    address: address,
+    location: address.split(", ")[1],
     specialty: Faker::Educator.university + " " + career.title,
     experience_in_years: rand(5..10),
     resume: career.description,
@@ -570,7 +580,7 @@ CATEGORIES.each_with_index do |category, index|
     create_user(car)
     puts "-------------------"
   end
-    puts ""
+  puts ""
 
 end
 
@@ -596,6 +606,7 @@ puts "Finished seeding process"
 my_user = User.new(
   email: "lux@mail.com",
   user_type: 1,
+    account_status: 1,
   first_name: "Lux",
   last_name: "Le Wagon",
   birth: Faker::Date.backward(365 * 25),
@@ -605,6 +616,7 @@ my_user = User.new(
   )
 my_user.save!
 pro = Professional.new(
+  address: "Niceto Vegas 4866",
   location: "Argentina, Buenos Aires",
   specialty: "Ruby Fullstack Developer - Le Wagon",
   experience_in_years: 2,
@@ -622,6 +634,7 @@ end
 my_user = User.new(
   email: "faby@mail.com",
   user_type: 1,
+    account_status: 1,
   first_name: "Faby",
   last_name: "Le Wagon",
   birth: Faker::Date.backward(365 * 25),
@@ -631,6 +644,7 @@ my_user = User.new(
   )
 my_user.save!
 pro = Professional.new(
+  address: "Niceto Vegas 4866",
   location: "Argentina, Buenos Aires",
   specialty: "Ruby Fullstack Developer - Le Wagon",
   experience_in_years: 2,
@@ -648,6 +662,7 @@ end
 my_user = User.new(
   email: "sole@mail.com",
   user_type: 1,
+    account_status: 1,
   first_name: "Sole",
   last_name: "Le Wagon",
   birth: Faker::Date.backward(365 * 25),
@@ -657,6 +672,7 @@ my_user = User.new(
   )
 my_user.save!
 pro = Professional.new(
+  address: "Niceto Vegas 4866",
   location: "Argentina, Buenos Aires",
   specialty: "Ruby Fullstack Developer - Le Wagon",
   experience_in_years: 2,
@@ -675,10 +691,14 @@ end
 
 Professional.all.each do |pro|
   3.times do
+    start = Faker::Date.backward(rand(20..100))
+    ending = start + rand(7..20)
     booking = Booking.new(
       professional: pro,
-      date: Faker::Date.backward(rand(1..100)),
-      booking_status: rand(0..2),
+      start_book: start,
+      end_book: ending,
+      amount_of_days: (ending - start).round,
+      booking_status: rand(1..2),
       intro_message: "I'm insterested on " + pro.career.title + " career."
 
       )
@@ -690,5 +710,5 @@ Professional.all.each do |pro|
   end
 end
 end_time = Time.now
-result = end_time - start
+result = end_time - start_time
 puts "#{result} seconds"

@@ -3,6 +3,7 @@ class CreateProfessionals < ActiveRecord::Migration[5.2]
     create_table :professionals do |t|
       t.references :career, foreign_key: true
       t.references :user, foreign_key: true
+      t.string :address
       t.string :location
       t.string :specialty
       t.text :resume

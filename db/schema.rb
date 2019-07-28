@@ -17,7 +17,9 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "professional_id"
-    t.date "date"
+    t.date "start_book"
+    t.date "end_book"
+    t.integer "amount_of_days"
     t.bigint "user_id"
     t.integer "booking_status"
     t.text "intro_message"
@@ -55,13 +57,16 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
 
   create_table "messages", force: :cascade do |t|
     t.text "content"
+
     t.string "identifier"
     t.bigint "sender_id"
     t.bigint "booking_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_messages_on_booking_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -76,6 +81,7 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
   create_table "professionals", force: :cascade do |t|
     t.bigint "career_id"
     t.bigint "user_id"
+    t.string "address"
     t.string "location"
     t.string "specialty"
     t.text "resume"
@@ -105,6 +111,8 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
     t.string "first_name"
     t.string "last_name"
     t.string "birth"
+    t.integer "account_status"
+    t.string "validation_key"
     t.string "user_description"
     t.string "google_token"
     t.string "google_refresh_token"
