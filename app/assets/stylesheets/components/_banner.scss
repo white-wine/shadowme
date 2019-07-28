@@ -16,6 +16,8 @@
   padding-top: 400px;
   padding-bottom: 500px;
   width: 100%;
+  background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60, 0.8));
+
   h1 {
     margin: 0;
     color: white;
@@ -32,13 +34,11 @@
     font-size: 35px;
   }
 
-  a {
-    color: white !important;
-  }
+
 
   a:hover {
     text-decoration: none !important;
-    color: black !important;
+    color: white !important;
   }
 }
 
