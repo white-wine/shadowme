@@ -1,11 +1,15 @@
 <div id="banner-carousel" class="banner-carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="banner-container" >
-      <h1>Explore before Choosing a Career Path </h1>
+      <h1>
+      <span style="color:#00FFA8;" class="">Explore</span>
+       before Choosing a
+     <span style="color:#00FFA8;" class="">Career Path</span>
+      </h1>
       <p>Get the Opportinity to have an in person experience
       with Professionals all over the world.</p>
 
-      <a class="button-1" href="/categories">Explore</a>
+      <a class="button-1 btn-lg" href="/categories">Explore</a>
     </div>
 
     <div class="carousel-item active">
@@ -28,10 +32,10 @@
 
 <div class="container about-us-wrapper">
   <div class="row">
-    <div class="col-12 col-sm-12 col-md-4 col-lg-5 cta-img" style="background-image: url('<%= asset_path('about-us-image.png') %>');">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-5 cta-img" style="background-image: url('<%= asset_path('pro_calendar.jpeg') %>');">
     </div>
     <div class="col-12 col-sm-12 col-md-8 col-lg-6 offset-lg-1 about-us">
-      <h2>About Us</h2>
+      <h2><span style="color:#8043FF;" class="">About Us</span></h2>
       <p>At shadow me, we help students figure out a career path. We do so by offering a in person experience with professionals. By doing so, it gives students an idea of what they will be doing.</p>
 
       <p>At shadow me, Professionals can dedicate some of their time to help students figure out what to do career wise.</p>
@@ -41,14 +45,14 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12" style="overflow: hidden;">
+    <div class="col-12 test-color" style="overflow: hidden background-color: #092672;">
       <%= render "pages/testimonies" %>
     </div>
   </div>
 </div>
 
 <div class="container">
-  <h2 class="home-title">Top 4 categories</h2>
+  <h2 class="home-title"><span style="color:#8043FF;" class="">Top 4 categories</span></h2>
   <div class="row">
     <% @categories.each do |category| %>
     <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
