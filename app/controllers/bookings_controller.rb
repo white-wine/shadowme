@@ -11,6 +11,9 @@ class BookingsController < ApplicationController
     @professional = Professional.find(params["professional_id"])
     @booking = Booking.new(booking_params)
     @booking.professional = @professional
+    @booking.start_book = params[:booking][:amount_of_days].split(" to ")[0]
+    @booking.end_book = params[:booking][:amount_of_days].split(" to ")[1]
+
     @booking.user = current_user if @booking.professional.user != current_user
     @booking.booking_status = 0
     if @booking.save
@@ -40,7 +43,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:intro_message, :start_book, :end_book)
+    params.require(:booking).permit(:intro_message, :amount_of_days)
 
   end
 
