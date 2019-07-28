@@ -1,3 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+    <form class="text-center mt-5" action="#" id="geoCoder">
+      <input type="submit" id="geoSubmit" value='Show Location of the professional'>
+      <h1 class='m-5' id='locationValue'></h1>
+    </form>
+    </div>
+    <div class="col-6">
+
+    <div id='map' style='height: 400px; width: 600px;'></div>
+    </div>
+    </div>
+</div>
+<script>
+const form = document.getElementById('geoCoder');
+const button = document.getElementById('geoSubmit');
+const result = document.getElementById('locationValue');
+
+
+const get = () => {
+  fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/<%= @professional.location %>.json?access_token=pk.eyJ1IjoibWF0dGZpY2tlIiwiYSI6ImNqNnM2YmFoNzAwcTMzM214NTB1NHdwbnoifQ.Or19S7KmYPHW8YjRz82v6g&cachebuster=1562249939883&autocomplete=true`)
+    .then(response => response.json())
+    .then((data) => {
+      const lat = data.features[0].geometry.coordinates[1];
+      const lng = data.features[0].geometry.coordinates[0];
+      // map.transform.center.lng = lng;
+      // map.transform.center.lat = lat;
+  L.mapbox.accessToken = 'pk.eyJ1Ijoiam9leXdhbmdjaG4iLCJhIjoiY2p4b3FwY2J5MDlyNDNtcXNsNjdqZHl3YSJ9.CbcjCbT00rwVbnPje2bzpA';
+  var map = L.mapbox.map('map')
+      .setView([lat, lng], 6)
+      .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+    });
+};
+
+
+button.addEventListener('click', get);
+
+
+
+</script>
 
 <div class="form-description-container">
   <div class="container pro-title">
