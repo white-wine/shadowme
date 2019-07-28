@@ -57,13 +57,11 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
     t.text "content"
     t.string "identifier"
     t.bigint "sender_id"
-    t.bigint "user_id"
     t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_messages_on_booking_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -108,8 +106,6 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
     t.string "last_name"
     t.string "birth"
     t.string "user_description"
-    t.string "google_token"
-    t.string "google_refresh_token"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
