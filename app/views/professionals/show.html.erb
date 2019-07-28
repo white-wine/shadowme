@@ -1,70 +1,117 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+    <form class="text-center mt-5" action="#" id="geoCoder">
+      <input type="submit" id="geoSubmit" value='Show Location of the professional'>
+      <h1 class='m-5' id='locationValue'></h1>
+    </form>
+    </div>
+    <div class="col-6">
+
+    <div id='map' style='height: 400px; width: 600px;'></div>
+    </div>
+    </div>
+</div>
+<script>
+const form = document.getElementById('geoCoder');
+const button = document.getElementById('geoSubmit');
+const result = document.getElementById('locationValue');
+
+
+const get = () => {
+  fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/<%= @professional.location %>.json?access_token=pk.eyJ1IjoibWF0dGZpY2tlIiwiYSI6ImNqNnM2YmFoNzAwcTMzM214NTB1NHdwbnoifQ.Or19S7KmYPHW8YjRz82v6g&cachebuster=1562249939883&autocomplete=true`)
+    .then(response => response.json())
+    .then((data) => {
+      const lat = data.features[0].geometry.coordinates[1];
+      const lng = data.features[0].geometry.coordinates[0];
+      // map.transform.center.lng = lng;
+      // map.transform.center.lat = lat;
+  L.mapbox.accessToken = 'pk.eyJ1Ijoiam9leXdhbmdjaG4iLCJhIjoiY2p4b3FwY2J5MDlyNDNtcXNsNjdqZHl3YSJ9.CbcjCbT00rwVbnPje2bzpA';
+  var map = L.mapbox.map('map')
+      .setView([lat, lng], 6)
+      .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+    });
+};
+
+
+button.addEventListener('click', get);
+
+
+
+</script>
 
 <div class="form-description-container">
   <div class="container pro-title">
-  <div class="row pro-row">
-    <div class="col-xs-12 col-md-6 offset-md-1 col-6 offset-lg-1 pro-name">
+    <div class="row pro-row">
+      <div class="col-xs-12 col-md-6 offset-md-1 col-6 offset-lg-1 pro-name">
         <h1><%= @professional.user.first_name%>'s Profile</h1>
       </div>
+    </div>
   </div>
-</div>
   <div class="container professional-description">
     <div class="row pro-row">
-    <div class="col-xs-12 col-md-6 offset-md-1 col-6 offset-lg-1 pro-profile">
-      <%= image_tag @professional.user.photo, alt: "alttext", class:"" %>
-      <p><strong>Name:</strong> <%= @professional.user.first_name %> <%= @professional.user.last_name %></p>
-      <p><strong>Description: </strong>
-        <%= image_tag @professional.company_logo, alt: "alttext", class:"avatar" %><%= @professional.user.user_description %></p>
-        <p><strong>Age: </strong><%= (Date.today - @professional.user.birth.to_date).to_i / 365 %> Years old</p>
+      <div class="col-xs-12 col-md-6 offset-md-1 col-6 offset-lg-1 pro-profile">
+        <%= image_tag @professional.user.photo, alt: "alttext", class:"", :size => "60x60"%>
+        <p><strong>Name:</strong> <%= @professional.user.first_name %> <%= @professional.user.last_name %></p>
+        <p><strong>Description: </strong>
+          <% if @professional.company_logo.nil? %>
 
-        <p><strong>Career description: </strong><%= @professional.career.description %></p>
-        <div class="star-wrapper">
-        <p><strong>Professional rating average: </strong>
+          <%= image_tag @professional.company_logo, alt: "alttext", class:"avatar" %>
+          <% end %>
+          <%= @professional.user.user_description %></p>
+          <% if !@professional.user.birth.nil? %>
 
-          </p>
-          <div class="average-stars">
+          <p><strong>Age: </strong><%= (Date.today - @professional.user.birth.to_date).to_i / 365 %> Years old</p>
+          <% end %>
+          <p><strong>Career description: </strong><%= @professional.career.description %></p>
+          <div class="star-wrapper">
+            <p><strong>Professional rating average: </strong>
+
+            </p>
+            <div class="average-stars">
               <% empty_stars = 5 - @professional.average_rating  %>
               <% @professional.average_rating.times do %>
-                <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
               <% end %>
               <% empty_stars.times do %>
-                <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
               <% end %>
             </div>
-        </div>
-         <ul>
-          <div class="review-format">
+          </div>
+          <ul>
+            <div class="review-format">
               <% @professional.bookings.each do |booking| %>
-                <%  booking.reviews.each do |review|   %>
-                  <div class="review">
-                     <p><%= review.user.first_name %> <%= review.user.last_name %></p>
-                    <p><%= image_tag(review.user.photo, class:"review_avatar") %><strong> <%= review.content %></strong>
-                    </p>
-                    <div class="stars-with-date">
-                      <p><%= Faker::Date.backward(rand(10..100)).strftime("%b %d %Y") %></p>
-                      <div class="stars">
-                        <% review.rating.times do %>
-                          <i class="fas fa-star"></i>
-                        <% end %>
-                        <% (5 - review.rating).times do %>
-                          <i class="far fa-star"></i>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
-              <% end %>
+              <%  booking.reviews.each do |review|   %>
+              <div class="review">
+               <p><%= review.user.first_name %> <%= review.user.last_name %></p>
+               <p><%= image_tag(review.user.photo, class:"review_avatar") %><strong> <%= review.content %></strong>
+               </p>
+               <div class="stars-with-date">
+                <p><%= Faker::Date.backward(rand(10..100)).strftime("%b %d %Y") %></p>
+                <div class="stars">
+                  <% review.rating.times do %>
+                  <i class="fas fa-star"></i>
+                  <% end %>
+                  <% (5 - review.rating).times do %>
+                  <i class="far fa-star"></i>
+                  <% end %>
+                </div>
+              </div>
             </div>
-           </ul>
-        </div>
+            <% end %>
+            <% end %>
+          </div>
+        </ul>
+      </div>
       <div class="col-xs-12 col-md-4 col -4">
         <%= render 'professionals/new_booking_form', professional: @professional, booking: @booking %>
       </div>
     </div>
-    </div>
   </div>
-      <div class="row button-cluster">
-      <%= link_to "professionals list", career_path(@professional.career), class:"" %>
-      <%= link_to "homepage", root_path, class:"" %>
-      <%= link_to "careers list", category_path(@professional.career.category), class:"" %>
-    </div>
+</div>
+<div class="row button-cluster">
+  <%= link_to "professionals list", career_path(@professional.career), class:"" %>
+  <%= link_to "homepage", root_path, class:"" %>
+  <%= link_to "careers list", category_path(@professional.career.category), class:"" %>
+</div>
 </div>

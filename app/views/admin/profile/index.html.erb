@@ -89,7 +89,7 @@ end
 <ul>
   <!-- show details of each booking -->
   <% current_user.professional.bookings.each do |booking| %>
-  <% if booking.date < Date.today %>
+  <% if booking.start_book < Date.today %>
   <!-- if booking owner has photo, show photo -->
   <% if !booking.user.photo.nil? %>
   <%= image_tag booking.user.photo, class:"career-img" %>
@@ -100,7 +100,7 @@ end
   <p><strong>Self introduction message:</strong> <%= booking.intro_message%></p>
   <p><strong>Student description:</strong> <%= booking.user.user_description%></p>
   <p><strong>Email of the one who booked:</strong> <%= booking.user.email %></p>
-  <p><strong>Booking date:</strong> <%= booking.date %></p>
+  <p><strong>Booking date:</strong> <%= booking.start_book %></p>
 
 
 
