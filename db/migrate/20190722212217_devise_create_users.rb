@@ -10,6 +10,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :birth
+      t.integer :account_status
+      t.string :validation_key
       t.string :user_description
       t.string :google_token
       t.string :google_refresh_token
