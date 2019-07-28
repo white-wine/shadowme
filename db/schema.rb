@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
     t.text "content"
     t.string "identifier"
     t.bigint "sender_id"
-    t.bigint "user_id"
     t.bigint "booking_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_messages_on_booking_id"
