@@ -3,13 +3,14 @@
   <%= form_for([professional, booking], html: { autocomplete: 'off' }) do |f| %>
     <div class="form-group">
       <h1>Would you like to ShadowMe?</h1>
-      <label for="tab-select">Select a Week:</label>
+      <label for="tab-select">Select a start date:</label>
 
+<!--       <input class="form-control datepicker input" placeholder="Choose a date" required="" tabindex="0" type="text" readonly="readonly" id='booking-date'>
+ -->
 
+<%= f.date_field :start_book, class:"form-control datepicker input", id:"booking-date" %>
 
-<%= f.date_field :start_book, class:"form-control date_picker input", id:"booking-date" %>
-
-      <label for="tab-select">Select a Week:</label>
+      <label for="tab-select">Select end date:</label>
 
 <%= f.date_field :end_book, class:"form-control input", id:"booking-date" %>
 
