@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
 
   create_table "messages", force: :cascade do |t|
     t.text "content"
-
     t.string "identifier"
     t.bigint "sender_id"
     t.bigint "booking_id"

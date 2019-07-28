@@ -59,6 +59,10 @@ button.addEventListener('click', get);
           <%= image_tag @professional.company_logo, alt: "alttext", class:"avatar" %>
           <% end %>
           <%= @professional.user.user_description %></p>
+
+        <p><strong>Location: </strong> <%= @professional.location %></p>
+
+
           <% if !@professional.user.birth.nil? %>
 
           <p><strong>Age: </strong><%= (Date.today - @professional.user.birth.to_date).to_i / 365 %> Years old</p>
