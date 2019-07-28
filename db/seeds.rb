@@ -474,9 +474,12 @@ end
 
 ## CREATE BOOKING
 def create_booking(professional, student)
+      start = Faker::Date.forward(rand(2..20))
+    ending = start + rand(7..20)
   booking = Booking.new(
     professional: professional,
-    date: Faker::Date.forward(rand(1..100)),
+    start_book: start,
+    end_book: ending,
     booking_status: rand(0..2),
     intro_message: "I'm insterested on " + professional.career.title + " career."
 
@@ -675,10 +678,13 @@ end
 
 Professional.all.each do |pro|
   3.times do
+    start = Faker::Date.backward(rand(20..100))
+    ending = start + rand(7..20)
     booking = Booking.new(
       professional: pro,
-      date: Faker::Date.backward(rand(1..100)),
-      booking_status: rand(0..2),
+      start_book: start,
+      end_book: ending,
+      booking_status: rand(1..2),
       intro_message: "I'm insterested on " + pro.career.title + " career."
 
       )

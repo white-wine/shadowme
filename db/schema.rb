@@ -17,7 +17,8 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "professional_id"
-    t.date "date"
+    t.date "start_book"
+    t.date "end_book"
     t.bigint "user_id"
     t.integer "booking_status"
     t.text "intro_message"
@@ -57,8 +58,8 @@ ActiveRecord::Schema.define(version: 2019_07_27_165326) do
     t.text "content"
     t.string "identifier"
     t.bigint "sender_id"
-    t.bigint "user_id"
     t.bigint "booking_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_messages_on_booking_id"
