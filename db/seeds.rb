@@ -28,7 +28,7 @@ CATEGORIES = [
 	{
 		title: "Engineering",
 		description: "Combining mathematics, science and technology, engineers produce creative solutions to real world problems. ... In the past, engineering could be divided into four major branches: Mechanical, Chemical, Civil and Electrical, with sub branches of each discipline.",
-		image: "https://www.pembrokeshire.ac.uk/wp-content/uploads/2018/07/Mech.png"
+		image: "https://retos-operaciones-logistica.eae.es/wp-content/uploads/2018/05/iStock-869287090-600x426.jpg"
 	},
 
 	{
