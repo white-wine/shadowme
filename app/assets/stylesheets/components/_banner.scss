@@ -3,6 +3,12 @@
   background-position: cover;
   padding: 300px 0;
   object-fit: cover;
+
+}
+
+.carousel-item {
+ -webkit-filter: grayscale(100%);
+ filter: grayscale(100%);
 }
 
 .banner-carousel {
