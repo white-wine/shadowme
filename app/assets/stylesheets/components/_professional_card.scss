@@ -4,9 +4,6 @@
   height: auto;
   width: 350px;
   margin: 10vh auto;
- -webkit-filter: grayscale(100%);
- filter: grayscale(100%);
-
   border-radius: 25px;
   padding-bottom: 1px;
   box-shadow: 2px 2px 5px #2524243d;
@@ -15,11 +12,8 @@ transition: 1s ease;
 }
 
 .professional_card:hover{
-  opacity:0.9;
+  opacity:0.5;
   transition: 1s ease;
-
- -webkit-filter: grayscale(0%);
- filter: grayscale(0%);
 }
 
 
@@ -147,14 +141,6 @@ background-image: image_url("pro_calendar.jpeg");
     overflow-y: scroll;
 }
 
-.star-wrapper {
-  display: flex;
-}
-
-
-.average-stars {
-  margin-left: 50px;
-}
 
 
 .stars-with-date {
