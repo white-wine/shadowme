@@ -49,10 +49,10 @@ button.addEventListener('click', get);
     </div>
   </div>
   <div class="container professional-description">
-    <div class="row pro-row">
+    <div class="row pro-row text-center">
       <div class="col-xs-12 col-md-6 offset-md-1 col-6 offset-lg-1 pro-profile">
-        <%= image_tag @professional.user.photo, alt: "alttext", class:"", :size => "60x60"%>
-        <p><strong>Name:</strong> <%= @professional.user.first_name %> <%= @professional.user.last_name %></p>
+        <%= image_tag @professional.user.photo, alt: "alttext", class:"rounded-circle", :size => "60x60"%>
+        <p> <br><strong>Name:</strong> <%= @professional.user.first_name %> <%= @professional.user.last_name %></p>
         <p><strong>Description: </strong>
           <% if @professional.company_logo.nil? %>
 
@@ -68,7 +68,10 @@ button.addEventListener('click', get);
           <p><strong>Age: </strong><%= (Date.today - @professional.user.birth.to_date).to_i / 365 %> Years old</p>
           <% end %>
           <p><strong>Career description: </strong><%= @professional.career.description %></p>
-          <div class="star-wrapper">
+
+
+
+          <div class="inline">
             <p><strong>Professional rating average: </strong>
 
             </p>
@@ -81,6 +84,25 @@ button.addEventListener('click', get);
               <i class="far fa-star"></i>
               <% end %>
             </div>
+          </div>
+
+
+      </div>
+      <div class="col-xs-12 col-md-4 col -4">
+        <%= render 'professionals/new_booking_form', professional: @professional, booking: @booking %>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container professional-description">
+    <div class="row">
+      <div class="col-xs-12 col-md-12 col-12 pro-profile">
+
+          <div class="star-wrapper review-title">
+            <h3 class="review-title"><strong>Reviews</strong>
+
+            </h3>
           </div>
           <ul>
             <div class="review-format">
@@ -107,15 +129,11 @@ button.addEventListener('click', get);
           </div>
         </ul>
       </div>
-      <div class="col-xs-12 col-md-4 col -4">
-        <%= render 'professionals/new_booking_form', professional: @professional, booking: @booking %>
-      </div>
+
     </div>
   </div>
-</div>
 <div class="row button-cluster">
-  <%= link_to "professionals list", career_path(@professional.career), class:"" %>
-  <%= link_to "homepage", root_path, class:"" %>
-  <%= link_to "careers list", category_path(@professional.career.category), class:"" %>
-</div>
+  <%= link_to "professionals list", career_path(@professional.career), class:"btn btn-primary" %>
+  <%= link_to "homepage", root_path, class:"btn btn-primary" %>
+  <%= link_to "careers list", category_path(@professional.career.category), class:"btn btn-primary" %>
 </div>
