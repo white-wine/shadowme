@@ -1,3 +1,8 @@
+.carousel-item {
+-webkit-filter: grayscale(100%);
+filter: grayscale(100%);
+}
+
 .banner {
   background-size: cover;
   background-position: cover;
@@ -22,8 +27,10 @@
   padding-top: 400px;
   padding-bottom: 500px;
   width: 100%;
-  background-image: linear-gradient(rgba(40, 40, 40, 0.6), rgba(54, 58, 60, 0.8));
   height: 100%;
+  background-image: linear-gradient(rgba(40, 40, 40, 0.4), rgba(54, 58, 60, -0.2));
+
+
   h1 {
     margin: 0;
     color: white;
@@ -44,7 +51,7 @@
 
   a:hover {
     text-decoration: none !important;
-    color: white !important;
+    color: black !important;
   }
 }
 

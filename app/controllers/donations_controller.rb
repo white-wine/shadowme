@@ -1,10 +1,11 @@
 class DonationsController < ApplicationController
+  skip_before_action :authenticate_user!
   def new
     @donation = Donation.new
   end
   def create
 
-  @donation = Donation.new(amount_cents: donation_params[:amount_cents])
+  @donation = Donation.new(amount: donation_params[:amount_cents])
   @donation.state = "pending"
   @donation.save
   redirect_to new_donation_payment_path(@donation)
@@ -19,5 +20,4 @@ class DonationsController < ApplicationController
   def donation_params
     params.require(:donation).permit(:amount_cents)
   end
-
 end

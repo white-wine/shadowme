@@ -2,8 +2,11 @@
 
 .cta-img {
   background-size: cover;
-  background-position: 40% 10%;
+  background-position: 100%;
   height: 400px;
+   -webkit-filter: grayscale(100%);
+ filter: grayscale(100%);
+
 }
 
 .about-us {

@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+   skip_before_action :authenticate_user!
   def index
     if params[:search_type] == "career"
       @careers = Career.search_by_title(params[:q])
