@@ -1,7 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  }
+  background-color: transparent;
+  transition: 0.2s background-color ease;
+  padding: 40px 30px;
+}
+
+.navbar-lewagon-white {
+  background: -webkit-linear-gradient(#303030, #383838, #505050);
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -15,7 +21,6 @@
 }
 .home-navbar-style {
   height: 60px;
-  background-color: black;
   a {
     color: white !important;
     font-weight: bold;

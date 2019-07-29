@@ -14,13 +14,36 @@
     font-size: 50px;
     margin-bottom: 20px;
     border-bottom: 3px solid;
+    color: #fe525b;
   }
   p {
     font-size: 20px;
   }
 }
 
-.about-us-wrapper {
-  margin-top: 50px;
-  margin-bottom: 50px;
+.about-us-holder {
+  margin-top: 80px !important;
+  margin-bottom: 80px !important;
+}
+
+.testimony {
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 60px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  }
+  p {
+    margin: 0;
+    color: white;
+    padding-left: 15px;
+  }
 }

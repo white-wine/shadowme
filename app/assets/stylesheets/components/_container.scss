@@ -17,9 +17,9 @@
   height: 345px;
 }
 
-.about-us-wrapper {
-  display: flex;
-  justify-content: space-between;
+.about-us-holder {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .about-us-content {
@@ -50,17 +50,15 @@
   justify-content: space-between;
 }
 
-.testimony-container {
-  margin-top: 20px;
-  margin-bottom: 450px;
-
-  & h2 {
-    margin-bottom: 0px !important;
-    padding-bottom: 50px !important;
-    font-size: 50px !important;
-  }
-}
-
 .test-color {
   background-color: #C3AC96;
+}
+
+.reviews-wrapper {
+background: -webkit-linear-gradient(#fe525b, #983136);
+  padding: 30px;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+
 }
