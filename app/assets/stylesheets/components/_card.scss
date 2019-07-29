@@ -145,5 +145,9 @@ filter: grayscale(100%);
       -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.1);
+          -webkit-filter: grayscale(0%);
+filter: grayscale(0%);
+transition: 0.9s ease;
+
 
 }
