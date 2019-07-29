@@ -108,6 +108,9 @@
   text-decoration: none;
   box-shadow: 0 0 15px rgba(6, 6, 6, 0.56);
   border-radius: 5px;
+  -webkit-filter: grayscale(100%);
+filter: grayscale(100%);
+
 
   p {
     font-size: 40px;
@@ -139,7 +142,12 @@
 }
 
 .category-card:hover {
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        transform: scale(0.8);
+      -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+          -webkit-filter: grayscale(0%);
+filter: grayscale(0%);
+transition: 0.9s ease;
+
+
 }
