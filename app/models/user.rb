@@ -25,6 +25,14 @@ class User < ApplicationRecord
     tsearch: { prefix: true }
   }
 
+  def full_name
+    unless first_name && last_name
+      email
+    else
+      "#{first_name} #{last_name}"
+    end
+  end
+
   def identifier
    if (first_name).nil?
      email
