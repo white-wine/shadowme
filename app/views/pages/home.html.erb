@@ -1,14 +1,30 @@
-<div id="banner-carousel" class="banner-carousel slide" data-ride="carousel">
+<div id="banner-carousel" class="banner banner-carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="banner-container" >
-      <h1>
-        <span style="color:#fe525b;" class="">Explore</span>
-        before Choosing a
-        <span style="color:#fe525b;" class="">Career Path</span>
-      </h1>
-      <p>Get the Opportinity to have an in person experience
-      with Professionals all over the world.</p>
+      <h1 class="home-title">
 
+
+        <span class="typewriter">
+          <h1>Shadow me</h1>
+        </span>
+        <br>
+
+        <div>
+          <span style="" class="banner-word">Explore</span>
+           <span class="beforeChoose"> before Choosing a</span>
+          <span style="" class="banner-word">Career Path</span>
+        </div>
+      </h1>
+
+
+
+
+      <div class="home-title">
+        <div>
+          <p>Get the Opportinity to have an in person experience
+          with Professionals all over the world.</p>
+        </div>
+      </div>
       <a class="button-1 btn-lg" href="/categories">Explore</a>
     </div>
 
@@ -50,22 +66,22 @@
 </div>
 
 <div class= "row-spacing">
-<div class="container">
-  <h2 class="home-title text-center"><span style="color:#fe525b;" class="">Top 4 categories</span></h2>
-  <div class="row">
-    <% @categories.each do |category| %>
-    <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
-      <%= link_to category_path(category), class: 'no-hover' do %>
+  <div class="container">
+    <h2 class="home-title text-center"><span style="color:#fe525b;" class="">Top 4 categories</span></h2>
+    <div class="row">
+      <% @categories.each do |category| %>
+      <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
+        <%= link_to category_path(category), class: 'no-hover' do %>
 
-      <div class="category-card m-1 mx-1" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
+        <div class="category-card m-1 mx-1" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
 
-       <p><%= category.title %></p>
+         <p><%= category.title %></p>
 
+       </div>
+       <% end %>
      </div>
      <% end %>
    </div>
-   <% end %>
  </div>
-</div>
 
 </div>
