@@ -1,5 +1,5 @@
 .footer {
-  background: #3c4146;
+  background: -webkit-linear-gradient(#303030, #383838, #505050);
   height: 15vh;
   padding-left: 25px;
   padding-right: 25px;
@@ -114,7 +114,7 @@
   opacity: 0.15;
 }
 .social-links {
-  background-color: #3c4146;
+  background-color: transparent;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
