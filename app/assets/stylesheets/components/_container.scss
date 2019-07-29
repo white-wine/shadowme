@@ -55,6 +55,10 @@
 }
 
 .reviews-wrapper {
-  background-color: #fe525b;
+background: -webkit-linear-gradient(#fe525b, #983136);
   padding: 30px;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+
 }
