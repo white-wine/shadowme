@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+    skip_before_action :authenticate_user!
   def new
     @donation = Donation.find(params[:donation_id])
   end
