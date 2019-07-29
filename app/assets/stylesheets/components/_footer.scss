@@ -6,15 +6,20 @@
   border-top: 2px solid #c2c2c2;
 }
 
-
+.footer-services a :hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  display: inline-block;
+}
 .footer-items{
+  margin-top: 10px;
   display: flex;
 
   justify-content: space-between;
-  align-items: center;
 }
 .footer h2 {
-  color: black;
+  color: #13110F;
   font-weight: bold;
   font-size: 25px;
 }
@@ -25,14 +30,14 @@
 }
 
 .footer-services i {
-  color: black;
+  color: #13110F;
   opacity: 1;
   text-decoration: none;
   font-size: 26px;
   padding: 7px;
 }
 .footer-services a {
-  color: black;
+  color: #13110F;
   opacity: 1;
   text-decoration: none;
   font-size: 26px;
@@ -48,7 +53,7 @@
 
 .footer-links {
   a {
-    color: black;
+    color: #13110F;
     opacity: 1;
     text-decoration: none;
     font-size: 27px;
@@ -61,9 +66,9 @@
   }
 }
 .footer-services{
-  text-align: left;
+  text-align: center;
   a {
-    color: black;
+    color: #13110F;
     opacity: 1;
     text-decoration: none;
     font-size: 21px;
@@ -72,7 +77,7 @@
 .footer-follow{
   text-align: center;
   a {
-    color: black;
+    color: #13110F;
     opacity: 1;
     text-decoration: none;
     font-size: 21px;
@@ -86,15 +91,15 @@
   align-items: center;
 }
 .footer-contact{
-  text-align: left;
+  text-align: center;
   a {
-    color: black;
+    color: #13110F;
     opacity: 1;
     text-decoration: none;
     font-size: 21px;
   }
   i {
-    color: black;
+    color: #13110F;
     opacity: 1;
     text-decoration: none;
     font-size: 21px;
@@ -136,3 +141,9 @@
     box-decoration-break: clone;
     display: block;
   }
+.footer-contact a :hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  display: inline-block;
+}
