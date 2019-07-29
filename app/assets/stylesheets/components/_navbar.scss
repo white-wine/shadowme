@@ -10,10 +10,15 @@
   width: 40px;
 }
 
+.nav-text {
+  p {}
+}
 .home-navbar-style {
-  background-color: transparent;
+  background-color: #283e4a;
+  height: 60px;
   a {
     color: white !important;
+    font-weight: bold;
   }
   a:hover {
     color: blue !important;
@@ -21,7 +26,7 @@
 }
 
 .dropdown-menu-right{
-  background-color: transparent;
+  background-color: white;
   border: none;
   text-align: center;
   right: -30px;
@@ -36,6 +41,8 @@
 
 .nav-item  {
   margin: 10px;
+  text-decoration: none;
+  color: white;
 }
 
 .dropdown-item {
