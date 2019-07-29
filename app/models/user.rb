@@ -19,7 +19,7 @@ class User < ApplicationRecord
   pg_search_scope :search_by_name_or_specialty,
   against: [ :first_name, :last_name ],
   associated_against: {
-    professionals: [ :specialty ]
+    professional: [ :specialty ]
   },
   using: {
     tsearch: { prefix: true }

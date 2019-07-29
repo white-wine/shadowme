@@ -2,6 +2,7 @@
   <div class="carousel-inner">
     <div class="banner-container" >
       <h1>
+
       <span style="color:#fe525b;" class="">Explore</span>
        before Choosing a
      <span style="color:#fe525b;" class="">Career Path</span>
@@ -35,6 +36,7 @@
     <div class="col-12 col-sm-12 col-md-4 col-lg-5 cta-img" style="background-image: url('<%= asset_path('laptop_pointing.jpeg') %>');">
     </div>
     <div class="col-12 col-sm-12 col-md-8 col-lg-6 offset-lg-1 about-us">
+
       <h2><span style="color:#5f0a21;" class="">About Us</span></h2>
       <p>At shadow me, we help students figure out a career path. We do so by offering a in person experience with professionals. By doing so, it gives students an idea of what they will be doing.</p>
 
@@ -52,13 +54,13 @@
 </div>
 
 <div class="container">
-  <h2 class="home-title"><span style="color:#C3AC96;" class="">Top 4 categories</span></h2>
+  <h2 class="home-title text-center"><span style="color:black;" class="">Top 4 categories</span></h2>
   <div class="row">
     <% @categories.each do |category| %>
     <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
         <%= link_to category_path(category), class: 'no-hover' do %>
 
-      <div class="category-card m-1" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
+      <div class="category-card m-1 mx-1" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
 
        <p><%= category.title %></p>
 

@@ -8,6 +8,12 @@ filter: grayscale(100%);
   background-position: cover;
   padding: 300px 0;
   object-fit: cover;
+
+}
+
+.carousel-item {
+ -webkit-filter: grayscale(100%);
+ filter: grayscale(100%);
 }
 
 .banner-carousel {
@@ -21,6 +27,7 @@ filter: grayscale(100%);
   padding-top: 400px;
   padding-bottom: 500px;
   width: 100%;
+  height: 100%;
   background-image: linear-gradient(rgba(40, 40, 40, 0.4), rgba(54, 58, 60, -0.2));
 
 

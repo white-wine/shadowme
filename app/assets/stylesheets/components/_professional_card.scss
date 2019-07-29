@@ -4,6 +4,9 @@
   height: auto;
   width: 350px;
   margin: 10vh auto;
+ -webkit-filter: grayscale(100%);
+ filter: grayscale(100%);
+
   border-radius: 25px;
   padding-bottom: 1px;
   box-shadow: 2px 2px 5px #2524243d;
@@ -12,8 +15,11 @@ transition: 1s ease;
 }
 
 .professional_card:hover{
-  opacity:0.5;
+  opacity:0.9;
   transition: 1s ease;
+
+ -webkit-filter: grayscale(0%);
+ filter: grayscale(0%);
 }
 
 
