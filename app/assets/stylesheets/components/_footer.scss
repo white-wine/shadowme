@@ -1,15 +1,15 @@
 .footer {
-  background: #800020;
+  background: #FE525B;
   display: flex;
   align-items: start;
   justify-content: space-between;
   padding: 10px 50px;
   color: rgba(0,0,0,0.3);
-  height: 100px;
+  height: 175px;
 }
 
 .footer-title {
-  background: black;
+  background: #232323;
   height: 35px;
   display: flex;
   word-spacing: 30px;
@@ -27,7 +27,7 @@
 .footer h2 {
   color: black;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 30px;
 }
   .footer a {
     color: #3E3E3E;
@@ -69,6 +69,8 @@ i {
   padding: 7px;
 }
 }
+
+
 
 
 .footer-contact{
