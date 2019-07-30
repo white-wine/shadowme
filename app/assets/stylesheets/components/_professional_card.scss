@@ -127,7 +127,9 @@ transition: 1s ease;
 }
 
 .form-description-container {
-background-image: image_url("pro_calendar.jpeg");
+  background-image: image_url("pro_calendar.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 
@@ -188,6 +190,12 @@ background-image: image_url("pro_calendar.jpeg");
 
 .professional-description {
   margin-top: 50px !important;
+}
+
+.review-description {
+  width: 74%;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 
 .pro-row {
