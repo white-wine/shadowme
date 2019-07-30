@@ -30,8 +30,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
     resources :messages, only: [:create]
   end
+
   resources :searches, only: [:index]
-  resources :donations, only: [:new, :create] do
+  resources :donations, only: [:new, :create, :show] do
     resources :payments, only: [:new, :create]
   end
 

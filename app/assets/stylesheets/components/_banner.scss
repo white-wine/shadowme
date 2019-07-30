@@ -78,8 +78,18 @@ background-image: linear-gradient(rgba(228,73,81, 1), rgba(203,65,72, 1));
 .carousel {
   z-index: 50 !important;
 }
+
+
+//banner-donations
+
+.banner-donations {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
 .shadow {
     text-shadow: 2px 4px 3px rgba(0,0,0,0.5);
   box-shadow: none !important;
+
 
 }

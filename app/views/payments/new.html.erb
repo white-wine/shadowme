@@ -1,4 +1,8 @@
-<h1>Donation </h1>
+<div class="banner-donations" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485359466996-ba9d9b4958b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  </div>
+  <div class="form-donation">
+
+<h2>Donation </h2>
 <%= form_tag donation_payments_path(@donation) do %>
   <article>
     <label class="amount">
@@ -14,3 +18,4 @@
     data-currency="<%= @donation.amount.currency %>"></script>
 
 <% end %>
+</div>
