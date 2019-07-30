@@ -19,12 +19,23 @@ font-family: 'Satisfy', cursive;
 }
 
 .under {
-  border-bottom: 1px solid black;
+  border-top: 1px solid black;
   padding-top: 10px;
+  margin-top: 10px;
   padding-bottom: 10px;
+  display: flex;
+  text-align: center;
+ justify-content: center;
 }
 
 
 .pro-img {
- height: 10px;
+ background-image: url('pros.jpg');
+  background-size: cover;
+  background-position: cover;
+  object-fit: cover;
+  object-position: bottom;
+
+  width: 250px;
 }
+

@@ -1,6 +1,15 @@
 <div class="container-letter">
 <div class="request-sent">
+<% if @booking.booking_status != "pending" %>
+<h1><strong>Request confirmed! </strong> with: <%= @booking.professional.user.full_name %>!</h1>
+<p>Get ready to shadow!!</p>
+<% else %>
 <h1><strong>Request Sent to</strong> <%= @booking.professional.user.full_name %>!</h1>
+<% end %>
+
+
+
+
 </div>
  <div>
  <p>Hi, <%= @booking.user.first_name %></strong> <%= @booking.user.last_name %></p>
@@ -12,8 +21,16 @@
 </div>
 <button type="button" class="btn btn-outline-danger">View Booking</button>
 <div class="under">
+
+
+
 <div class="pro-img">
-<h1><img src="<%= asset_path('pros.jpg') %>" alt=""></h1>
+<h1 style="">abc</h1>
+<p>asaaaac</p>
+<p>asaaaac</p>
+<p>asaaaac</p>
+<p>asaaaac</p>
+<p>asaaaac</p>
 
 </div>
   </div>
@@ -25,61 +42,13 @@
 
 
 
+<div class="container">
 
-
-<h1>Booking ID:<strong> <%= @booking.id %></strong></h1>
+<% if @booking.booking_status != "pending" %>
 <%= render 'messages/chat', message: @message, messages: @messages %>
-
-<p><strong>Avatar of the one who booked</strong>:</p>
-
-<% if !@booking.user.photo.nil? %>
-<%= image_tag @booking.user.photo, class:"career-img" %>
 <% end %>
-<p><strong>Booking date: </strong><%= @booking.start_book %></p>
-<p><strong>Booking end date: </strong><%= @booking.end_book %></p>
-<p><strong>Booking amount of days: </strong><%=  (@booking.end_book - @booking.start_book).to_i
- %></p>
-<p><strong>Name of the one who booked:</strong> <%= @booking.user.first_name %></strong> <%= @booking.user.last_name %></p>
-<p><strong>Self introduction message:</strong> <%= @booking.intro_message%></p>
-<p><strong>Email of the one who booked:</strong> <%= @booking.user.email %></p>
-
-<br><br>
-
-<h2><strong>professional info: </strong> </h2>
-<p><strong>professional address: </strong><%= @booking.professional.address%></p>
-<p><strong>professional specialty: </strong><%= @booking.professional.specialty%></p>
-
-
-<p><strong>Professional resume: </strong><%= @booking.professional.resume%></p>
-
-<p><strong>Professional Owner Avatar</strong>:  <%= image_tag @booking.professional.user.photo, class:"career-img" %></p>
-
-<p><strong>Professional years of experience: </strong><%= @booking.professional.experience_in_years%> years</p>
-
-<p>list of reviews content and ratings</p>
-
-<ul>
-  <%  @booking.reviews.each do |review|   %>
-  <li>Content: <%= review.content %>, rating: <%= review.rating %> </li>
-  <% end %>
-</ul>
-
-
-<p><strong>Professional rating average: </strong>
-
-  <%
-  c = 0
-  amount_of_reviews = @booking.reviews.count
-  @booking.reviews.each do |review|
-    c += review.rating
-  end
-  if c != 0 && amount_of_reviews != 0
-  average = c / amount_of_reviews
-end
-  %>
-  <%= average %>
-</p>
-
 <%= link_to "Back to professional card", professional_path(@booking.professional) %>
 <%= link_to "Back to homepage", root_path %>
 </div>
+
+
