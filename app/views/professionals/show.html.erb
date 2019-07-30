@@ -44,7 +44,6 @@ button.addEventListener('click', get);
   <div class="container pro-title">
     <div class="row pro-row">
       <div class="col-xs-12 col-md-6 offset-md-1 col-6 offset-lg-1 pro-name">
-        <h1><%= @professional.user.first_name%>'s Profile</h1>
       </div>
     </div>
   </div>
@@ -95,7 +94,7 @@ button.addEventListener('click', get);
   </div>
 </div>
 
-  <div class="container professional-description">
+  <div class="container review-description">
     <div class="row">
       <div class="col-xs-12 col-md-12 col-12 pro-profile">
 
@@ -133,7 +132,7 @@ button.addEventListener('click', get);
     </div>
   </div>
 
-<div class="row button-cluster">
+<!-- <div class="row button-cluster">
   <%= link_to "Professionals list", career_path(@professional.career), class:"myButton" %>
   <%= link_to "Homepage", root_path, class:"myButton" %>
   <%= link_to "Careers list", category_path(@professional.career.category), class:"myButton" %>
@@ -179,3 +178,4 @@ button.addEventListener('click', get);
   top:1px;
 }
 </style>
+ -->
