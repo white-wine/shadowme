@@ -1,22 +1,23 @@
+<div class="container">
 
-<%= form_tag searches_path, method: :get do %>
-<%= text_field_tag :q, params[:q]  %>
-<%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]) %>
-<%= submit_tag "buscar" %>
-<% end %>
+  <%= form_tag searches_path, method: :get do %>
+  <%= text_field_tag :q, params[:q]  %>
+  <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]) %>
+  <%= submit_tag "buscar" %>
+  <% end %>
 
-<% if @results %>
+  <% if @results %>
 
-<% @results.each do |result| %>
-<div class="search-result">
- <%= result.searchable %>
-</div>
-<% end %>
-<% end %>
+  <% @results.each do |result| %>
+  <div class="search-result">
+   <%= result.searchable %>
+ </div>
+ <% end %>
+ <% end %>
 
-<% if @careers %>
-<% @careers.each do |career| %>
-<div class="search-result">
+ <% if @careers %>
+ <% @careers.each do |career| %>
+ <div class="search-result">
   <div class="row">
     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
       <%= render "shared/career_card",  career: career  %>
@@ -62,6 +63,6 @@
 <% end %>
 <% end %>
 
-
+</div>
 
 
