@@ -1,7 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top home-navbar-style <%= controller_name == 'pages' && action_name == 'home' ? 'home-navbar-style' : "white-navbar" %>">
+
+<div class="logo-n-phrase">
   <%= link_to "/", class: "navbar-brand ml-5" do %>
   <%= image_tag "rdd_logo.png" %>
+
   <% end %>
+  <%= link_to "/", class: "navbar-brand" do %>
+
+  <h1 class="logo-phrase">shadowMe</h1>
+  <% end %>
+
+</div>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,29 +25,29 @@
       <% if user_signed_in? %>
       <li class="nav-item">
 
-        <%= link_to "Explore", "/categories", class: "nav-link" %>
+        <%= link_to "Explore", "/categories", class: "nav-link nav-btn" %>
       </li>
 
           <li class="nav-item">
-            <%= link_to "Search by", searches_path, class: "nav-link" %>
+            <%= link_to "Search by", searches_path, class: "nav-link nav-btn" %>
           </li>
 
 
           <% if current_user.professional? && !current_user.professional %>
           <li class="nav-item">
-          <%= link_to "Create Professional Profile", new_professional_path, class: "nav-link" %>
+          <%= link_to "Create Professional Profile", new_professional_path, class: "nav-link nav-btn" %>
           </li>
           <% elsif current_user.professional&.id.present? %>
           <li class="nav-item">
-          <%= link_to "Edit Professional Profile", edit_professional_path(current_user.professional), class: "nav-link" %>
+          <%= link_to "Edit Professional Profile", edit_professional_path(current_user.professional), class: "nav-link nav-btn" %>
 
           </li>
 
       <li class="nav-item">
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-out" %>
       </li>
 
-        <div class="avatar mr-5" aria-labelledby="navbarDropdown">
+        <div class="" aria-labelledby="navbarDropdown">
 
           <%= link_to admin_profile_index_path do %>
 
