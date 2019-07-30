@@ -1,5 +1,7 @@
-<h1>Donation</h1>
-<ul>
-  <li>Status: <%= @donation.state %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@odonation.amount_cents) %></li>
-<ul>
+<div class="banner-donations" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1484906468498-4d81f1001881?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+</div>
+<div class="form-donation">
+<h2>Thank you!</h2>
+  <p>Your donation of  <%= humanized_money_with_symbol(@donation.amount) %> has been processed</p>
+  <p>100% of your donation will help students with school supplies </p>
+</div>

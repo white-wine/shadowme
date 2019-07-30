@@ -12,7 +12,7 @@ class DonationsController < ApplicationController
   end
 
   def show
-    @donation = donation.find(params[:id])
+    @donation = Donation.find(params[:id])
   end
 
   private
