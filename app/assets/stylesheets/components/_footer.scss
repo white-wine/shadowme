@@ -1,9 +1,9 @@
 .footer {
-  background: #c2c2c2;
+  background: white;
   height: 20vh;
   padding-left: 25px;
   padding-right: 25px;
-  border-top: 15px solid black;
+  border-top: 15px solid #f64747;
 
 }
 
@@ -20,12 +20,12 @@
   justify-content: space-between;
 }
 .footer h2 {
-  color: #13110F;
+  color: #f64747;
   font-weight: bold;
   font-size: 25px;
 }
 .footer a {
-  color: #3E3E3E;
+  color: #f64747;
   text-decoration: none;
   font-size: 22px;
 }
@@ -54,7 +54,7 @@
 
 .footer-links {
   a {
-    color: #13110F;
+    color: #f64747;
     opacity: 1;
     text-decoration: none;
     font-size: 27px;
@@ -69,7 +69,7 @@
 .footer-services{
   text-align: center;
   a {
-    color: #7a7a8c;
+    color: #f64747;
     opacity: 1;
     text-decoration: none;
     font-size: 16px;
@@ -85,7 +85,6 @@
     opacity: 1;
     text-decoration: none;
     font-size: 21px;
-
   }
 }
 
@@ -99,8 +98,9 @@
 .footer-contact{
   text-align: center;
   a {
-    color: #7a7a8c;
+    color: #f64747;
     opacity: 1;
+    font-style: italic;
     text-decoration: none;
     font-size: 16px;
   }
@@ -123,11 +123,9 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-        :hover{
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-    }
 }
 .social-links>a {
    margin-left: 13px;
@@ -151,5 +149,70 @@
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+        :hover{
   display: inline-block;
+  }
+}
+
+
+.footer-st #button-st{
+  width: 100%;
+  height: 100px;
+  margin:0 auto;
+  position:relative;
+  -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.footer-st #button-st:hover{
+    width: 35px;
+    height: 35px;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    position: relative;
+}
+
+.footer-st {
+  bottom:0;
+  left:0;
+  position:fixed;
+    width: 100%;
+    height: 2em;
+    overflow:hidden;
+    margin:0 auto;
+  -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  z-index:999;
+}
+.footer-st:hover {
+    transition: all 1s ease;
+    height: 10em;
+}
+.footer-st #container-st{
+  margin-top: 5px;
+  width: 100%;
+  height: 80px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: #f64747;
+}
+.footer-st #cont-st{
+  position: relative;
+  top: -90px;
+  width: 80%;
+  background-color: white;
+  height: auto;
+  margin: 0 auto;
+}
+.footer_center-st {
+  width: 100%;
+  float: left;
+  text-align: center;
+  background-color: white;
 }
