@@ -1,28 +1,15 @@
-<div class="container">
-
-
-<% current_user.professional.bookings.where(booking_status: 0).each do |booking| %>
-
-
-<div class="row">
-  <div class="w-100" style="background-color: blue; height: 30px;">
-    <div class="notification">
-  <%= image_tag booking.user.photo, class:"student-career-img" %>
-  <p><strong>Name of the one who booked:</strong> <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-  <div class="notification-content">
-      <p><strong>Booking date:</strong> <%= booking.start_book %></p>
-    <p><strong>Self introduction message:</strong> <%= booking.intro_message%></p>
-  </div>
-
-  <div class="notification-actions">
+<div class="pending-wrapper">
+  <% current_user.professional.bookings.where(booking_status: 0).each do |booking| %>
+  <div class="pending-container">
+    <%= image_tag booking.user.photo, class:"student-career-img" %>
+    <div class="pending-content">
+      <p><strong>Student Name:</strong> <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+      <p><strong>Message:</strong> <%= booking.intro_message%></p>
+    </div>
+    <p><strong><i class="far fa-calendar-alt"></i> Booking:</strong> <%= booking.start_book.strftime("%b %d %Y") %> <i class="fas fa-minus"></i> <%= booking.end_book.strftime("%b %d %Y") %></p>
 
   </div>
-</div>
-  </div>
-
-</div>
 
 
-
-<% end %>
+  <% end %>
 </div>
