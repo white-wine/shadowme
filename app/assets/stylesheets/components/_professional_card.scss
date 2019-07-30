@@ -21,7 +21,7 @@ transition: 1s ease;
   h2 {
   text-align: center;
   width: 100%;
-  padding: 30px 0;
+  padding: 10px 0;
   font-weight: 600;
 }
 }
@@ -127,6 +127,14 @@ transition: 1s ease;
 }
 
 .form-description-container {
+background-image: image_url("pro_calendar.jpeg");
+padding-top:4%;
+font-family: 'Poppins', sans-serif;
+h1{
+  color: rgba(255,255,255,0.9);
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
   background-image: image_url("pro_calendar.jpeg");
   background-size: cover;
   background-position: center;
