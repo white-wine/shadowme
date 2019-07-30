@@ -1,0 +1,14 @@
+<div class="card-search">
+  <div class="category-card m-1 mb-5" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
+    <div class="card-search-infos">
+      <%= link_to category_path(category), class: 'no-hover' do %>
+        <div class="career-description">
+          <div class="career-search-header">
+           <h2 class="category-title"><%= category.title %></h2>
+         </div>
+       </div>
+   </div>
+ </div>
+</div>
+<% end %>
+
