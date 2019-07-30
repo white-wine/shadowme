@@ -1,7 +1,7 @@
 class DonationsController < ApplicationController
   skip_before_action :authenticate_user!
   def new
-    @donation = Donation.new
+    @donation = Donation.new(amount_cents: nil)
   end
   def create
 
@@ -12,7 +12,7 @@ class DonationsController < ApplicationController
   end
 
   def show
-    @donation = donation.find(params[:id])
+    @donation = Donation.find(params[:id])
   end
 
   private

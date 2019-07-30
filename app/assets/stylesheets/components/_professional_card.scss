@@ -135,6 +135,9 @@ h1{
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
 }
+  background-image: image_url("pro_calendar.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 
@@ -195,6 +198,12 @@ h1{
 
 .professional-description {
   margin-top: 50px !important;
+}
+
+.review-description {
+  width: 74%;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 
 .pro-row {

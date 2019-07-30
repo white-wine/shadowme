@@ -1,0 +1,55 @@
+.form-donation {
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  background-color: white;
+  margin-top: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 200px;
+    h2 {
+    margin-bottom: 30px;
+    font-weight: bold;
+    }
+  margin-top: -75px;
+}
+
+.thank-you-container {
+  cursor: pointer;
+  perspective: 600;
+  position: relative;
+}
+.thank-you {
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+}
+.thank-you:hover {
+  transform: rotateY(180deg);
+}
+.thank-you .side {
+  backface-visibility: hidden;
+}
+.thank-you .back {
+  a {
+    color: #fe525b;
+    text-decoration: none;
+  }
+  font-weight: bold;
+  text-align: center;
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 50px;
+  position: absolute;
+  top: 80px;
+  right: 55px;
+  width: 80%;
+  background-color: white;
+}
+
+.avatar-student {
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  border: 1px solid #fe525b;
+  margin: 10px 15px;
+}

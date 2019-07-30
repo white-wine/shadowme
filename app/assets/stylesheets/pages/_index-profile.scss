@@ -1,0 +1,44 @@
+.profile-container {
+  width: 90%;
+  margin: 100px auto;
+}
+
+.professional-info {
+  text-align: center;
+  img {
+    width: 200px;
+  }
+}
+
+
+.professional-tags {
+  display: flex;
+  justify-content: center;
+  align-items: flex;
+  p {
+    margin-left: 30px;
+  }
+}
+
+
+// pending request
+.pending-wrapper {
+   width: 90%;
+  margin: 30px auto;
+}
+.pending-container {
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+  img {
+    padding: 10px;
+    border-radius: 50%;
+  }
+ p {
+  padding: 10px;
+ }
+}
+
+.pending-content {
+   padding: 10px;
+}
