@@ -7,13 +7,13 @@
   border-radius: 25px;
   padding-bottom: 1px;
   box-shadow: 2px 2px 5px #2524243d;
-  opacity:1;
 transition: 1s ease;
 }
 
 .professional_card:hover{
-  opacity:0.5;
   transition: 1s ease;
+  -webkit-transform: scale(1.1);
+  -transform: scale(1.1);
 }
 
 
@@ -127,7 +127,9 @@ transition: 1s ease;
 }
 
 .form-description-container {
-background-image: image_url("pro_calendar.jpeg");
+  background-image: image_url("pro_calendar.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 
@@ -170,7 +172,6 @@ background-image: image_url("pro_calendar.jpeg");
 .button-cluster {
   display: flex;
   justify-content: space-evenly;
-  color: black !important;
   margin-bottom: 50px !important;
   margin-top: 50px !important;
   margin: auto;
@@ -183,12 +184,18 @@ background-image: image_url("pro_calendar.jpeg");
 
   & a:hover {
     text-decoration: none !important;
-    color: red !important;
+    color: white !important;
   }
 }
 
 .professional-description {
   margin-top: 50px !important;
+}
+
+.review-description {
+  width: 74%;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 
 .pro-row {
