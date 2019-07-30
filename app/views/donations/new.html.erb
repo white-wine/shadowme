@@ -2,8 +2,12 @@
 </div>
 <div class="form-donation">
   <h2>Donations</h2>
-  <%= simple_form_for(@donation) do |f| %>
-   <%= f.input :amount_cents, label:"Amount" %>
-   <%= f.submit class:"btn-donation" %>
+
+  <%= form_for @donation do |f| %>
+    <div class="form-group">
+      <%= f.label :amount, class: "form-label" %>
+      <%= f.number_field :amount_cents,placeholder: "10", class: "form-control" %>
+    </div>
+    <%= f.submit "Donate", class: "btn btn-donation" %>
   <% end %>
 </div>
