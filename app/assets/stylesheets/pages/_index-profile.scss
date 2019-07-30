@@ -4,9 +4,15 @@
 }
 
 .professional-info {
+  width: 650px;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin-bottom: 50px;
   img {
     width: 200px;
+    margin-bottom: 20px;
   }
 }
 
@@ -23,8 +29,8 @@
 
 // pending request
 .pending-wrapper {
-   width: 90%;
-  margin: 30px auto;
+ width: 90%;
+ margin: 30px auto;
 }
 .pending-container {
   display: flex;
@@ -34,11 +40,42 @@
     padding: 10px;
     border-radius: 50%;
   }
- p {
-  padding: 10px;
- }
+  p {
+    padding: 10px;
+  }
 }
 
 .pending-content {
-   padding: 10px;
+ padding: 10px;
+}
+
+.confirm-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+@media(min-width: 100px)and(max-width: 575px) {
+ .pending-container {
+  display: block;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  img {
+    padding: 10px;
+    border-radius: 50%;
+  }
+  p {
+    padding: 10px;
+  }
+}
+
+
+}
+
+
+// nav items
+.nav-tabs {
+  border-bottom: 0px solid #dee2e6;
 }

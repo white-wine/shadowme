@@ -11,32 +11,32 @@
       <p><strong>Amount of bookings: </strong> <%= current_user.professional.bookings.count %></p>
     </div>
   </div>
+  <div class="tab-wrapper">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pending Requests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">History Requests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">All Requests</a>
+      </li>
+    </ul>
 
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pending Requests</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">History Requests</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">All Requests</a>
-    </li>
-  </ul>
-
-  <div class="tab-content">
-    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <%= render "/admin/profile/pending_requests" %>
-    </div>
-    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <%= render "/admin/profile/history_requests" %>
-    </div>
-    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-      <%= render "/admin/profile/all_requests" %>
+    <div class="tab-content">
+      <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <%= render "/admin/profile/pending_requests" %>
+      </div>
+      <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <%= render "/admin/profile/history_requests" %>
+      </div>
+      <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+        <%= render "/admin/profile/all_requests" %>
+      </div>
     </div>
   </div>
 </div>
-
 <script>
   $('#myTab a').on('click', function (e) {
     e.preventDefault()
