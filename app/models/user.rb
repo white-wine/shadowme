@@ -70,4 +70,8 @@ class User < ApplicationRecord
     user.save
   end
 
+  def self.students
+    User.where(user_type: 1)
+  end
+
 end
