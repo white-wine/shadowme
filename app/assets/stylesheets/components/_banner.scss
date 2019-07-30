@@ -30,6 +30,11 @@
   background: -webkit-linear-gradient(#fe525b, #FE8188);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+}
+
+.banner-container h1  {
+  box-shadow: none !important;
 }
 
 .banner-container {
@@ -47,7 +52,6 @@
   h1 {
     margin: 0;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 32px;
     font-weight: bold;
     font-size: 4.5rem;
@@ -57,7 +61,6 @@
     font-size: 20px;
     color: white;
     opacity: .7;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-family: 'Verdana', sans-serif;
     font-size: 1.5rem;
     letter-spacing: 0.03rem;
@@ -74,4 +77,9 @@ background-image: linear-gradient(rgba(228,73,81, 1), rgba(203,65,72, 1));
 
 .carousel {
   z-index: 50 !important;
+}
+.shadow {
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.5);
+  box-shadow: none !important;
+
 }
