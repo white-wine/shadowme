@@ -12,7 +12,11 @@
     <div class="pro_job">
       <h2><%= professional.user.first_name %> <%= professional.user.last_name %></h2>
       <div class="job_details">
+    <% if  !professional.user.user_description.nil? %>
+
         <p><%= professional.user.user_description.truncate(51, omission: "... (more)") %></p>
+    <% end %>
+
         <div class="logo-wrapper">
           <%= image_tag(professional.company_logo, class:"company_logo") %>
         </div>
