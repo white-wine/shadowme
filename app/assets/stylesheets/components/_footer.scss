@@ -1,9 +1,10 @@
 .footer {
-  background: -webkit-linear-gradient(#303030, #383838, #505050);
-  height: 15vh;
+  background: #c2c2c2;
+  height: 20vh;
   padding-left: 25px;
   padding-right: 25px;
-  border-top: 2px solid #c2c2c2;
+  border-top: 15px solid black;
+
 }
 
 .footer-services a :hover {
@@ -71,7 +72,7 @@
     color: #7a7a8c;
     opacity: 1;
     text-decoration: none;
-    font-size: 21px;
+    font-size: 16px;
   }
   i {
     color: #7a7a8c;
@@ -84,6 +85,7 @@
     opacity: 1;
     text-decoration: none;
     font-size: 21px;
+
   }
 }
 
@@ -100,7 +102,7 @@
     color: #7a7a8c;
     opacity: 1;
     text-decoration: none;
-    font-size: 21px;
+    font-size: 16px;
   }
   i {
     color: #7a7a8c;
@@ -128,7 +130,7 @@
     }
 }
 .social-links>a {
-    padding: .25rem 2rem;
+   margin-left: 13px;
     position: relative;
     -webkit-transition: .2s;
     transition: .2s;
