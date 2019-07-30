@@ -1,6 +1,6 @@
-<h2 class="category-title">Professionals in <strong> <%= Career.find(params[:id]).title %> </strong>career</h2>
-
 <div class="container">
+<h2 class="category-title">Professionals in <strong> <%= Career.find(params[:id]).title %> </strong>career</h2>
+<h3><%= @career.description %></h3>
   <div class="row">
         <% @professionals.each do |professional| %>
 
