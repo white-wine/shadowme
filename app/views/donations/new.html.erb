@@ -1,4 +1,9 @@
-<%= simple_form_for(@donation) do |f| %>
- <%= f.input :amount_cents %>
- <%= f.submit %>
-<% end %>
+<div class="banner-donations" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+</div>
+<div class="form-donation">
+  <h2>Donations</h2>
+  <%= simple_form_for(@donation) do |f| %>
+   <%= f.input :amount_cents, label:"Amount" %>
+   <%= f.submit class:"btn-donation" %>
+  <% end %>
+</div>
