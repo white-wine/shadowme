@@ -2,40 +2,78 @@
 
 .container-letter {
   background-color: white;
+  width: 570px;
+  margin: 0 auto;
   padding-top: 75px;
   padding-bottom: 75px;
   padding-left: 50px;
   padding-right: 50px;
-  text-align: center;
-  }
+  text-align: left;
+  margin-top: 100px;
+}
 
 .signature {
-font-family: 'Satisfy', cursive;
+  font-family: 'Satisfy', cursive;
 }
 
 .request-sent {
- border-bottom: 1px solid black;
+ border-bottom: 1px solid lightgray;
  text-align: center;
+ h1 {
+  padding-bottom: 20px;
+  font-size: 25px;
+
+ }
 }
 
 .under {
-  border-top: 1px solid black;
+  border-top: 1px solid lightgray;
   padding-top: 10px;
   margin-top: 10px;
   padding-bottom: 10px;
   display: flex;
   text-align: center;
- justify-content: center;
+  justify-content: center;
 }
 
 
 .pro-img {
- background-image: url('pros.jpg');
-  background-size: cover;
-  background-position: cover;
-  object-fit: cover;
-  object-position: bottom;
+ background-image: url('two.jpg');
+ background-size: cover;
+ background-position: cover;
+ object-fit: cover;
+ object-position: bottom;
+ width: 100%;
+ background-position: center;
+ height: 250px;
+ color: white;
+  font-weight: bold;
+background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('two.jpg');
 
-  width: 250px;
+
+}
+
+
+
+.buttons {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.req-content {
+  margin-top: 30px;
+}
+
+.banner-words {
+   background: -webkit-linear-gradient(#fe525b, #FE8188);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+
+}
+
+.sec-row {
+  font-size: 20px;
 }
 
