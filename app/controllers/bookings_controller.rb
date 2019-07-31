@@ -20,7 +20,13 @@ class BookingsController < ApplicationController
       redirect_to booking_path(@booking)
     else
 
+        # flash.now[:alert] = @booking.errors.full_messages[0]
+        # flash.now[:alert] = @booking.errors.full_messages[1]
+        # flash.now[:alert] = @booking.errors.full_messages[2]
+      flash.now[:alert] = "Please complete the empty fields"
+
       render "professionals/show"
+
     end
   end
 
