@@ -21,7 +21,7 @@ CATEGORIES = [
 	{
 		title: "Education",
 		description: "Do you love helping people and spreading knowledge? Are you passionate about a specific academic subject (or subjects)? If so, an education major might be for you.",
-		image: "https://images.theconversation.com/files/242320/original/file-20181025-71023-hjn5fq.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip"
+		image: "https://cdn.studyinternational.com/news/wp-content/uploads/2019/02/ChartervPrivate.jpg"
 	},
 	{
 		title: "Engineering",

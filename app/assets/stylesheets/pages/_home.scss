@@ -81,9 +81,11 @@
 }
 .box:hover .content {
   width: 100%;
-  height: 100%;
+  height: 96%;
   bottom: 0;
   left: 0;
+  border-bottom: 3px solid white;
+  margin-bottom: 15px;
 }
 
 
@@ -92,9 +94,12 @@
   margin: 0;
   padding: 0;
   font-size: 30px;
-  font-weight: 400;
+  font-weight: bold;
   color: white;
   text-align: center;
+  border-bottom: 3px solid white;
+  // text-decoration: underline;
+
 }
 
 .box .content p {
@@ -115,5 +120,13 @@
 
 
 .box:hover .content h3 {
-  text-decoration: underline;
+  margin-top: 10px;
+  // text-decoration: underline;
+  border-bottom: 3px solid white;
 }
+
+.box:hover .content {
+  background: linear-gradient(left, rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+}
+
+// https://images.theconversation.com/files/242320/original/file-20181025-71023-hjn5fq.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip
