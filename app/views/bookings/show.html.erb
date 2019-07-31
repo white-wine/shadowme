@@ -1,4 +1,20 @@
+
+
+
+ <div class="container">
+
+    <% if @booking.booking_status != "pending" %>
+    <%= render 'messages/chat', message: @message, messages: @messages %>
+   <% else %>
+    <%= link_to "Back to professional card", professional_path(@booking.professional) %>
+    <%= link_to "Back to homepage", root_path %>
+     <% end %>
+   </div>
+
 <div class="container-letter">
+
+
+
   <div class="request-sent">
     <% if @booking.booking_status == "confirmed" && @booking.user == @user %>
 
@@ -114,19 +130,5 @@
 
 
 
-
-
-
-
-
-<!-- <div class="container"> -->
-
-   <!--  <% if @booking.booking_status != "pending" %>
-    <%= render 'messages/chat', message: @message, messages: @messages %>
-   <% else %>
-    <%= link_to "Back to professional card", professional_path(@booking.professional) %>
-    <%= link_to "Back to homepage", root_path %>
-     <% end %>
-   </div> -->
 
 
