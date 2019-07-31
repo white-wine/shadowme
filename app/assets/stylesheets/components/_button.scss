@@ -2,7 +2,7 @@
   color: white;
   font-weight: bold;
   font-size: 25px;
-  border-radius: 25px;
+  border-radius: 5px;
   padding: 10px 25px;
   background-image: linear-gradient(rgba(254,82,91, 1), rgba(203,65,72, 1));
 }
@@ -126,3 +126,17 @@
  background-color: #de4048;
  color: white;
 }
+
+// button for search in navbar
+
+.search-btn {
+  padding: 6px 10px;
+  background-color: #fe525b;
+  border: 0px;
+  border-radius: 6px;
+  i {
+    color: white;
+    font-weight: bold;
+  }
+}
+

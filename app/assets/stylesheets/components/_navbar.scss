@@ -5,8 +5,18 @@
   padding: 35px 30px;
 }
 
+
+.nav-btn {
+}
+
+.log{
+  filter: invert(99%);
+
+}
+
+
 .navbar-lewagon-white {
-  background: -webkit-linear-gradient(#303030, #383838, #505050);
+  background: #333 !important;
   padding: 35px 30px;
 
 }
@@ -44,6 +54,16 @@
 
 .avatar {
   margin: 0px 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 2px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
+  margin-left: 5px;
+
 }
 
 .nav-item  {
@@ -63,9 +83,8 @@
   text-decoration: none;
   background-color: transparent;
   color: white;
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2)
+  transition: 0.05s;
+  transform: scale(1.025)
 }
 
 .nav-item > a:hover {
@@ -75,12 +94,13 @@
 .nav-link:link {
   text-decoration: none;
   background-color: transparent;
-  color: white;
+  color: #fe525b;
 
 }
 
+
 .white-navbar {
-  background: -webkit-linear-gradient(#303030, #383838, #505050);
+  background: #333 !important;
 
   justify-content: space-between;
   background-color: transparent;
@@ -89,5 +109,41 @@
   a {
     color: white !important;
   }
+
+}
+.logo-n-phrase{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.5);
+  :hover{
+    transition: all .01s ease;
+    transform: scale(1.025);
+  }
+}
+
+.logo-phrase{
+  font-family: 'Satisfy', cursive;
+  color:white !important;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: -48px;
+}
+
+
+.form-inline .form-control {
+    display: inline-block;
+    width: 130px;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: transparent;
+    border: 2px solid lightgray;
+    color: lightgray;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.form-control {
+    background-color: transparent;
 
 }

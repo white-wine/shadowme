@@ -3,7 +3,7 @@
   <%= form_for([professional, booking], html: { autocomplete: 'off' }) do |f| %>
     <div class="form-group">
       <h1>Would you like to ShadowMe?</h1>
-      <label for="tab-select">Select a start date:</label>
+      <label for="tab-select">Select a week:</label>
 
 <!--       <input class="form-control datepicker input" placeholder="Choose a date" required="" tabindex="0" type="text" readonly="readonly" id='booking-date'>
  -->
@@ -14,7 +14,7 @@
       <small id="emailHelp" class="form-text text-muted"></small>
     </div>
     <div class="form-group">
-      <label for="tab-message">Message</label>
+      <label for="tab-message">Message:</label>
 
       <%= f.text_area :intro_message, class: "form-control form-control-sm", id: "tab-message", rows: 5, placeholder: "Type here..." %>
 

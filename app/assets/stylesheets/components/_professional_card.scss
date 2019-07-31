@@ -3,39 +3,52 @@
   background-color: #FFFFFF;
   height: auto;
   width: 350px;
-  margin: 10vh auto;
+  margin: 25px auto;
   border-radius: 25px;
   padding-bottom: 1px;
   box-shadow: 2px 2px 5px #2524243d;
-transition: 1s ease;
+  transition: 1s ease;
+  padding-bottom: 15px;
+  min-height: 510px;
 }
+
+.career-list-title{
+ margin-bottom: 25px;
+}
+
 
 .professional_card:hover{
-  transition: 1s ease;
-  -webkit-transform: scale(1.1);
-  -transform: scale(1.1);
+  transition: 0.25s ease;
+  -webkit-transform: scale(1.03);
+  -transform: scale(1.03);
+  border: 2px solid gray;
 }
 
-
+.golden-stars{
+  color:#FFD700;
+}
 .pro_job {
   h2 {
-  text-align: center;
-  width: 100%;
-  padding: 10px 0;
-  font-weight: 600;
-}
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: 600;
+  }
 }
 
 .job_details {
   display: flex;
   margin: auto 22px;
   justify-content: space-between;
+  p {
+    min-height: 72px;
+  }
 }
 
 .pro-banner {
   height: 100px;
-  background-color: black;
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 24px 24px 0px 0px;
+  opacity: 0.4;
 }
 
 .pro_photo {
@@ -76,7 +89,7 @@ transition: 1s ease;
 
 .pro_separation {
   width: 250px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid lightgray;
   margin-bottom: 10px;
 }
 
@@ -87,7 +100,7 @@ transition: 1s ease;
 
 .pro_expertise {
   span {
-  font-weight: 550;
+    font-weight: 550;
   }
 }
 
@@ -127,14 +140,14 @@ transition: 1s ease;
 }
 
 .form-description-container {
-background-image: image_url("pro_calendar.jpeg");
-padding-top:4%;
-font-family: 'Poppins', sans-serif;
-h1{
-  color: rgba(255,255,255,0.9);
-  font-weight: bold;
+  background-image: image_url("pro_calendar.jpeg");
+  padding-top:4%;
   font-family: 'Poppins', sans-serif;
-}
+  h1{
+    color: rgba(255,255,255,0.9);
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
   background-image: image_url("pro_calendar.jpeg");
   background-size: cover;
   background-position: center;
@@ -143,12 +156,12 @@ h1{
 
 .pro-profile {
   background-color: #383535bf;
-    padding-top: 30px;
-    padding-left: 30px;
-    height: 502px;
-    border-radius: 8px;
-    color: white;
-    overflow-y: scroll;
+  padding-top: 30px;
+  padding-left: 30px;
+  height: 502px;
+  border-radius: 8px;
+  color: white;
+  overflow-y: scroll;
 }
 
 

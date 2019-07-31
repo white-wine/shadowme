@@ -1,67 +1,16 @@
-
-<%= form_tag searches_path, method: :get do %>
-<%= text_field_tag :q, params[:q]  %>
-<%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]) %>
-<%= submit_tag "buscar" %>
-<% end %>
-
-<% if @results %>
-
-<% @results.each do |result| %>
-<div class="search-result">
- <%= result.searchable %>
-</div>
-<% end %>
-<% end %>
-
-<% if @careers %>
-<% @careers.each do |career| %>
-<div class="search-result">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
-      <%= render "shared/career_card",  career: career  %>
-    </div>
-  </div>
-</div>
-<% end %>
-<% end %>
-
-
-<% if @categories %>
-<% @categories.each do |category| %>
-<div class="search-result">
- <div class="row">
-   <div class="col-md-4">
-    <%= link_to category_path(category), class: 'no-hover' do %>
-    <div class="category-card m-1 mb-5" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
-     <p><%= category.title %></p>
-   </div>
-
- </div>
- <% end %>
-</div>
-</div>
-</div>
-<% end %>
-<% end %>
-
-<% if @users %>
-<% @users.each do |user| %>
-<div class="search-result">
-  <div class="row">
-
-    <% if !user.professional.nil? %>
-    <div class="col-xs-12 col-md-6 col-xl-4">
-      <%= render "shared/professional_card",  professional: user.professional  %>
-
-    </div>
+<div class="container tp-5">
+  <div class="navbar_search d-md-none">
+    <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+    <%= text_field_tag :q, params[:q], class: "form-control"  %>
+    <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
+    <%= submit_tag "buscar", class: "btn btn-primary" %>
     <% end %>
+  </div>
+  <div class="container-search">
+  <% @results.each do |result| %>
+    <% result = result.searchable if result.respond_to? :searchable %>
 
+    <%= render "shared/#{result.class.name.downcase}_search", result.class.name.downcase.to_sym => result %>
+  <% end %>
   </div>
 </div>
-<% end %>
-<% end %>
-
-
-
-

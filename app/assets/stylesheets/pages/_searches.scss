@@ -1,0 +1,72 @@
+.container-search{
+  padding-top: 100px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+//cards for searches
+.card-search {
+  overflow: hidden;
+  height: 140px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border-right: 7px solid green;
+}
+
+.card-search-career {
+  overflow: hidden;
+  height: 140px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border-right: 7px solid red;
+}
+
+.card-search-category {
+  overflow: hidden;
+  height: 140px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border-right: 7px solid yellow;
+}
+
+
+.search-img {
+  height: 100%;
+  width: 140px;
+  object-fit: cover;
+}
+
+.career-search-header h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-search p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-search .card-search-infos {
+  padding: 16px;
+}
+
+.career-description {
+  padding: 62px 20px;
+}
+
+.category-title {
+
+}
