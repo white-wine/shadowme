@@ -2,7 +2,7 @@
   <div class="request-sent">
     <% if @booking.booking_status != "pending" %>
     <div class="req-content">
-      <h1>Request confirmed! with: <strong> <%= @booking.professional.user.full_name %>!</strong></h1>
+      <h1>Request confirmed with: <strong> <%= @booking.professional.user.full_name %></strong></h1>
       <p>Get ready to shadow!!</p>
       <p>Hi, <%= @booking.user.first_name %></strong> <%= @booking.user.last_name %></p>
       <p>Your request has been approved. Your Shadow request
@@ -56,14 +56,14 @@
 
 
 
-  <div class="container">
+  <!-- <div class="container"> -->
 
-    <% if @booking.booking_status != "pending" %>
+   <!--  <% if @booking.booking_status != "pending" %>
     <%= render 'messages/chat', message: @message, messages: @messages %>
    <% else %>
     <%= link_to "Back to professional card", professional_path(@booking.professional) %>
     <%= link_to "Back to homepage", root_path %>
      <% end %>
-  </div>
+  </div> -->
 
 
