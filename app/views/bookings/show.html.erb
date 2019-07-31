@@ -1,12 +1,14 @@
 
 <div class="booking-show">
-    <div class="letter-column">
-      <%= render 'bookings/letter', booking: @booking, user: @user %>
+  <div class="letter-column">
+    <%= render 'bookings/letter', booking: @booking, user: @user %>
+  </div>
+  <% if @booking.booking_status != "pending" %>
+    <div class="chat-column">
+      <%= render 'messages/chat', message: @message, messages: @messages %>
     </div>
-    <% if @booking.booking_status != "pending" %>
-    <%= render 'messages/chat', message: @message, messages: @messages %>
-   <% else %>
+  <% else %>
     <%= link_to "Back to professional card", professional_path(@booking.professional) %>
     <%= link_to "Back to homepage", root_path %>
-     <% end %>
-   </div>
+  <% end %>
+</div>

@@ -13,7 +13,7 @@ export const chat = () => {
           <div class="chat-message">${data.content}</div>
         </div>
 
-        <div class="chat-timestamp  ${sender}">${new Date(data.created_at)}</div>
+        <div class="chat-timestamp  ${sender}">${dayjs(new Date(data.created_at)).format("MMM D, hh:mm A")}</div>
       </div>
     `);
   };
@@ -29,25 +29,8 @@ export const chat = () => {
 
   const chatChannel = pusher.subscribe('message');
 
-  const buildBookingStatus = booking => {
-    if (booking.status == 'approved') {
-      return (`
-        <div>
-          <span class="booking-category status-ap" style="text-transform: capitalize;">${booking.status}</span>
-          <i class="fas fa-check-circle approved-status"></i>
-        </div>
-      `)
-    } else {
-      return (`
-        <div>
-          <span class="booking-category status-di" style="text-transform: capitalize;">${booking.status}</span>
-          <i class="fas fa-times-circle declined-status"></i>
-        </div>
-      `)
-    }
-  }
-
   let current_user = $('.chat-box').data("current_user")
+  let booking_id = $('.chat-box').data("booking_id")
 
   chatChannel.bind('new', function(data) {
     let sender = data.sender_id == current_user ? "me" : "him"

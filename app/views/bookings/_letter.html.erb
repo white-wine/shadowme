@@ -19,7 +19,6 @@
       <div class="buttons">
         <p><%= link_to "Home", root_path , class: "btn btn-outline-danger"%></p>
       </div>
-    </div>
 
     <% elsif booking.booking_status == "pending" && booking.user = user %>
 
@@ -51,7 +50,7 @@
       </div>
     </div>
 
-    <% elsif booking.booking_status == "pending" && booking.professional.user == user %>
+    <% elsif booking.pending? && booking.professional.user == user %>
 
     <div class="req-content">
       <h1>Request From <strong><%= booking.user.full_name %>!</strong></h1>
