@@ -1,16 +1,17 @@
-<div class="card-search">
+<div class="card-search-career">
   <%= image_tag career.image, class:"search-img" %>
   <div class="card-search-infos">
     <%= link_to career_path(career), class:"career-description-connection" do %>
-      <div class="career-card">
+      <div class="career-cardss">
 
        <div class="career-description">
           <div class="career-search-header">
             <h2><%= career.title %></h2>
             <p><%= career.description.truncate(100) %></p>
+            <% end %>
           </div>
         </div>
       </div>
   </div>
 </div>
-<% end %>
+
