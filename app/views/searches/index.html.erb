@@ -6,8 +6,11 @@
     <%= submit_tag "buscar", class: "btn btn-primary" %>
     <% end %>
   </div>
+  <div class="container-search">
   <% @results.each do |result| %>
     <% result = result.searchable if result.respond_to? :searchable %>
+
     <%= render "shared/#{result.class.name.downcase}_search", result.class.name.downcase.to_sym => result %>
   <% end %>
+  </div>
 </div>

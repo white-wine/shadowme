@@ -11,13 +11,7 @@
 
 </div>
 
-<div class="navbar_search d-none d-sm-inline">
-  <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
-    <%= text_field_tag :q, params[:q], class: "form-control"  %>
-    <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
-    <%= submit_tag "buscar", class: "btn btn-primary" %>
-  <% end %>
-</div>
+
 
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +38,18 @@
           <% elsif current_user.professional&.id.present? %>
 
 
+
+       <li class="nav-item">
+        <div class="navbar_search d-none d-sm-inline">
+  <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+    <%= text_field_tag :q, params[:q], class: "form-control"  %>
+    <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
+    <%= button_tag(type: "submit", class: "search-btn") do %>
+   <i class="fas fa-search"></i>
+<% end %>
+  <% end %>
+</div>
+      </li>
       <li class="nav-item">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-out" %>
       </li>
