@@ -1,6 +1,7 @@
 .profile-container {
   width: 90%;
   margin: 100px auto;
+  margin-top: 150px;
 }
 
 .professional-info {
@@ -9,10 +10,25 @@
   padding: 20px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      margin-bottom: 50px;
+  margin-bottom: 50px;
+  background-color: #fe525b;
+  color: white;
+
+
   img {
-    width: 200px;
+    // width: 200px;
+    display: block;
+    position: relative;
+    background-color: #E6EBEE;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: -75px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px #252424;
     margin-bottom: 20px;
+
   }
 }
 
@@ -34,11 +50,15 @@
 }
 .pending-container {
   display: flex;
+  justify-content: space-between;
   padding-bottom: 10px;
   border-bottom: 1px solid lightgrey;
   img {
     padding: 10px;
     border-radius: 50%;
+    width: 150px;
+    height: 150px;
+
   }
   p {
     padding: 10px;
@@ -78,4 +98,8 @@
 // nav items
 .nav-tabs {
   border-bottom: 0px solid #dee2e6;
+  justify-content: center;
+
 }
+
+
