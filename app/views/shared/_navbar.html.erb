@@ -40,7 +40,17 @@
 
       <div class="logo-n-phrase" aria-labelledby="navbarDropdown">
 
-        <%= link_to admin_profile_index_path do %>
+              <li class="nav-item">
+                <div class="navbar_search d-none d-sm-inline">
+                              <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+                              <%= text_field_tag :q, params[:q], class: "form-control", autocomplete: "off"  %>
+                              <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
+                                            <%= button_tag(type: "submit", class: "search-btn") do %>
+                                            <i class="fas fa-search"></i>
+                                            <% end %>
+                              <% end %>
+                </div>
+              </li>
 
         <% if !current_user.photo.nil? %>
         <%= image_tag current_user.photo, class: "avatar"%>
@@ -71,9 +81,24 @@
 
 
 
+<<<<<<< HEAD
+              <li class="nav-item">
+                <div class="navbar_search d-none d-sm-inline">
+                              <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+                              <%= text_field_tag :q, params[:q], class: "form-control", autocomplete: "off" %>
+                              <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
+                                            <%= button_tag(type: "submit", class: "search-btn") do %>
+                                            <i class="fas fa-search"></i>
+                                            <% end %>
+                              <% end %>
+                </div>
+              </li>
+                            <li class="nav-item">
+=======
 
 
 <!--                             <li class="nav-item">
+>>>>>>> master
                 <%= link_to "Create Professional Profile", new_professional_path, class: "nav-link nav-btn" %>
               </li>
             -->
@@ -112,14 +137,28 @@
                 <%= button_tag(type: "submit", class: "search-btn") do %>
                 <i class="fas fa-search"></i>
                 <% end %>
-                <% end %>
-              </div>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
+
+      </div>
+<!-- Si no esta logueado -->
+      <% else %>
+        <li class="nav-item">
+          <div class="navbar_search d-none d-sm-inline">
+            <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+            <%= text_field_tag :q, params[:q], class: "form-control"  %>
+            <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
+            <%= button_tag(type: "submit", class: "search-btn") do %>
+            <i class="fas fa-search"></i>
             <% end %>
-          </ul>
+            <% end %>
+          </div>
+        </li>
+
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+      <% end %>
+    </ul>
+
 
 
 

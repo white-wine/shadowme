@@ -1,0 +1,115 @@
+  <div class="container-letter">
+    <div class="request-sent">
+      <% if booking.confirmed? && booking.user == user %>
+      <div class="req-content">
+        <h1>Request confirmed with: <strong> <%= booking.professional.user.full_name %></strong> (<%= booking.professional.user.email %>)</h1>
+        <p>Get ready to shadow!!</p>
+        <p>Hi, <strong><%= booking.user.first_name %></strong> <%= booking.user.last_name %></p>
+        <p>Your request has been approved. Your Shadow request
+          <p>From: <strong><%= booking.start_book.strftime("%b %d %Y") %></strong></p>
+          <p>  To: <strong><%= booking.end_book.strftime("%b %d %Y") %></strong>.</p>
+          <p>Address: <%= booking.professional.address %></p>
+        Note that this is a professional setting. Please be on time and come prepared.</p>
+        <p>If you have any questions or concerns feel free to reach us any time at <strong>shadow@me.com</strong></p>
+      </div>
+
+      <div class="signature">
+        <p><strong>-ShadowMe</strong></p>
+      </div>
+      <div class="buttons">
+        <p><%= link_to "Home", root_path , class: "btn btn-outline-danger"%></p>
+      </div>
+
+    <% elsif booking.booking_status == "pending" && booking.user = user %>
+
+    <div class="req-content">
+      <h1>Request Sent to <strong><%= booking.professional.user.full_name %>!</strong></h1>
+      <p>Hi, <strong><%= booking.user.first_name %></strong> <%= booking.user.last_name %></p>
+      <p>Your request has been sent.</p>
+      <p>From: <strong><%= booking.start_book.strftime("%b %d %Y") %></strong>  To: <strong><%= booking.end_book.strftime("%b %d %Y") %>.</strong></p>
+      <p>Please wait patiently. <%= booking.professional.user.full_name %> should respond within 24 hours.</p>
+      <p>If you have any questions or concerns feel free to reach us any time at <strong>shadow@me.com</strong></p>
+    </div>
+
+    <div class="signature">
+      <p><strong>-ShadowMe</strong></p>
+    </div>
+
+    <div class="buttons">
+      <p><%= link_to "Home", root_path , class: "btn btn-outline-danger"%></p>
+    </div>
+
+    <div class="under">
+      <div class="pro-img">
+        <div class="container">
+          <div class="word-fix">
+            <span style="" class="banner-words">Prepare to Shadow</span>
+            <p class="sec-row">Find Your Career</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% elsif booking.pending? && booking.professional.user == user %>
+
+    <div class="req-content">
+      <h1>Request From <strong><%= booking.user.full_name %>!</strong></h1>
+      <p>Hi, <strong><%= user.first_name %></strong> <%= user.last_name %></p>
+      <p>You have a request from <%= booking.user.email.capitalize %></p>
+      <p>From: <strong><%= booking.start_book.strftime("%b %d %Y") %></strong>  To: <strong><%= booking.end_book.strftime("%b %d %Y") %>.</strong></p>
+      <p>If you have any questions or concerns feel free to reach us any time at <strong>shadow@me.com</strong></p>
+      <p>Go to your profile to confirm this request</p>
+    </div>
+
+    <div class="signature">
+      <p><strong>-ShadowMe</strong></p>
+    </div>
+
+    <div class="buttons booking-btns">
+      <p><%= link_to "My Profile", "/admin/profile", class: "btn btn-outline-danger"%></p>
+      <p> <%= link_to "Home", root_path , class: "btn btn-outline-danger"%></p>
+    </div>
+  </div>
+
+  <div class="under">
+    <div class="pro-img">
+      <div class="container">
+        <div class="word-fix">
+          <span style="" class="banner-words">Prepare to Shadow</span>
+          <p class="sec-row">Find Your Career</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% elsif booking.confirmed? && booking.professional.user == user %>
+
+  <div class="req-content">
+    <h1>Request From <strong><%= booking.user.full_name %>!</strong></h1>
+    <p>Hi, <strong><%= user.first_name %></strong> <%= user.last_name %></p>
+    <p>You confirmed the request from <%= booking.user.email.capitalize %></p>
+    <p>From: <strong><%= booking.start_book.strftime("%b %d %Y") %></strong>  To: <strong><%= booking.end_book.strftime("%b %d %Y") %>.</strong></p>
+    <p>If you have any questions or concerns feel free to reach us any time at <strong>shadow@me.com</strong></p>
+  </div>
+
+  <div class="signature">
+    <p><strong>-ShadowMe</strong></p>
+  </div>
+
+  <div class="buttons">
+    <p><%= link_to "Home", root_path , class: "btn btn-outline-danger"%></p>
+  </div>
+
+  <div class="under">
+    <div class="pro-img">
+      <div class="container">
+        <div class="word-fix">
+          <span style="" class="banner-words">Prepare to Shadow</span>
+          <p class="sec-row">Find Your Career</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>

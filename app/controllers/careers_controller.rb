@@ -3,6 +3,7 @@ class CareersController < ApplicationController
 
   def show
     @career = Career.find(params[:id])
+    authorize @career
     @professionals = Professional.where(career: @career)
         @tags = {
             "agriculture" => "Freelance, Executive, Office Workder, Part-time, Entepreneur, Farm, Organic, Research, Growth, Nature",
@@ -15,5 +16,4 @@ class CareersController < ApplicationController
             "technology" => "Freelance, Executive, Office Workder, Part-time, Entepreneur, Date, Startup, Robotics, Software, Physic, Electricity"
           }
   end
-
 end

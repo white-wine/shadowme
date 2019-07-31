@@ -1,9 +1,9 @@
 <div class="chat-bubble-wrapper">
-  <% sender = message.sender == current_user ? "me" : "professional" %>
+  <% sender = message.sender == current_user ? "me" : "him" %>
   <div class="chat-bubble <%= sender %>">
     <div class="chat-username"><%= message.sender.identifier %></div>
     <div class="chat-message"><%= message.content %></div>
   </div>
 
-  <div class="chat-timestamp <%= sender %>"><%= message.created_at.strftime("%m-%e-%Y %H:%M") %></div>
+  <div class="chat-timestamp <%= sender %>"><%= message.created_at.strftime("%b %e, %l:%M %p") %></div>
 </div>

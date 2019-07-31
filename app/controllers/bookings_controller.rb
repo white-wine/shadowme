@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
     @review = Review.new()
     @messages = Message.where(booking: @booking)
     @message = Message.new()
@@ -20,6 +21,7 @@ class BookingsController < ApplicationController
 
     @booking.user = current_user if @booking.professional.user != current_user
     @booking.booking_status = 0
+    authorize @booking
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -54,7 +56,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:intro_message, :amount_of_days)
-
   end
-
 end

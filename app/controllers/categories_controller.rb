@@ -3,7 +3,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 before_action :set_category, only: [:show]
 
   def index
-    @categories = Category.all
+    @categories = policy_scope(Category).all
   end
 
   def show
@@ -25,5 +25,6 @@ before_action :set_category, only: [:show]
 
   def set_category
     @category = Category.find(params[:id])
+    authorize @category
   end
 end
