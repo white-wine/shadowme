@@ -621,7 +621,7 @@ pro = Professional.new(
   )
 puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-10.times do
+5.times do
   create_booking(pro, User.all.sample)
 end
 
@@ -649,7 +649,7 @@ pro = Professional.new(
   )
 puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-10.times do
+5.times do
   create_booking(pro, User.all.sample)
 end
 
@@ -677,16 +677,16 @@ pro = Professional.new(
   )
 puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-10.times do
+5.times do
   create_booking(pro, User.all.sample)
 end
 
 
 
 Professional.all.each do |pro|
-  3.times do
+  10.times do
     start = Faker::Date.backward(rand(20..100))
-    ending = start + rand(7..20)
+    ending = start + rand(7..19)
     booking = Booking.new(
       professional: pro,
       start_book: start,
