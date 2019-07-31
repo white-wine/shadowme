@@ -22,9 +22,9 @@
   transition: 0.5s ease;
   background-color: #ffd9d961;
 
-.salary-color {
-  color: gray;
-}
+  .salary-color {
+    color: gray;
+  }
 }
 
 .career-img {
@@ -100,7 +100,7 @@
 }
 
 .career-card-title{
-      color: black;
+  color: black;
 }
 
 .main-header-cat-cards {
@@ -122,12 +122,89 @@
   }
 }
 
+
+.main-foot-title {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 50px;
+  margin-bottom: 40px;
+  h3 {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 21px;
+    letter-spacing: 0px;
+    text-transform: none;
+    font-family: proxima-nova;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.2em;
+  }
+   h4 {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 350;
+    font-size: 21px;
+    letter-spacing: 0px;
+    text-transform: none;
+    font-family: proxima-nova;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    color: #f64747;
+  }
+  margin-bottom: 100px;
+}
+
+.main-foot-buttons {
+  justify-content: space-around;
+  a{
+    text-decoration: none;
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: black !important;
+    border: 1.5px solid #f64747;
+    border-radius: 20px;
+  }
+}
+
+
+.main-foot-buttons a:hover {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #f64747 !important;
+    border: 1.5px solid #f64747;
+      -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transition: 0.5s ease;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+
 .category-title {
-  border-bottom: #FFF 5px solid;
+  border-bottom: lightgray 2px solid;
   padding: 20px 50px 0 50px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: inline-block;
   color: #FFF !important;
+  font-family: 'Raleway', sans-serif;
+
+  margin-top: 20px;
+
+  h1 {
+    font-size: 3.5em;
+    font-weight: 200;
+  }
+}
+.foot-title {
+  border-bottom: lightgray 2px solid;
+  padding: 20px 50px 0 50px;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: #f64747 !important;
   font-family: 'Raleway', sans-serif;
 
   margin-top: 20px;
