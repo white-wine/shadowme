@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
     customer:     customer.id,   # You should store this customer id and re-use it.
     amount:       @donation.amount_cents,
     description:  "Payment for donation",
-    currency:     "ARS"
+    currency:     "USD"
   )
 
   @donation.update(payment: charge.to_json, state: 'paid')
