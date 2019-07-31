@@ -1,15 +1,15 @@
 .pro-career-img {
  display: block;
-  position: relative;
-  background-color: #FFFFFF;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  margin-top: -96px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  border-radius: 50%;
-  box-shadow:  2px 2px 5px #252424;
+ position: relative;
+ background-color: #FFFFFF;
+ width: 150px;
+ height: 150px;
+ margin: 0 auto;
+ margin-top: -96px;
+ margin-bottom: 10px;
+ overflow: hidden;
+ border-radius: 50%;
+ box-shadow:  2px 2px 5px #252424;
 }
 
 .pro-info{
@@ -79,3 +79,26 @@
   color: #555555;
 }
 
+// booking cards of the students
+.student-bookings {
+
+}
+
+
+
+
+.status-confirmed {
+  border-right: 2px solid green;
+  color:red;
+  i {
+    color: red;
+  }
+}
+
+.status-pending {
+  border-right: 2px solid green;
+  color: red;
+  i {
+    color: red;
+  }
+}
