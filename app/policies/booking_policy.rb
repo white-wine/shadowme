@@ -5,10 +5,10 @@ class BookingPolicy < ApplicationPolicy
     end
   end
   def create?
-    true
+    user.student?
   end
   def show?
-    true
+    is_owner?
   end
   def update?
     is_owner?
@@ -24,7 +24,6 @@ class BookingPolicy < ApplicationPolicy
   end
 
   private
-
 
   def is_owner?
     record.user == user

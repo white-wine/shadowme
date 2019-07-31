@@ -4,9 +4,6 @@ class ProfessionalsController < ApplicationController
   before_action :store_user_location!, if: :storable_location?
 
 
-  def index
-  end
-
   def show
     @booking = Booking.new()
   end
@@ -25,10 +22,6 @@ class ProfessionalsController < ApplicationController
       render :new
     end
   end
-
-  def edit
-  end
-
 
   def update
 
@@ -53,6 +46,7 @@ class ProfessionalsController < ApplicationController
 
   def set_professional
     @professional = Professional.find(params[:id])
+    authorize @professional
   end
 
 
