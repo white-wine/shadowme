@@ -126,3 +126,15 @@
  background-color: #de4048;
  color: white;
 }
+// button for search in navbar
+
+.search-btn {
+  padding: 6px 10px;
+  background-color: #fe525b;
+  border: 0px;
+  border-radius: 6px;
+  i {
+    color: white;
+    font-weight: bold;
+  }
+}
