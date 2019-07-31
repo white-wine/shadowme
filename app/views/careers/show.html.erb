@@ -1,6 +1,14 @@
-<div class="container">
-  <h2 class="category-title"><strong> <%= @career.title %> </strong></h2>
+<div class="container-fluid main-header-title">
+  <h1 class="category-title">
+    <i class="fas fa-users"></i>
+
+ <%= @career.title %> </h1>
   <h3 class="category-description"><%= @career.description %></h3>
+
+</div>
+
+
+<div class="container">
 
   <div class="row">
     <% @professionals.each do |professional| %>

@@ -16,10 +16,8 @@
   text-decoration: none;
   box-shadow: 0 0 15px rgba(6, 6, 6, 0.56);
   border-radius: 5px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
   p {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 400;
     color: white;
     text-align: center;
@@ -30,20 +28,19 @@
   margin-bottom: 0px !important;
   padding-bottom: 30px !important;
   font-size: 50px !important;
+  padding-top: 30px;
 }
 
 //Career Categories
-.category-title {
-  font-weight: bold;
-
-  text-align: center;
-  font-size: 50px;
-  margin-top: 50px;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 2px;
-  margin: 15px;
-
-}
+// .category-title {
+//   font-weight: bold;
+//   text-align: center;
+//   font-size: 50px;
+//   font-family: 'Poppins', sans-serif;
+//   letter-spacing: 2px;
+//   margin: 15px;
+//   margin-bottom: 50px;
+// }
 
 .category-description{
   font-size: 18px;
@@ -53,17 +50,14 @@
   margin-top: 20px;
 }
 .category-card {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+
 }
 
 
 .category-card:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
   transition: 0.5s ease;
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
 }
 
 

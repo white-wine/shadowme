@@ -1,26 +1,23 @@
 
 <div id="banner-carousel" class="banner banner-carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
+  <div class="carousel-inner banner-carousel-height">
     <div class="banner-container" >
       <h1 class="home-title">
         <span class="typewriter">
-          <h1 class="shadow">Shadow me</h1>
+
         </span>
         <br>
 
         <div>
           <span style="" class="banner-word shadow">Explore</span>
-           <span class="beforeChoose shadow"> before Choosing a</span>
+          <span class="beforeChoose shadow"> before Choosing a</span>
           <span style="" class="banner-word shadow">Career Path</span>
         </div>
       </h1>
 
-
-
-
       <div class="home-title">
         <div>
-          <p>Get the Opportinity to have an in person experience
+          <p>Get the Opportunity to have an in person experience
           with Professionals all over the world.</p>
         </div>
       </div>
@@ -53,20 +50,66 @@
     </div>
     <div class="col-12 col-sm-12 col-md-8 col-lg-6 offset-lg-1 about-us pr-5">
       <h2><span>About Us</span></h2>
-      <p>At shadow me, we help students figure out a career path. We do so by offering a in person experience with professionals. By doing so, it gives students an idea of what they will be doing.</p>
-
-      <p>At shadow me, Professionals can dedicate some of their time to help students figure out what to do career wise.</p>
+      <p>At <strong>ShadowMe</strong>, we help students figure out a career path. We do so by providing career information that students can navigate from and learn more about. We also help students find professionals to shadow. We believe that shadowing professionals will give students a satisfactory understanding of what that career consists of.</p>
+      <p>At <strong>ShadowMe</strong>, we have the best professionals who enjoy dedicating their time to help students find their dream job. To show our appreciation, we offer a service in which you can donate to thank these professionals.</p>
     </div>
   </div>
 </div>
+
+
+
+<div class="container-fluid about-us-holder">
+  <div class="col-12 col-sm-12 col-md-8 col-lg-6 offset-lg-1 about-us pr-5">
+    <h2><span>What you will gain?</span></h2>
+    <ul>
+      <p><strong>Learn</strong> about managing your career from your host’s own story.</p>
+      <p><strong>Practice</strong> networking during career conversations.</p>
+      <p><strong>Understand</strong> organizational culture during a workplace tour.</p>
+      <p><strong>Develop</strong> your career ideas by acquiring industry knowledge.</p>
+      <p><strong>Apply</strong> skills in the workplace through a planned activity.</p>
+    </ul>
+  </div>
+  <div class="col-12 col-sm-12 col-md-4 col-lg-5 pl-5">
+    <div class="cta-img" style="background-image: url('https://i.udemycdn.com/course/750x422/1727072_30e1_2.jpg');">
+    </div>
+  </div>
+</div>
+
 
 <div class="reviews-wrapper">
   <%= render "pages/testimonies" %>
 </div>
 
+
 <div class= "row-spacing">
   <div class="container">
-    <h2 class="home-title text-center"><span style="color:#fe525b;" class="">Top 4 categories</span></h2>
+    <h2 class="home-title text-center"><span style="color:#fe525b;" class=""><strong>DON'T TOUCH!!</strong></span></h2>
+    <div class="row">
+      <% @categories.each do |category| %>
+      <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
+        <%= link_to category_path(category), class: 'no-hover' do %>
+        <div class="box-container">
+          <div class="box">
+            <div class="category-card" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
+              <div class="content">
+                <h3><%= category.title %></h3>
+                <% category.careers.first(5).each do |career| %>
+                <p><%= career.title %></p>
+                <% end %>
+                <p>...more</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class= "row-spacing">
+  <div class="container">
+    <h2 class="home-title text-center"><span style="color:#fe525b;" class="">Top 4 Categories</span></h2>
     <div class="row">
       <% @categories.each do |category| %>
       <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
@@ -84,3 +127,4 @@
  </div>
 
 </div>
+

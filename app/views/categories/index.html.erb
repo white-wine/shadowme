@@ -1,14 +1,45 @@
-<div class="container">
+<div class="container main-header-title">
   <h2 class="category-title">Career Categories</h2>
+</div>
+
+
+
+<div class="container main-header-cat-cards">
+    <div class="row">
+      <% @categories.each do |category| %>
+      <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
+        <%= link_to category_path(category), class: 'no-hover' do %>
+        <div class="box-container">
+          <div class="box">
+            <div class="category-card" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
+              <div class="content">
+                <h3><%= category.title %></h3>
+                <% category.careers.first(5).each do |career| %>
+                <p><%= career.title %></p>
+                <% end %>
+                <p>...more</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+</div>
+
+<!--
+
+
   <div class="row">
     <% @categories.each do |category| %>
     <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
       <div class=''>
 
         <%= link_to category_path(category), class: 'no-hover' do %>
-      <div class="category-card m-1 mb-5" style="background-image: linear-gradient(rgba(40, 40, 40, -0.7), rgba(54, 58, 60,0.8)), url('<%= category.image %>');">
-       <p><%= category.title %></p>
-      </div>
+        <div class="category-card m-1 mb-5" style="background-image: linear-gradient(rgba(40, 40, 40, -0.7), rgba(54, 58, 60,0.8)), url('<%= category.image %>');">
+         <p><%= category.title %></p>
+       </div>
 
      </div>
      <% end %>
@@ -16,5 +47,5 @@
    <% end %>
  </div>
 
-</div>
-rgba(40, 40, 40, -0.4)), to(rgba(54, 58, 60, 0.8)
+
+ -->

@@ -4,7 +4,7 @@
   background-color: white;
   width: 570px;
   margin: 0 auto;
-  padding-top: 75px;
+  padding-top: 40px;
   padding-bottom: 75px;
   padding-left: 50px;
   padding-right: 50px;
@@ -17,18 +17,22 @@
 }
 
 .request-sent {
- border-bottom: 1px solid lightgray;
- text-align: center;
+
+ text-align: left;
  h1 {
   padding-bottom: 20px;
   font-size: 25px;
+  border-bottom: 1px solid lightgray;
+ text-align: center;
+ margin-bottom: 30px;
 
  }
+
 }
 
 .under {
   border-top: 1px solid lightgray;
-  padding-top: 10px;
+  padding-top: 30px;
   margin-top: 10px;
   padding-bottom: 10px;
   display: flex;
@@ -63,17 +67,23 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
 
 .req-content {
   margin-top: 30px;
+  h1  {
+    color: #fe525b;
 }
-
+}
 .banner-words {
-   background: -webkit-linear-gradient(#fe525b, #FE8188);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fe525b;
+
   font-size: 30px;
+
 
 }
 
 .sec-row {
   font-size: 20px;
+
 }
 
+.word-fix {
+  margin-top: 100px;
+}

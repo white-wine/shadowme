@@ -1,27 +1,22 @@
+.category-container {
+  width: 100%;
+  margin: 100px auto;
+}
 .career-card {
   display: flex;
-  width: 540px;
   height: 200px;
-  margin: 50px;
+  margin: 10px;
   border-radius: 2px;
   background-color: white;
-
- -webkit-filter: grayscale(100%);
- filter: grayscale(100%);
   box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
 }
 
-.container{
-  max-width: 78% !important;
-}
 .career-card:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-
-          -webkit-filter: grayscale(0%);
-filter: grayscale(0%);
-transition: 0.5s ease;
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
+  transition: 0.5s ease;
+  background-color: #ffd9d961;
 }
 
 .career-img {
@@ -30,6 +25,7 @@ transition: 0.5s ease;
   width: 140px;
   object-fit: cover;
 }
+
 .review-title {
   justify-content: center;
   text-align: center;
@@ -75,7 +71,7 @@ transition: 0.5s ease;
   margin-top: 5px;
   margin-bottom: 10px;
   span {
-    background-color: rgba(0,0,0,0.8);
+    background-color: #f64747;
     padding: 3px 15px;
     border-radius: 4px;
     font-size: 10px;
@@ -92,4 +88,39 @@ transition: 0.5s ease;
 .career-description-connection:hover {
   text-decoration: none;
   color: black;
+}
+
+.main-header-cat-cards {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 50px;
+  margin-bottom: 40px;
+}
+
+.main-header-title {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 50px;
+  margin-bottom: 40px;
+  background-color: #f64747;
+  h3 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+  }
+}
+
+.category-title {
+  border-bottom: #FFF 5px solid;
+  padding: 0 50px 0 50px;
+  margin-bottom: 20px;
+  display: inline-block;
+  color: #FFF !important;
+  font-family: 'Raleway', sans-serif;
+
+  margin-top: 20px;
+
+  h1 {
+    font-size: 3.5em;
+    font-weight: 200;
+  }
 }
