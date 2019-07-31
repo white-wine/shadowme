@@ -60,13 +60,13 @@
 
 <div class="container-fluid about-us-holder">
   <div class="col-12 col-sm-12 col-md-8 col-lg-6 offset-lg-1 about-us pr-5">
-    <h2><span>What you will gain</span></h2>
+    <h2><span>What you will gain?</span></h2>
     <ul>
-      <li>Learn about managing your career from your host’s own story</li>
-      <li>Practice networking during career conversations</li>
-      <li>Understand organizational culture during a workplace tour</li>
-      <li>Develop your career ideas by acquiring industry knowledge</li>
-      <li>Apply skills in the workplace through a planned activity</li>
+      <p>Learn about managing your career from your host’s own story.</p>
+      <p>Practice networking during career conversations.</p>
+      <p>Understand organizational culture during a workplace tour.</p>
+      <p>Develop your career ideas by acquiring industry knowledge.</p>
+      <p>Apply skills in the workplace through a planned activity.</p>
     </ul>
   </div>
   <div class="col-12 col-sm-12 col-md-4 col-lg-5 pl-5">
@@ -76,11 +76,37 @@
 </div>
 
 
-
 <div class="reviews-wrapper">
   <%= render "pages/testimonies" %>
 </div>
 
+
+<div class= "row-spacing">
+  <div class="container">
+    <h2 class="home-title text-center"><span style="color:#fe525b;" class=""><strong>DON'T TOUCH!!</strong></span></h2>
+    <div class="row">
+      <% @categories.each do |category| %>
+      <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
+        <%= link_to category_path(category), class: 'no-hover' do %>
+        <div class="box-container">
+          <div class="box">
+            <div class="category-card" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
+              <div class="content">
+                <h3><%= category.title %></h3>
+                <% category.careers.first(5).each do |career| %>
+                <p><%= career.title %></p>
+                <% end %>
+                <p>...more</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <div class= "row-spacing">
   <div class="container">
     <h2 class="home-title text-center"><span style="color:#fe525b;" class="">Top 4 Categories</span></h2>
@@ -101,3 +127,4 @@
  </div>
 
 </div>
+
