@@ -83,7 +83,7 @@
 
 <div class= "row-spacing">
   <div class="container">
-    <h2 class="home-title text-center"><span style="color:#fe525b;" class=""><strong>DON'T TOUCH!!</strong></span></h2>
+    <h2 class="home-title text-center"><span style="color:#fe525b;" class=""><strong>Top 4 Categories</strong></span></h2>
     <div class="row">
       <% @categories.each do |category| %>
       <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
@@ -91,12 +91,16 @@
         <div class="box-container">
           <div class="box">
             <div class="category-card" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
-              <div class="content">
+              <div class="content p-2 category-card-title">
                 <h3><%= category.title %></h3>
-                <% category.careers.first(5).each do |career| %>
-                <p><%= career.title %></p>
-                <% end %>
-                <p>...more</p>
+                <div class='d-flex flex-column justify-content-between h-100 align-items-center'>
+                  <% category.careers.first(5).each do |career| %>
+                  <p class="career-titles">
+                  <%= career.title %>
+                  </p>
+                  <% end %>
+                  <p>...more</p>
+                </div>
               </div>
             </div>
           </div>
@@ -107,24 +111,3 @@
     </div>
   </div>
 </div>
-<div class= "row-spacing">
-  <div class="container">
-    <h2 class="home-title text-center"><span style="color:#fe525b;" class="">Top 4 Categories</span></h2>
-    <div class="row">
-      <% @categories.each do |category| %>
-      <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
-        <%= link_to category_path(category), class: 'no-hover' do %>
-
-        <div class="category-card m-1 mx-1" style="background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(54, 58, 60)), url('<%= category.image %>');">
-
-         <p><%= category.title %></p>
-
-       </div>
-       <% end %>
-     </div>
-     <% end %>
-   </div>
- </div>
-
-</div>
-

@@ -3,11 +3,38 @@
 </div>
 
 
-
 <div class="container main-header-cat-cards">
+
+  <div class="row">
+    <% @categories.each do |category| %>
+    <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3 category-row">
+      <%= link_to category_path(category), class: 'no-hover' do %>
+      <div class="box-container">
+        <div class="box">
+          <div class="category-card" style="background-image: linear-gradient(rgba(40, 40, 40, 0.1), rgba(54, 58, 60)), url('<%= category.image %>');">
+            <div class="content p-2 category-card-title">
+              <h3><%= category.title %></h3>
+              <div class='d-flex flex-column justify-content-between h-100 align-items-center'>
+                <% category.careers.first(5).each do |career| %>
+                <p class="career-titles">
+                  <%= career.title %>
+                </p>
+                <% end %>
+                <p>...more</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<!-- <div class="container main-header-cat-cards">
     <div class="row">
       <% @categories.each do |category| %>
-      <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3">
+      <div class="col-12 col-xs-12 col-md-6 col-lg-3 col-xl-3 category-row">
         <%= link_to category_path(category), class: 'no-hover' do %>
         <div class="box-container">
           <div class="box">
@@ -15,7 +42,7 @@
               <div class="content">
                 <h3><%= category.title %></h3>
                 <% category.careers.first(5).each do |career| %>
-                <p><%= career.title %></p>
+                <p class="category-p"><%= career.title %></p>
                 <% end %>
                 <p>...more</p>
               </div>
@@ -27,7 +54,7 @@
       <% end %>
     </div>
 </div>
-
+-->
 <!--
 
 
@@ -48,4 +75,4 @@
  </div>
 
 
- -->
+-->
