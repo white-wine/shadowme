@@ -2,11 +2,13 @@
   <div class="request-sent">
     <% if @booking.booking_status != "pending" %>
     <div class="req-content">
-      <h1>Request confirmed with: <strong> <%= @booking.professional.user.full_name %></strong></h1>
+      <h1>Request confirmed with: <strong> <%= @booking.professional.user.full_name %></strong> (<%= @booking.professional.user.email %>)</h1>
       <p>Get ready to shadow!!</p>
       <p>Hi, <%= @booking.user.first_name %></strong> <%= @booking.user.last_name %></p>
       <p>Your request has been approved. Your Shadow request
-        <p>From: <strong><%= @booking.start_book.strftime("%b %d %Y") %></strong>  To: <strong><%= @booking.end_book.strftime("%b %d %Y") %>.</strong></p>
+        <p>From: <strong><%= @booking.start_book.strftime("%b %d %Y") %></strong></p>
+        <p>  To: <strong><%= @booking.end_book.strftime("%b %d %Y") %></strong>.</p>
+        <p>Address: <%= @booking.professional.address %></p>
          Note that this is a professional setting. Please be on time and come prepared.</p>
         <p>If you have any questions or concerns feel free to reach us any time at <strong>shadow@me.com</strong></p>
       </div>

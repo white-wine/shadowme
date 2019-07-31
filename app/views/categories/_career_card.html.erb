@@ -3,7 +3,7 @@
  <%= image_tag career.image, class:"career-img" %>
  <div class="career-description">
   <div>
-    <h2><%= career.title %></h2>
+    <h2 class="career-card-title"><%= career.title %></h2>
     <div class="career-tags">
       <% @tags[career.category.title.downcase].split(", ").sample(3).each do |tag| %>
       <span class="career-tag"><%= tag %></span>
@@ -13,7 +13,7 @@
   </div>
   <div class="career-icons">
    <div class="career-icon">
-    <i class="fas fa-dollar-sign"></i> <%= rand(50000..100000)%> (salary per year)
+    <i class="fas fa-dollar-sign"></i><span class="salary-color"> <%= rand(50000..100000)%> (salary per year)</span>
   </div>
   <div class="career-icon">
     <i class="fas fa-users"></i> <%= career.professionals.count %> Professionals

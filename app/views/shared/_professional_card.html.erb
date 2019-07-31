@@ -2,7 +2,7 @@
 
 <%= link_to professional_path(professional), class:"career-description-connection" do %>
 <div class="professional_card">
-  <div class="pro-banner">
+  <div class="pro-banner" style="background-color: <%= ["red", "blue", "yellow", "purple", "#008080", "green", "orange", "crimson", "pink"].sample %>;">
   </div>
   <div class="pro-photo_avatar" >
     <%= image_tag(professional.user.photo, class:"pro_photo") %>
@@ -12,10 +12,10 @@
     <div class="pro_job">
       <h2><%= professional.user.first_name %> <%= professional.user.last_name %></h2>
       <div class="job_details">
-    <% if  !professional.user.user_description.nil? %>
+        <% if  !professional.user.user_description.nil? %>
 
-        <p><%= professional.user.user_description.truncate(51, omission: "... (more)") %></p>
-    <% end %>
+        <p><%= professional.user.user_description.truncate(60, omission: "... (more)") %></p>
+        <% end %>
 
         <div class="logo-wrapper">
           <%= image_tag(professional.company_logo, class:"company_logo") %>
@@ -25,40 +25,40 @@
         <div class="pro_separation"></div>
       </div>
 
-        <div class="pro_details">
-          <div class="pro_expertise">
-            <span>Career Expertise</span>
-            </div>
-            <div class="pro_tags">
-              <span>MANAGEMENT</span>
-              <span>FINANCE</span>
-              <span>SALES</span>
-          </div>
-          <div class="pro_reviews">
-            <div class="d-flex justify-content-between pr-3">
-              <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
-              <div>
-                <% empty_stars = 5 - professional.average_rating  %>
-                <% professional.average_rating.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-                <% empty_stars.times do %>
-                  <i class="far fa-star"></i>
-                <% end %>
-              </div>
-            </div>
-            <div class="pro_review">
-              <% professional.reviews.last(2).each do |review| %>
-                <div class="review_one">
-                  <%= image_tag(review.user.photo, class:"review_avatar") %>
-                  <span class="text_review"><%= review.content.truncate(45, omission: "... (more)") %></span>
-                </div>
+      <div class="pro_details">
+        <div class="pro_expertise">
+          <span>Career Expertise</span>
+        </div>
+        <div class="pro_tags">
+          <% @tags[professional.career.category.title.downcase].split(", ").sample(3).each do |tag| %>
+          <span class="career-tag"><%= tag %></span>
+          <% end %>
+        </div>
+        <div class="pro_reviews">
+          <div class="d-flex justify-content-between pr-3">
+            <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
+            <div>
+              <% empty_stars = 5 - professional.average_rating  %>
+              <% professional.average_rating.times do %>
+              <span class="golden-stars"><i class="fas fa-star"></i></span>
+              <% end %>
+              <% empty_stars.times do %>
+              <span class="golden-stars"><i class="far fa-star"></i></span>
               <% end %>
             </div>
+          </div>
+          <div class="pro_review">
+            <% professional.reviews.last(2).each do |review| %>
+            <div class="review_one">
+              <%= image_tag(review.user.photo, class:"review_avatar") %>
+              <span class="text_review"><%= review.content.truncate(45, omission: "... (more)") %></span>
+            </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-            <% end %>
+<% end %>
