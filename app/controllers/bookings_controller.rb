@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     @review = Review.new()
     @messages = Message.where(booking: @booking)
     @message = Message.new()
+    @user = current_user
   end
 
   def create
@@ -34,12 +35,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @booking.booking_status = 1
     @booking.save
+    redirect_to booking_path(@booking)
   end
 
   def decline
     @booking = Booking.find(params[:booking_id])
     @booking.booking_status = 2
     @booking.save
+    redirect_to booking_path(@booking)
   end
 
   private

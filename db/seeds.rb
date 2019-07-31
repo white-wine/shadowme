@@ -410,51 +410,51 @@ def faker_female
 end
 ## CREATE PRO USER
 def create_user(career)
+  2.times do
 
-
-  male_user = User.new(
-    user_type: 1,
-    account_status: 1,
-    first_name: faker_male.split.first,
-    last_name: Faker::Name.last_name,
-    birth: (Date.today - (365 * rand(25..50))),
-    user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
+    male_user = User.new(
+      user_type: 1,
+      account_status: 1,
+      first_name: faker_male.split.first,
+      last_name: Faker::Name.last_name,
+      birth: (Date.today - (365 * rand(25..50))),
+      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         photo: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
         password: 123456
         )
-  male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
-  puts male_user.first_name
-  puts male_user.last_name
-  puts male_user.email
-  puts male_user.user_description
-  puts male_user.photo
-  male_user.save!
+    male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
+    puts male_user.first_name
+    puts male_user.last_name
+    puts male_user.email
+    puts male_user.user_description
+    puts male_user.photo
+    male_user.save!
 
-  create_professional(male_user, career)
+    create_professional(male_user, career)
 
-  fem_user = User.new(
-    user_type: 1,
-    account_status: 1,
-    first_name: faker_female.split.first,
-    last_name: Faker::Name.last_name,
-    birth: (Date.today - (365 * rand(25..50))),
-    user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
+    fem_user = User.new(
+      user_type: 1,
+      account_status: 1,
+      first_name: faker_female.split.first,
+      last_name: Faker::Name.last_name,
+      birth: (Date.today - (365 * rand(25..50))),
+      user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
         # user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
         photo: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
         password: 123456
         )
-  fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
-  puts fem_user.first_name
-  puts fem_user.last_name
-  puts fem_user.email
-  puts fem_user.user_description
-  puts fem_user.photo
+    fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
+    puts fem_user.first_name
+    puts fem_user.last_name
+    puts fem_user.email
+    puts fem_user.user_description
+    puts fem_user.photo
 
-  fem_user.save!
+    fem_user.save!
 
-  create_professional(fem_user, career)
-
+    create_professional(fem_user, career)
+  end
 end
 
 def create_review(booking, student)
@@ -494,7 +494,7 @@ def create_student_user(professional)
   2.times do
     fem_student = User.new(
       user_type: 0,
-    account_status: 1,
+      account_status: 1,
       first_name: Faker::Name.female_first_name,
       last_name: Faker::Name.last_name,
       birth: Faker::Date.backward(365 * rand(15..20)),
@@ -510,7 +510,7 @@ def create_student_user(professional)
 
     male_student = User.new(
       user_type: 0,
-    account_status: 1,
+      account_status: 1,
       first_name: Faker::Name.male_first_name,
       last_name: Faker::Name.last_name,
       birth: Faker::Date.backward(365 * rand(15..20)),
@@ -600,7 +600,7 @@ puts "Finished seeding process"
 my_user = User.new(
   email: "lux@mail.com",
   user_type: 1,
-    account_status: 1,
+  account_status: 1,
   first_name: "Lux",
   last_name: "Le Wagon",
   birth: Faker::Date.backward(365 * 25),
@@ -621,14 +621,14 @@ pro = Professional.new(
   )
 puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-4.times do
+10.times do
   create_booking(pro, User.all.sample)
 end
 
 my_user = User.new(
   email: "faby@mail.com",
   user_type: 1,
-    account_status: 1,
+  account_status: 1,
   first_name: "Faby",
   last_name: "Le Wagon",
   birth: Faker::Date.backward(365 * 25),
@@ -649,14 +649,14 @@ pro = Professional.new(
   )
 puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-4.times do
+10.times do
   create_booking(pro, User.all.sample)
 end
 
 my_user = User.new(
   email: "sole@mail.com",
   user_type: 1,
-    account_status: 1,
+  account_status: 1,
   first_name: "Sole",
   last_name: "Le Wagon",
   birth: Faker::Date.backward(365 * 25),
@@ -677,7 +677,7 @@ pro = Professional.new(
   )
 puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-4.times do
+10.times do
   create_booking(pro, User.all.sample)
 end
 
