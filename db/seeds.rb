@@ -4,7 +4,7 @@ Category.destroy_all
 User.destroy_all
 start_time = Time.now
 
-REVIEWS = ["A great experience with very knowledgeable local guides, well organised and executed.", "Amazing career", "So interesting!", "I learnt a lot about the process", "Amazing experience!", "Best experience ever!", "I really think it's an amazing career!", "I learned a lot!", "I had a wonderful experience shadowing this professional", "I absolutely love this career", "Everything went very smoothly", "It was great, fast, easy experience.", "I would recommend you guys to anyone."]
+REVIEWS = ["I found my passion through.", "Enjoyed my time with great Professionals.", "A great experience with very knowledgeable local guides, well organised and executed.", "Amazing career", "So interesting!", "I learnt a lot about the process", "Amazing experience!", "Best experience ever!", "I really think it's an amazing career!", "I learned a lot!", "I had a wonderful experience shadowing this professional", "I absolutely love this career", "Everything went very smoothly", "It was great, fast, easy experience.", "I would recommend you guys to anyone."]
 
 POSITIONS = ["assistant", "executive", "manager", "director", "chief", "supervisor", "coordinator", "specialist"]
 CATEGORIES = [
@@ -14,40 +14,34 @@ CATEGORIES = [
 		image: "https://www.worldatlas.com/r/w728-h425-c728x425/upload/f2/03/7e/shutterstock-653708227.jpg"
 	},
 	{
-		title: "Education",
-		description: "Do you love helping people and spreading knowledge? Are you passionate about a specific academic subject (or subjects)? If so, an education major might be for you.",
-		image: "https://images.theconversation.com/files/242320/original/file-20181025-71023-hjn5fq.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip"
-	},
-
-	{
 		title: "Arts",
 		description: "Art as a major encompasses many topics. Therefore, there is a wide range of individuals who will enjoy taking art as a major. Artistic individuals are able to draw, paint write or design are primary candidates for this major. They may also have a keen sense of music and know how to play an instrument. Hobbies for art students may involve playing music, painting, attending plays, attending the theater, analyzing movies, writing creatively, drawing, or reading.",
 		image: "https://www.youth.ie/wp-content/uploads/2019/03/NYCI-Youth-Arts-2.jpg"
 	},
-
+	{
+		title: "Education",
+		description: "Do you love helping people and spreading knowledge? Are you passionate about a specific academic subject (or subjects)? If so, an education major might be for you.",
+		image: "https://images.theconversation.com/files/242320/original/file-20181025-71023-hjn5fq.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip"
+	},
 	{
 		title: "Engineering",
 		description: "Combining mathematics, science and technology, engineers produce creative solutions to real world problems. ... In the past, engineering could be divided into four major branches: Mechanical, Chemical, Civil and Electrical, with sub branches of each discipline.",
 		image: "https://retos-operaciones-logistica.eae.es/wp-content/uploads/2018/05/iStock-869287090-600x426.jpg"
 	},
-
 	{
 		title: "Health",
 		description: "A program of study that prepares individuals to assume roles as health/wellness professionals in private business and industry, community organizations, and health care settings.",
 		image: "https://hhp-blog.s3.amazonaws.com/2018/02/iStock-639896942.jpg"
-
 	},
 	{
 		title: "Law",
 		description: "Although undergraduate majors such as political science, history, economics, communication, journalism and philosophy are traditionally associated with law school, the truth is that no single major qualifies or disqualifies a student.",
 		image: "https://www.sharda.ac.in/blog/wp-content/uploads/2017/08/4-Main-Types-of-Law-Which-One-Is-the-Best-For-You.jpg"
 	},
-
 	{
 		title: "Science",
 		description: "Science play a major role in applying the principles and theories of science and mathematics to solve problems occurring in research and development processes. They are responsible for setting up laboratory equipment and monitoring experiments. Science technicians monitoring manufacturing processes are also required to ensure product quality by carrying out random product tests.",
 		image: "https://cms.qut.edu.au/__data/assets/image/0006/776760/GettyImages-925324224.jpg"
-
 	},
 	{
 		title: "Technology",
@@ -429,7 +423,7 @@ def create_user(career)
         photo: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
         password: 123456
         )
-  male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + "@mail.com"
+  male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
   puts male_user.first_name
   puts male_user.last_name
   puts male_user.email
@@ -450,7 +444,7 @@ def create_user(career)
         photo: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
         password: 123456
         )
-  fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + "@mail.com"
+  fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
   puts fem_user.first_name
   puts fem_user.last_name
   puts fem_user.email
