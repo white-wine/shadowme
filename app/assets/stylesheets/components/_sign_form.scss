@@ -169,11 +169,13 @@
   }
 
   .overlay {
-    background: #FF416C;
-    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
-            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    background: #fb4a3f;
+    background: -webkit-linear-gradient(to right, #FF33F7, #fe525b);
+// background: linear-gradient(200deg, rgba(200,0,0,.8), rgba(255,0,0,0) 50%),
+//             linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+//             linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+     background: radial-gradient(circle, rgba(251,74,63,0.9458158263305322) 0%, rgba(120,119,119,0.8785889355742297) 95%);
+     background: radial-gradient(circle, rgba(251,74,63,0.9458158263305322) 0%, rgba(91,91,91,0.9514180672268907) 95%);
             background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
