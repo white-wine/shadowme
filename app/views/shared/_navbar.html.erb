@@ -11,24 +11,34 @@
 
   </div>
 
-
-
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
 
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
+      <% if current_user.user_type == "student" %>
 
+      <li class="nav-item">
+        <div class="navbar_search d-none d-sm-inline">
+          <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+          <%= text_field_tag :q, params[:q], class: "form-control"  %>
+          <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
+          <%= button_tag(type: "submit", class: "search-btn") do %>
+          <i class="fas fa-search"></i>
+          <% end %>
+          <% end %>
+        </div>
+      </li>
 
+      <li class="nav-item">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-out" %>
+      </li>
 
-              <% if current_user.user_type == "student" %>
+      <div class="logo-n-phrase" aria-labelledby="navbarDropdown">
 
               <li class="nav-item">
                 <div class="navbar_search d-none d-sm-inline">
@@ -42,29 +52,36 @@
                 </div>
               </li>
 
-              <li class="nav-item">
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-out" %>
-              </li>
+        <% if !current_user.photo.nil? %>
+        <%= image_tag current_user.photo, class: "avatar"%>
+        <% else %>
+        <%= image_tag "default-avatar.jpg", class: "avatar"%>
 
-              <div class="logo-n-phrase" aria-labelledby="navbarDropdown">
-
-                            <%= link_to admin_profile_index_path do %>
-
-                                        <% if !current_user.photo.nil? %>
-                                        <%= image_tag current_user.photo, class: "avatar"%>
-                                        <% else %>
-                                        <%= image_tag "default-avatar.jpg", class: "avatar"%>
-
-                                        <% end %>
-
-
-                <% end %>
+        <% end %>
+        <% end %>
       </div>
 
 
-              <% elsif current_user.professional&.id.present? %>
+      <% elsif current_user.user_type == "professional" %>
 
 
+      <li class="nav-item">
+        <div class="navbar_search d-none d-sm-inline">
+          <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+          <%= text_field_tag :q, params[:q], class: "form-control"  %>
+          <%= select_tag :search_type, options_for_select(["user", "category", "career"], params[:search_type]),class: "form-control" %>
+          <%= button_tag(type: "submit", class: "search-btn") do %>
+          <i class="fas fa-search"></i>
+          <% end %>
+          <% end %>
+        </div>
+      </li>
+
+
+
+
+
+<<<<<<< HEAD
               <li class="nav-item">
                 <div class="navbar_search d-none d-sm-inline">
                               <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
@@ -77,27 +94,50 @@
                 </div>
               </li>
                             <li class="nav-item">
+=======
+
+
+<!--                             <li class="nav-item">
+>>>>>>> master
                 <%= link_to "Create Professional Profile", new_professional_path, class: "nav-link nav-btn" %>
               </li>
-
-              <li class="nav-item">
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-out" %>
-              </li>
-
-              <div class="logo-n-phrase" aria-labelledby="navbarDropdown">
-
-                            <%= link_to admin_profile_index_path do %>
-
-                                        <% if !current_user.photo.nil? %>
-                                        <%= image_tag current_user.photo, class: "avatar"%>
-                                        <% else %>
-                                        <%= image_tag "default-avatar.jpg", class: "avatar"%>
-
-                                        <% end %>
-                            <% end %>
+            -->
 
 
+
+
+            <li class="nav-item">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-out" %>
+            </li>
+
+            <div class="logo-n-phrase" aria-labelledby="navbarDropdown">
+
+              <%= link_to admin_profile_index_path do %>
+
+              <% if !current_user.photo.nil? %>
+              <%= image_tag current_user.photo, class: "avatar"%>
+              <% else %>
+              <%= image_tag "default-avatar.jpg", class: "avatar"%>
+
+              <% end %>
+              <% end %>
+
+
+              <% end %>
+            </div>
+            <!-- Si no esta logueado -->
+            <% else %>
+
+
+            <li class="nav-item">
+              <div class="navbar_search d-none d-sm-inline">
+                <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+                <%= text_field_tag :q, params[:q], class: "form-control"  %>
+                <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
+                <%= button_tag(type: "submit", class: "search-btn") do %>
+                <i class="fas fa-search"></i>
                 <% end %>
+<<<<<<< HEAD
       </div>
 <!-- Si no esta logueado -->
       <% else %>
@@ -118,22 +158,32 @@
       </li>
       <% end %>
     </ul>
+=======
+                <% end %>
+              </div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+            <% end %>
+          </ul>
+>>>>>>> master
 
 
 
-  </div>
-</div>
-<script>const initUpdateNavbarOnScroll = () => {
-  const navbar = document.querySelector('.navbar-lewagon');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
-        navbar.classList.add('navbar-lewagon-white');
-      } else {
-        navbar.classList.remove('navbar-lewagon-white');
+        </div>
+      </div>
+      <script>const initUpdateNavbarOnScroll = () => {
+        const navbar = document.querySelector('.navbar-lewagon');
+        if (navbar) {
+          window.addEventListener('scroll', () => {
+            if (window.scrollY >= window.innerHeight) {
+              navbar.classList.add('navbar-lewagon-white');
+            } else {
+              navbar.classList.remove('navbar-lewagon-white');
+            }
+          });
+        }
       }
-    });
-  }
-}
 
-export { initUpdateNavbarOnScroll };</script>
+    export { initUpdateNavbarOnScroll };</script>
