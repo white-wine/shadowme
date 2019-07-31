@@ -9,12 +9,10 @@
     <div class="confirm-wrapper">
       <p><strong><i class="far fa-calendar-alt"></i> Booking:</strong> <%= booking.start_book.strftime("%b %d %Y") %> <i class="fas fa-minus"></i> <%= booking.end_book.strftime("%b %d %Y") %>
         <div class="confirm-container">
-          <%= link_to "Confirm", root_path , class: "btn btn-outline-danger"%>
-          <%= link_to "Decline", root_path , class: "btn btn-outline-danger"%></p>
+          <%= link_to "Confirm", booking_path(booking), class: "btn btn-outline-danger"%>
+          <%= link_to "Decline", decline_booking_path(booking), class: "btn btn-outline-danger"%></p>
         </div>
       </div>
     </div>
-
-
     <% end %>
   </div>

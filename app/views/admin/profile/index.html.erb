@@ -1,3 +1,5 @@
+<% if current_user.user_type == "student" %>
+
 <div class="profile-container">
   <div class="professional-info">
     <% if !@current_user.photo.nil? %>
@@ -5,41 +7,107 @@
     <% end %>
 
     <p><strong>Name:</strong><%= current_user.first_name %> <%= current_user.last_name %></p>
-    <p><%= current_user.professional.specialty %></p>
-    <div class="professional-tags">
-      <p><strong>User email: </strong> <%= current_user.email %></p>
-      <p><strong>Amount of bookings: </strong> <%= current_user.professional.bookings.count %></p>
-    </div>
-  </div>
-  <div class="tab-wrapper">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pending Requests</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">History Requests</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">All Requests</a>
-      </li>
-    </ul>
 
-    <div class="tab-content">
-      <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <%= render "/admin/profile/pending_requests" %>
-      </div>
-      <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <%= render "/admin/profile/history_requests" %>
-      </div>
-      <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-        <%= render "/admin/profile/all_requests" %>
-      </div>
-    </div>
   </div>
-</div>
-<script>
-  $('#myTab a').on('click', function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-  })
-</script>
+  <div class="container student-bookings">
+
+
+
+
+    <div class="pending-wrapper">
+
+
+
+
+      <% current_user.bookings.all.each do |booking| %>
+      <div class="pending-container">
+        <%= image_tag booking.professional.user.photo, class:"student-career-img" %>
+        <div class="pending-content">
+          <p><strong>Professional name:</strong> <%= booking.professional.user.first_name %> <%= booking.professional.user.last_name %></p>
+          <p><strong>Message:</strong> <%= booking.intro_message%></p>
+        </div>
+        <div class="confirm-wrapper">
+          <p><strong><i class="far fa-calendar-alt"></i> Booking:</strong> <%= booking.start_book.strftime("%b %d %Y") %> <i class="fas fa-minus"></i> <%= booking.end_book.strftime("%b %d %Y") %>
+
+
+
+
+            <% if booking.booking_status == "confirmed" %>
+
+
+
+            <div class="status-confirmed"><p><strong>Status: </strong><%= booking.booking_status %> <i class="far fa-check-circle"></i></p></div>
+
+              <% else %>
+              <div class="status-pending"><p><strong>Status: </strong><%= booking.booking_status %> <i class="fas fa-times"></i></p></div>
+
+              <% end %>
+
+
+              <div class="confirm-container">
+                <%= link_to "Booking request status", booking_path(booking), class: "btn btn-outline-danger"%>
+              </div>
+            </div>
+          </div>
+          <% end %>
+
+
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+
+      <% else %>
+      <div class="profile-container">
+        <div class="professional-info">
+          <% if !@current_user.photo.nil? %>
+          <%= image_tag current_user.photo, class:"pro-career-img rounded-circle" %>
+          <% end %>
+
+          <p><strong>Name:</strong><%= current_user.first_name %> <%= current_user.last_name %></p>
+          <p><%= current_user.professional.specialty %></p>
+          <div class="professional-tags">
+            <p><strong>User email: </strong> <%= current_user.email %></p>
+            <p><strong>Amount of bookings: </strong> <%= current_user.professional.bookings.count %></p>
+          </div>
+        </div>
+        <div class="tab-wrapper">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pending Requests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">History Requests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">All Requests</a>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <%= render "/admin/profile/pending_requests" %>
+            </div>
+            <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <%= render "/admin/profile/history_requests" %>
+            </div>
+            <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+              <%= render "/admin/profile/all_requests" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $('#myTab a').on('click', function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+      </script>
+      <% end %>

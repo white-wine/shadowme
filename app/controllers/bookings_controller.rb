@@ -6,6 +6,10 @@ class BookingsController < ApplicationController
     @review = Review.new()
     @messages = Message.where(booking: @booking)
     @message = Message.new()
+    @user = current_user
+    if @user == @booking.professional.user
+     confirm
+   end
   end
 
   def create
@@ -33,7 +37,7 @@ class BookingsController < ApplicationController
   end
 
   def confirm
-    @booking = Booking.find(params[:booking_id])
+    @booking = Booking.find(params[:id])
     @booking.booking_status = 1
     @booking.save
   end
