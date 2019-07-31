@@ -91,5 +91,29 @@
 }
 
 .main-header-title {
-  margin-top: 90px;
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 50px;
+  margin-bottom: 40px;
+  background-color: #f64747;
+  h3 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+  }
+}
+
+.category-title {
+  border-bottom: #FFF 5px solid;
+  padding: 0 50px 0 50px;
+  margin-bottom: 20px;
+  display: inline-block;
+  color: #FFF !important;
+  font-family: 'Raleway', sans-serif;
+
+  margin-top: 20px;
+
+  h1 {
+    font-size: 3.5em;
+    font-weight: 200;
+  }
 }

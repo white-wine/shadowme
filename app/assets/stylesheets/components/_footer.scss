@@ -117,40 +117,40 @@
 }
 .social-links {
   background-color: transparent;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 .social-links>a {
-   margin-left: 13px;
-    position: relative;
-    -webkit-transition: .2s;
-    transition: .2s;
-    color: #7a7a8c;
-    position: relative;
+ margin-left: 13px;
+ position: relative;
+ -webkit-transition: .2s;
+ transition: .2s;
+ color: #7a7a8c;
+ position: relative;
 
 }
 .social-links>a strong {
-    background: -webkit-gradient(linear,left top,right top,from(#ff8a00),to(#da1b60));
-    background: linear-gradient(to right,#fe525b,#da1b60);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-    display: block;
-  }
+  background: -webkit-gradient(linear,left top,right top,from(#ff8a00),to(#da1b60));
+  background: linear-gradient(to right,#fe525b,#da1b60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  display: block;
+}
 .footer-contact a :hover {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-        :hover{
-  display: inline-block;
+  :hover{
+    display: inline-block;
   }
 }
 
@@ -161,37 +161,41 @@
   margin:0 auto;
   position:relative;
   -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .footer-st #button-st:hover{
-    width: 35px;
-    height: 35px;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
-    position: relative;
+  width: 35px;
+  height: 35px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  position: relative;
 }
 
 .footer-st {
   bottom:0;
   left:0;
   position:fixed;
-    width: 100%;
-    height: 2em;
-    overflow:hidden;
-    margin:0 auto;
+  width: 100%;
+  height: 4em;
+  overflow:hidden;
+  margin:0 auto;
   -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
   z-index:999;
 }
 .footer-st:hover {
-    transition: all 1s ease;
-    height: 10em;
+  transition: all 1s ease;
+  height: 12em;
+  .arrow-up {
+    transition: 1s ease;
+    color: transparent;
+  }
 }
 .footer-st #container-st{
   margin-top: 5px;
@@ -215,4 +219,12 @@
   float: left;
   text-align: center;
   background-color: white;
+}
+
+
+.arrow-up {
+  font-weight: bolder;
+  font-size: 40px;
+  color: #f64747;
+  justify-content: center;
 }
