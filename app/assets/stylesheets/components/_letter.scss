@@ -70,14 +70,19 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('
 }
 
 .banner-words {
-   background: -webkit-linear-gradient(#fe525b, #FE8188);
+  background: -webkit-linear-gradient(#fe525b, #FE8188);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 30px;
+
 
 }
 
 .sec-row {
   font-size: 20px;
+
 }
 
+.word-fix {
+  margin-top: 100px;
+}
