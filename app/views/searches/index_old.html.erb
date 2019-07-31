@@ -1,0 +1,74 @@
+<div class="container tp-5">
+  <div class="navbar_search d-md-none">
+    <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+    <%= text_field_tag :q, params[:q], class: "form-control"  %>
+    <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
+    <%= submit_tag "buscar", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+
+  <% if @results %>
+  <% @results.each do |result| %>
+
+  <% if result.searchable_type == 'Professional'%>
+  <% user = Professional.find(result.searchable_id) %>
+  <h1>Professionals</h1>
+  <%= render 'shared/professional_search', professional: user.professional %>
+  <% end %>
+
+  <% if result.searchable_type == 'Category'%>
+  <% category = Category.find(result.searchable_id) %>
+  <h1>Categories</h1>
+  <%= render 'shared/category_search', category: category %>
+  <% end %>
+
+  <% if result.searchable_type == 'Career'%>
+  <% career = Career.find(result.searchable_id) %>
+  <h1>Careers</h1>
+  <%= render 'pages/professional_card', career: career %>
+  <% end %>
+<% end %>
+  <% end %>
+
+</div>
+<% if @careers %>
+<% @careers.each do |career| %>
+<div class="search-result">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
+      <%= render "shared/career_search",  career: career  %>
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
+
+
+<% if @categories %>
+<% @categories.each do |category| %>
+<div class="search-result">
+  <%= render "shared/category_search",  career: career  %>
+
+</div>
+</div>
+<% end %>
+<% end %>
+
+<% if @users %>
+<% @users.each do |user| %>
+<div class="search-result">
+  <div class="row">
+
+    <% if !user.professional.nil? %>
+    <div class="col-xs-12 col-md-6 col-xl-4">
+      <%= render "shared/professional_card",  professional: user.professional  %>
+
+    </div>
+    <% end %>
+
+  </div>
+</div>
+<% end %>
+<% end %>
+</div>

@@ -1,0 +1,17 @@
+<div class="card-search-category">
+  <%= image_tag category.image, class:"search-img" %>
+  <div class="card-search-infos">
+    <%= link_to category_path(category), class:"career-description-connection" do %>
+      <div class="career-cardss">
+
+       <div class="career-description">
+          <div class="career-search-header">
+            <h2><%= category.title %></h2>
+            <p><%= category.description.truncate(100,  omission: "... (more)") %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
