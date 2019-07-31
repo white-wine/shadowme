@@ -12,9 +12,9 @@
     <div class="side back">
       <%= link_to root_path do %>
         <p>Your donation of  <%= humanized_money_with_symbol(@donation.amount) %> has been processed</p>
-        <p>Your donation will help <%= (@donation.amount / 100).to_i %> students with school supplies </p>
+        <p>Your donation will help students with school supplies </p>
         <div class="d-flex justify-content-center align-items-center">
-          <% User.students.first((@donation.amount / 100).to_i).each do |student| %>
+          <% User.students.first((@donation.amount / 50).to_i).each do |student| %>
             <img src="<%= student.photo %>" class="avatar-student">
           <% end %>
         </div>
