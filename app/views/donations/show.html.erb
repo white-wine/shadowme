@@ -1,8 +1,6 @@
 <div class="banner-donations" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1484906468498-4d81f1001881?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
 </div>
-
 <div>
-
 <div class="thank-you-container">
   <div class="form-donation thank-you">
     <div class="side">
@@ -12,7 +10,7 @@
     <div class="side back">
       <%= link_to root_path do %>
         <p>Your donation of  <%= humanized_money_with_symbol(@donation.amount) %> has been processed</p>
-        <p>Your donation will help <%= (@donation.amount / 100).to_i %> students with school supplies </p>
+        <p>100% of your donation will help students with school supplies </p>
         <div class="d-flex justify-content-center align-items-center">
           <% User.students.first((@donation.amount / 100).to_i).each do |student| %>
             <img src="<%= student.photo %>" class="avatar-student">
