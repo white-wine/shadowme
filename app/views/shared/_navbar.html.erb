@@ -2,7 +2,6 @@
 
 <div class="logo-n-phrase">
   <%= link_to "/", class: "navbar-brand ml-5" do %>
-  <%= image_tag "log.png", class:'log' %>
 
   <% end %>
   <%= link_to "/", class: "navbar-brand" do %>
@@ -10,6 +9,14 @@
   <h1 class="logo-phrase">ShadowMe</h1>
   <% end %>
 
+</div>
+
+<div class="navbar_search d-none d-sm-inline">
+  <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
+    <%= text_field_tag :q, params[:q], class: "form-control"  %>
+    <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
+    <%= submit_tag "buscar", class: "btn btn-primary" %>
+  <% end %>
 </div>
 
 
@@ -23,12 +30,9 @@
 
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-      <li class="nav-item">
 
-        <%= link_to "Explore", "/categories", class: "nav-link nav-btn" %>
-      </li>
 
-          <li class="nav-item">
+          <li class="nav-item d-md-none">
             <%= link_to "Search by", searches_path, class: "nav-link nav-btn" %>
           </li>
 
@@ -38,10 +42,7 @@
           <%= link_to "Create Professional Profile", new_professional_path, class: "nav-link nav-btn" %>
           </li>
           <% elsif current_user.professional&.id.present? %>
-          <li class="nav-item">
-          <%= link_to "Edit Professional Profile", edit_professional_path(current_user.professional), class: "nav-link nav-btn" %>
 
-          </li>
 
       <li class="nav-item">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-out" %>
@@ -65,10 +66,6 @@
 
       <% else %>
 
-            <li class="nav-item">
-
-        <%= link_to "Explore", "/categories", class: "nav-link" %>
-      </li>
       <li class="nav-item">
         <%= link_to "Search by", searches_path, class: "nav-link" %>
       </li>
