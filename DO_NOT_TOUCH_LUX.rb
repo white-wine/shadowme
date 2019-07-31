@@ -13,6 +13,24 @@ User.destroy_all
 ## ---------------------------------
 
 
+
+
+
+# <!-- <div class="container"> -->
+
+#    <!--  <% if @booking.booking_status != "pending" %>
+#     <%= render 'messages/chat', message: @message, messages: @messages %>
+#    <% else %>
+#     <%= link_to "Back to professional card", professional_path(@booking.professional) %>
+#     <%= link_to "Back to homepage", root_path %>
+#      <% end %>
+#    </div> -->
+
+
+
+
+
+
 CATEGORIES = [
   {
     title: "Agriculture",

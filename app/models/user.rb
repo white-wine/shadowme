@@ -13,7 +13,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
-
+  validates :user_type, presence: true
   include PgSearch::Model
   multisearchable against: [ :first_name, :last_name ]
   pg_search_scope :search_by_name_or_specialty,

@@ -103,3 +103,25 @@
 }
 
 
+.status-pending {
+  svg {
+    width: 25px;
+    color: #fe525b;
+    height: 25px;
+  }
+}
+
+
+.status-confirmed {
+  i {
+    color: green;
+    font-size: 25px;
+  }
+}
+
+.photoninfo {
+  align-items: center;
+}
+.pending-content {
+  padding-top: 30px;
+}
