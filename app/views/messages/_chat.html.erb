@@ -1,13 +1,15 @@
-<div class="chat-wrapper">
+<div class="chat-wrapper sticky-top">
   <div class="chat-box" data-booking_id="<%= @booking.id %>" data-current_user="<%= current_user.id %>">
     <% if @messages.empty? %>
 
       <div class="chat-bubble-wrapper">
-        <div class="chat-bubble parking-share">
-          <div class="chat-username">Parking Share</div>
-          <div class="chat-message">Your chat is here!</div>
+        <div class="chat-bubble company">
+          <div class="chat-username">ShadowMe</div>
+          <div class="chat-message">
+            sole will type a message
+          </div>
         </div>
-        <div class="chat-timestamp him"><%= Time.now.strftime("%m-%e-%Y %H:%M") %></div>
+        <div class="chat-timestamp him"><%= Time.now.strftime("%b %e, %l:%M %p") %></div>
       </div>
 
     <% end %>
@@ -29,7 +31,7 @@
     <% end %>
 
     <div class="field">
-      <%= form.text_field :content, id: :message, class: "form-control", required: true, placeholder: "Type a message..." %>
+      <%= form.text_field :content, id: :message, class: "form-control", required: true, placeholder: "Type a message...", autocomplete: "off" %>
       <%= form.hidden_field :identifier, id: :identifier, value: current_user.identifier %>
     </div>
   <% end %>

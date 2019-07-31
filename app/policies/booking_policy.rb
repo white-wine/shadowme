@@ -4,28 +4,20 @@ class BookingPolicy < ApplicationPolicy
       scope.all
     end
   end
+
   def create?
     user.student?
   end
+
   def show?
-    is_owner?
+    user.student? || user.professional?
   end
-  def update?
-    is_owner?
-  end
-  def destroy?
-    is_owner?
-  end
+
   def confirm?
-    is_owner?
+    user.professional?
   end
+
   def decline?
-    is_owner?
-  end
-
-  private
-
-  def is_owner?
-    record.user == user
+    user.professional?
   end
 end

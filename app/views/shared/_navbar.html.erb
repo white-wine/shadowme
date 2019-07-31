@@ -33,7 +33,7 @@
               <li class="nav-item">
                 <div class="navbar_search d-none d-sm-inline">
                               <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
-                              <%= text_field_tag :q, params[:q], class: "form-control"  %>
+                              <%= text_field_tag :q, params[:q], class: "form-control", autocomplete: "off"  %>
                               <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
                                             <%= button_tag(type: "submit", class: "search-btn") do %>
                                             <i class="fas fa-search"></i>
@@ -68,7 +68,7 @@
               <li class="nav-item">
                 <div class="navbar_search d-none d-sm-inline">
                               <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
-                              <%= text_field_tag :q, params[:q], class: "form-control"  %>
+                              <%= text_field_tag :q, params[:q], class: "form-control", autocomplete: "off" %>
                               <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
                                             <%= button_tag(type: "submit", class: "search-btn") do %>
                                             <i class="fas fa-search"></i>

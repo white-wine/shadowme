@@ -1,8 +1,8 @@
 .chat-wrapper {
+  top: 5em;
   display: flex;
   flex-direction: column;
-  position: relative;
-  height: 100%;
+  height: calc(100vh - 6em);
   padding-bottom: 7px;
   .chat-box {
     padding: 1.5em;
@@ -31,6 +31,8 @@
         flex-direction: column;
         flex: auto;
 
+// change bubble colors here
+
         &.me {
           background-color: #DCF8C5;
           align-self: flex-end;
@@ -43,7 +45,7 @@
           font-family: 'Raleway';
 
         }
-        &.parking-share {
+        &.company {
           align-self: flex-start;
           background-color: #E1F3FB;
         }
