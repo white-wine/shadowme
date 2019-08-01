@@ -39,11 +39,10 @@ color: red;
 }
 
 .job_details {
-  display: flex;
   margin: auto 22px;
-  justify-content: space-between;
+
   p {
-    min-height: 72px;
+    color: black;
   }
 }
 
