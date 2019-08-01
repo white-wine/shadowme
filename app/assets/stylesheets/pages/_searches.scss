@@ -36,7 +36,11 @@
   margin-bottom: 15px;
   border-right: 7px solid red;
   border-radius: 5px;
-
+  &:hover{
+  transition: 0.25s ease;
+  -webkit-transform: scale(1.03);
+  -transform: scale(1.03);
+}
 }
 
 
@@ -50,6 +54,12 @@
   margin-bottom: 8px;
   border-right: 7px solid yellow;
   border-radius: 5px;
+  &:hover{
+  transition: 0.25s ease;
+  -webkit-transform: scale(1.03);
+  -transform: scale(1.03);
+  border: 2px solid gray;
+}
 
 }
 
