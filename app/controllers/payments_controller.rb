@@ -1,7 +1,9 @@
 class PaymentsController < ApplicationController
-    skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!
+
   def new
     @donation = Donation.find(params[:donation_id])
+    authorize @donation
   end
 
   def create
@@ -20,9 +22,10 @@ class PaymentsController < ApplicationController
 
   @donation.update(payment: charge.to_json, state: 'paid')
   redirect_to donation_path(@donation)
+  authorize @donation
 
-rescue Stripe::CardError => e
-  flash[:alert] = e.message
-  redirect_to new_donation_payment_path(@donation)
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+    redirect_to new_donation_payment_path(@donation)
   end
 end
