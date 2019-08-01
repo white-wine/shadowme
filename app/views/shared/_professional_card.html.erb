@@ -20,6 +20,7 @@
         <% end %>
 
         <div class="logo-wrapper">
+
           <%= image_tag(professional.company_logo, class:"company_logo") %>
         </div>
       </div>
@@ -48,6 +49,7 @@
               <span class="golden-stars"><i class="far fa-star"></i></span>
               <% end %>
             </div>
+
           </div>
           <div class="pro_review">
             <% professional.reviews.last(2).each do |review| %>
