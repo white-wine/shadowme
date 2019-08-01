@@ -13,9 +13,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
       <% if current_user.user_type == "student" %>
-      <li class="nav-item d-flex align-items-center font-weight-bold">
-        Search
-      </li>
+
       <li class="nav-item">
         <div class="navbar_search d-none d-sm-inline">
           <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
@@ -40,9 +38,7 @@
         <% end %>
       </div>
       <% elsif current_user.user_type == "professional" %>
-      <li class="nav-item d-flex align-items-center font-weight-bold">
-        Search
-      </li>
+
       <li class="nav-item">
         <div class="navbar_search d-none d-sm-inline">
           <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
@@ -73,9 +69,7 @@
             </div>
             <!-- Si no esta logueado -->
             <% else %>
-            <li class="nav-item d-flex align-items-center font-weight-bold">
-              Search
-            </li>
+
             <li class="nav-item">
               <div class="navbar_search d-none d-sm-inline">
                 <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
