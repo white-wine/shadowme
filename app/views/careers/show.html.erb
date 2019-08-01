@@ -2,21 +2,22 @@
   <h1 class="category-title">
     <i class="fas fa-users"></i>
 
- <%= @career.title %> </h1>
-  <h3 class="category-description"><%= @career.description %></h3>
+    <%= @career.title %> </h1>
+    <h3 class="category-description"><%= @career.description %></h3>
 
-</div>
-
-
-<div class="container text-center">
-
-<h1 class="career-list-title">List of our professionals</h1>
-</div><div class="container">
-  <div class="row">
-    <% @professionals.each do |professional| %>
-    <div class="col-xs-12 col-md-6 col-xl-4">
-      <%= render "shared/professional_card",  professional: professional  %>
-    </div>
-    <% end %>
   </div>
-</div>
+
+
+  <div class="container text-center">
+    <h1 class="career-list-title">List of our professionals</h1>
+
+
+  </div><div class="container">
+    <div class="row">
+      <% @professionals.each do |professional| %>
+      <div class="col-xs-12 col-md-6 col-xl-4">
+        <%= render "shared/professional_card",  professional: professional  %>
+      </div>
+      <% end %>
+    </div>
+  </div>
