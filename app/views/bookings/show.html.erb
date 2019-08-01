@@ -1,10 +1,11 @@
+<% if @booking.booking_status == "confirmed" %>
 
 <div class="booking-show">
   <div class="letter-column">
     <%= render 'bookings/letter', booking: @booking, user: @user %>
   </div>
   <% if @booking.booking_status != "pending" %>
-    <div class="chat-column">
+    <div class="chat-column mt-5">
       <%= render 'messages/chat', message: @message, messages: @messages %>
     </div>
   <% else %>
@@ -12,3 +13,15 @@
     <%= link_to "Back to homepage", root_path %>
   <% end %>
 </div>
+
+
+<% else %>
+
+
+<div class="">
+  <div class="container text-center">
+    <%= render 'bookings/letter', booking: @booking, user: @user %>
+  </div>
+</div>
+
+<% end %>
