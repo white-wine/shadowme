@@ -15,4 +15,19 @@
       </div>
     </div>
     <% end %>
+      <% current_user.professional.bookings.where(booking_status: 1).each do |booking| %>
+  <div class="pending-container">
+    <%= image_tag booking.user.photo, class:"student-career-img" %>
+    <div class="pending-content">
+      <p><strong>Student Name:</strong> <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+      <p><strong>Message:</strong> <%= booking.intro_message%></p>
+    </div>
+    <div class="confirm-wrapper">
+      <p><strong><i class="far fa-calendar-alt"></i> Booking:</strong> <%= booking.start_book.strftime("%b %d %Y") %> <i class="fas fa-minus"></i> <%= booking.end_book.strftime("%b %d %Y") %>
+        <div class="confirm-container">
+          <%= link_to "Show", booking_path(booking), class: "btn btn-outline-danger"%>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>

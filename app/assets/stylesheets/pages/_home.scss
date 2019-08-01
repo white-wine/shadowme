@@ -118,7 +118,6 @@
   transition-delay: 0.5s;
 }
 
-
 .box:hover .content h3 {
   margin-top: 10px;
   // text-decoration: underline;
@@ -130,3 +129,20 @@
 }
 
 // https://images.theconversation.com/files/242320/original/file-20181025-71023-hjn5fq.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip
+a.button-to-home-top{
+  position: fixed;
+  right: 5%;
+  bottom: 12%;
+  font-size: 40px;
+  color: white;
+  background: #f64747;
+  font-weight: bolder;
+  border: 2px #f64747 solid;
+  border-radius: 50%;
+  &:hover{
+    transition: 1s;
+    text-decoration: none;
+    color: #f64747;
+    background: transparent;
+  }
+}

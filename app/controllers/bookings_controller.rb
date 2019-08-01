@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @messages = Message.where(booking: @booking)
     @message = Message.new()
     @user = current_user
-    if @user == @booking.professional.user
+    if @user == @booking.professional.user && @booking.booking_status == "pending"
      confirm
    end
   end
