@@ -145,5 +145,8 @@
 
 .form-control {
     background-color: transparent;
+}
 
+::placeholder {
+  color: white !important;
 }
