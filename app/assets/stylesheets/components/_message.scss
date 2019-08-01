@@ -47,12 +47,14 @@
         }
         &.company {
           align-self: flex-start;
-          background-color: #E1F3FB;
+          background-color: #fb6971eb;
+          color: white;
+          font-weight: bolder;
         }
         .chat-username {
-          font-size: 0.7em;
-          color: black;
+          color: #6b6b6b;
           font-weight: bold;
+          font-size: small;
         }
         .chat-message {
           font-size: 1em;
@@ -72,3 +74,4 @@
     }
   }
 }
+
