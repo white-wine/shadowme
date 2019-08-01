@@ -1,11 +1,25 @@
 <div class="pending-wrapper">
   <% current_user.professional.bookings.each do |booking| %>
+
+
   <div class="pending-container">
+
+
+    <div class="photoninfo d-flex">
+
     <%= image_tag booking.user.photo, class:"student-career-img" %>
     <div class="pending-content">
+
+<div class="container">
+
       <p><strong>Student Name:</strong> <%= booking.user.first_name %> <%= booking.user.last_name %></p>
       <p><strong>Message:</strong> <%= booking.intro_message%></p>
+      </div>
     </div>
+</div>
+
+
+
     <p><strong><i class="far fa-calendar-alt"></i> Booking:</strong> <%= booking.start_book.strftime("%b %d %Y") %> <i class="fas fa-minus"></i> <%= booking.end_book.strftime("%b %d %Y") %></p>
 
   </div>
