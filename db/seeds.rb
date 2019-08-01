@@ -393,7 +393,7 @@ CAREERS = [
       image: "https://www.elsiglodetorreon.com.mx/m/i/2018/03/1036585.jpeg"
     },
     {
-      title:"Programmer",
+      title:"Software Engineer",
       description:"While software developers design applications, it’s programmers who write the code needed for programs to function. Programmers also test software and update existing software. Many are employed by software companies. Necessary soft skills include problem solving, reading comprehension, active listening, attention to detail, and critical thinking. You might consider entering this field if you enjoy working with code for extended periods and testing the power of programming languages. As experience is an important asset, it’s helpful to do an internship or gain other hands-on experience while completing your formal education.",
       image: "https://blog.uwohoo.com/wp-content/uploads/2019/03/Good-programmer.jpeg"
     },
