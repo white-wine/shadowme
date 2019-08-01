@@ -1,31 +1,22 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top home-navbar-style <%= controller_name == 'pages' && action_name == 'home' ? 'home-navbar-style' : "white-navbar" %>">
-
   <div class="logo-n-phrase">
     <%= link_to "/", class: "navbar-brand ml-5" do %>
-
     <% end %>
     <%= link_to "/", class: "navbar-brand" do %>
-
     <h1 class="logo-phrase">ShadowMe</h1>
     <% end %>
-
   </div>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
     <ul class="navbar-nav mr-auto">
-      <% if signed_in? %>
-
+      <% if user_signed_in? %>
       <% if current_user.user_type == "student" %>
-
       <li class="nav-item">
         <div class="navbar_search d-none d-sm-inline">
           <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
-          <%= text_field_tag :q, params[:q], class: "form-control"  %>
+          <%= text_field_tag :q, params[:q], class: "form-control", autocomplete: "off" %>
           <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
           <%= button_tag(type: "submit", class: "search-btn") do %>
           <i class="fas fa-search"></i>
@@ -33,42 +24,23 @@
           <% end %>
         </div>
       </li>
-
       <li class="nav-item">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-out" %>
       </li>
-
       <div class="logo-n-phrase" aria-labelledby="navbarDropdown">
-
-              <li class="nav-item">
-                <div class="navbar_search d-none d-sm-inline">
-                              <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
-                              <%= text_field_tag :q, params[:q], class: "form-control", autocomplete: "off"  %>
-                              <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
-                                            <%= button_tag(type: "submit", class: "search-btn") do %>
-                                            <i class="fas fa-search"></i>
-                                            <% end %>
-                              <% end %>
-                </div>
-              </li>
-
+        <%= link_to admin_profile_index_path do %>
         <% if !current_user.photo.nil? %>
         <%= image_tag current_user.photo, class: "avatar"%>
         <% else %>
         <%= image_tag "default-avatar.jpg", class: "avatar"%>
-
         <% end %>
         <% end %>
       </div>
-
-
       <% elsif current_user.user_type == "professional" %>
-
-
       <li class="nav-item">
         <div class="navbar_search d-none d-sm-inline">
           <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
-          <%= text_field_tag :q, params[:q], class: "form-control"  %>
+          <%= text_field_tag :q, params[:q], class: "form-control", autocomplete: "off"  %>
           <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
           <%= button_tag(type: "submit", class: "search-btn") do %>
           <i class="fas fa-search"></i>
@@ -76,92 +48,41 @@
           <% end %>
         </div>
       </li>
-
-
-
-
-
-<<<<<<< HEAD
-              <li class="nav-item">
-                <div class="navbar_search d-none d-sm-inline">
-                              <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
-                              <%= text_field_tag :q, params[:q], class: "form-control", autocomplete: "off" %>
-                              <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
-                                            <%= button_tag(type: "submit", class: "search-btn") do %>
-                                            <i class="fas fa-search"></i>
-                                            <% end %>
-                              <% end %>
-                </div>
-              </li>
-                            <li class="nav-item">
-=======
-
-
 <!--                             <li class="nav-item">
->>>>>>> master
                 <%= link_to "Create Professional Profile", new_professional_path, class: "nav-link nav-btn" %>
               </li>
             -->
-
-
-
-
             <li class="nav-item">
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link log-out" %>
             </li>
-
             <div class="logo-n-phrase" aria-labelledby="navbarDropdown">
-
               <%= link_to admin_profile_index_path do %>
-
               <% if !current_user.photo.nil? %>
               <%= image_tag current_user.photo, class: "avatar"%>
               <% else %>
               <%= image_tag "default-avatar.jpg", class: "avatar"%>
-
               <% end %>
               <% end %>
-
-
               <% end %>
             </div>
             <!-- Si no esta logueado -->
             <% else %>
-
-
             <li class="nav-item">
               <div class="navbar_search d-none d-sm-inline">
                 <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
-                <%= text_field_tag :q, params[:q], class: "form-control"  %>
+                <%= text_field_tag :q, params[:q], class: "form-control", autocomplete: "off"%>
                 <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
                 <%= button_tag(type: "submit", class: "search-btn") do %>
                 <i class="fas fa-search"></i>
                 <% end %>
-
-      </div>
-<!-- Si no esta logueado -->
-      <% else %>
-        <li class="nav-item">
-          <div class="navbar_search d-none d-sm-inline">
-            <%= form_tag searches_path, method: :get, class: "form form-inline" do %>
-            <%= text_field_tag :q, params[:q], class: "form-control"  %>
-            <%= select_tag :search_type, options_for_select(["all", "user", "category", "career"], params[:search_type]),class: "form-control" %>
-            <%= button_tag(type: "submit", class: "search-btn") do %>
-            <i class="fas fa-search"></i>
+                <% end %>
+              </div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
             <% end %>
-            <% end %>
-          </div>
-        </li>
-
-      <li class="nav-item">
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      </li>
-      <% end %>
-    </ul>
-
-
-
-
+          </ul>
         </div>
       </div>
       <script>const initUpdateNavbarOnScroll = () => {
@@ -176,5 +97,4 @@
           });
         }
       }
-
     export { initUpdateNavbarOnScroll };</script>
