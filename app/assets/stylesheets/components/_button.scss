@@ -146,3 +146,21 @@
 .result-title{
   margin: 50px;
 }
+
+.btn-login {
+  float: right;
+  padding: 7px 31px;
+  background-color: #fe525b;
+  border: 0px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.btn-login:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #e2464e;
+  font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
