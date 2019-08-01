@@ -90,13 +90,15 @@
 .career-description-connection {
   text-decoration: none;
   color: rgba(0,0,0,0.8);
-  color: gray;
+  color: white;
+  margin-top: 100px;
 }
 
 
 .career-description-connection:hover {
   text-decoration: none;
-  color: gray;
+  color: black;
+
 }
 
 .career-card-title{
@@ -212,3 +214,5 @@
 .salary-color {
   color: gray;
 }
+
+

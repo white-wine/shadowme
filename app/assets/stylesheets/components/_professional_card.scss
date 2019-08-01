@@ -1,6 +1,6 @@
 
 .professional_card{
-  background-color: #FFFFFF;
+  background-color: #383535bf;
   height: auto;
   width: 350px;
   margin: 25px auto;
@@ -10,10 +10,12 @@
   transition: 1s ease;
   padding-bottom: 15px;
   min-height: 510px;
+  margin-top: 100px;
 }
 
 .career-list-title{
- margin-bottom: 25px;
+color: red;
+
 }
 
 
@@ -69,8 +71,9 @@
   width: 100%;
   height: auto;
   margin-bottom: 5px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+
+     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: rgba(69, 64, 64, 0.32) 1px solid;
 
 }
 
@@ -89,7 +92,7 @@
 
 .pro_separation {
   width: 250px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid black;
   margin-bottom: 10px;
 }
 
@@ -230,3 +233,14 @@
 .pro-name {
   padding-left: 0px !important;
 }
+
+
+
+// .container-back-img{
+// background-image: url("https://images.unsplash.com/photo-1482398650355-d4c6462afa0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+// width: 100%;
+// margin: 0 auto;
+// background-size: cover;
+
+
+// }
