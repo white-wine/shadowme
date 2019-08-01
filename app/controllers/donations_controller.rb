@@ -1,3 +1,4 @@
+
 class DonationsController < ApplicationController
   skip_before_action :authenticate_user!
 
@@ -9,9 +10,13 @@ class DonationsController < ApplicationController
   def create
     @donation = Donation.new(amount: donation_params[:amount_cents])
     @donation.state = "pending"
-    @donation.save
-    redirect_to new_donation_payment_path(@donation)
     authorize @donation
+    if !@donation.valid? || @donation.amount_cents == 0
+      render :new
+    else
+      @donation.save
+      redirect_to new_donation_payment_path(@donation)
+    end
   end
 
   def show
