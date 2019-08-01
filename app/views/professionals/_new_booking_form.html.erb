@@ -1,4 +1,4 @@
-<% if policy(Booking).create? %>
+<% if current_user && policy(Booking).create? %>
   <div class='booking-wrapper'>
     <%= form_for([professional, booking], html: { autocomplete: 'off' }) do |f| %>
       <div class="form-group">
@@ -22,4 +22,8 @@
     <% end %>
   </div>
 </div>
+<% else %>
+
+  <%= link_to "Login", new_user_session_path, class: "btn-login" %>
+
 <% end %>
