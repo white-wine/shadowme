@@ -137,12 +137,17 @@ a.button-to-home-top{
   color: #f64747;
   font-weight: bolder;
 
-
-
   &:hover{
-    transition: 1s;
+
     text-decoration: none;
     color: #f64747;
     background: transparent;
+
   }
+}
+.button-to-home-top:hover{
+      -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    transition: 0.5s ease;
 }

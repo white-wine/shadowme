@@ -7,6 +7,7 @@
     <% end %>
   </div>
   <div class="container-search">
+    <h1 class="result-title text-center"><%= pluralize(@results.count, 'Result') %> for "<%= params[:q] %>"</h1>
   <% @results.each do |result| %>
     <% result = result.searchable if result.respond_to? :searchable %>
 
