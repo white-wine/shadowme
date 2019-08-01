@@ -479,7 +479,6 @@ def create_booking(professional, student)
     amount_of_days: (ending - start).round,
     booking_status: rand(0..2),
     intro_message: "I'm insterested on " + professional.career.title + " career."
-
     )
   booking.user = student
   booking.save
@@ -621,7 +620,7 @@ pro = Professional.new(
   )
 puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-5.times do
+10.times do
   create_booking(pro, User.all.sample)
 end
 
@@ -649,7 +648,7 @@ pro = Professional.new(
   )
 puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-5.times do
+10.times do
   create_booking(pro, User.all.sample)
 end
 
@@ -677,14 +676,14 @@ pro = Professional.new(
   )
 puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-5.times do
+10.times do
   create_booking(pro, User.all.sample)
 end
 
 
 
 Professional.all.each do |pro|
-  10.times do
+  5.times do
     start = Faker::Date.backward(rand(20..100))
     ending = start + rand(7..19)
     booking = Booking.new(
@@ -700,7 +699,6 @@ Professional.all.each do |pro|
     booking.save
     puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
     create_review(booking, User.all.sample)
-
   end
 end
 end_time = Time.now
