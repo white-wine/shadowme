@@ -12,11 +12,20 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: top;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
   border-right: 7px solid green;
   border-radius: 5px;
+&:hover{
+ -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
+  transition: 0.5s ease;
+
 
 }
+}
+
+
 
 .card-search-career {
   overflow: hidden;
