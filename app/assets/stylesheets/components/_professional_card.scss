@@ -1,6 +1,6 @@
 
 .professional_card{
-  background-color: #383535bf;
+  background-color: white;
   height: auto;
   width: 350px;
   margin: 25px auto;
@@ -14,7 +14,8 @@
 }
 
 .career-list-title{
-color: red;
+    color: #333;
+    font-weight: bold;
 
 }
 
@@ -30,6 +31,7 @@ color: red;
   color:#FFD700;
 }
 .pro_job {
+
   h2 {
     text-align: center;
     width: 100%;
@@ -42,13 +44,14 @@ color: red;
 
   p {
     color: black;
+    text-align: center;
   }
 }
 
 .pro-banner {
   height: 100px;
   border-radius: 24px 24px 0px 0px;
-  opacity: 0.4;
+  opacity: 0.9;
 }
 
 .pro_photo {
@@ -65,6 +68,7 @@ color: red;
 }
 
 .company_logo {
+
   display: block;
   width: 100%;
   height: auto;
@@ -73,13 +77,12 @@ color: red;
      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     border: rgba(69, 64, 64, 0.32) 1px solid;
 
+
 }
 
 .logo-wrapper{
   width: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: 0 auto;
 }
 
 .pro_separation-wrapper {
@@ -231,6 +234,7 @@ color: red;
 .pro-name {
   padding-left: 0px !important;
 }
+
 
 
 

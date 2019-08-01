@@ -113,11 +113,11 @@
 
 .stripe-button-el span {
  background-color: #FE525B;
-  border-color: #FE525B;
-  color: white;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 25px;
+ border-color: #FE525B;
+ color: white;
+ font-weight: bold;
+ padding: 5px 10px;
+ border-radius: 25px;
 }
 
 .stripe-button-el:hover span{
@@ -142,4 +142,14 @@
   border-radius: 20px;
   padding: 5px 0px;
   font-weight: bold;
+}
+
+.booking-button {
+  color: white;
+  padding: 10px 20px;
+  background-color: #fe525b;
+  border-color: #fe525b;
+  margin-top: 45px;
+  border-radius: 6px;
+
 }
