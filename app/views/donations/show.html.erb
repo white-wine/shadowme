@@ -14,7 +14,7 @@
         <p>Your donation will help students with school supplies </p>
 
         <div class="d-flex justify-content-center align-items-center">
-          <% User.students.first((@donation.amount / 50).to_i).each do |student| %>
+          <% User.students.first((@donation.amount / 125).to_i).each do |student| %>
             <img src="<%= student.photo %>" class="avatar-student">
           <% end %>
         </div>
