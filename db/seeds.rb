@@ -478,7 +478,7 @@ def create_booking(professional, student)
     end_book: ending,
     amount_of_days: (ending - start).round,
     booking_status: rand(0..2),
-    intro_message: "I'm insterested on " + professional.career.title + " career."
+    intro_message: "I'm interested on " + professional.career.title + " career."
     )
   booking.user = student
   booking.save
@@ -634,7 +634,7 @@ Professional.all.each do |pro|
       end_book: ending,
       amount_of_days: (ending - start).round,
       booking_status: rand(1..2),
-      intro_message: "I'm insterested on " + pro.career.title + " career."
+      intro_message: "I'm interested on " + pro.career.title + " career."
 
       )
     booking.user = User.where(user_type: 0).sample

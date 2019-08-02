@@ -51,10 +51,10 @@
             </li>
             <div class="logo-n-phrase" aria-labelledby="navbarDropdown">
               <%= link_to admin_profile_index_path do %>
-              <% if !current_user.photo.nil? %>
-              <%= image_tag current_user.photo, class: "avatar"%>
+              <% if current_user.email == "fabi@gmail.com" %>
+              <%= image_tag "https://avatars2.githubusercontent.com/u/50439580?v=4", class: "avatar"%>
               <% else %>
-              <%= image_tag "default-avatar.jpg", class: "avatar"%>
+              <%= image_tag current_user.photo, class: "avatar"%>
               <% end %>
               <% end %>
               <% end %>
