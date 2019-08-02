@@ -2,12 +2,14 @@
 </div>
 <div>
 <div class="thank-you-container">
-  <div class="form-donation thank-you">
+  <div class="form-donation">
     <div class="side">
-      <h2>Thank you!</h2>
-      <p>Click me!</p>
+      <h2 class="banner-word">Thank you!</h2>
+      <p>Your donation <strong>$<%= @donation.amount %></strong> has been sent successfully <i class="banner-word fas fa-heart"></i></p>
+      <br>
+      <%= link_to root_path do %></%><a href="/" class="btn-login">Back to homepage </a><% end %>
     </div>
-    <div class="side back">
+<!--     <div class="side back">
       <%= link_to root_path do %>
         <p>Your donation of  <%= humanized_money_with_symbol(@donation.amount) %> has been processed</p>
 
@@ -19,7 +21,7 @@
           <% end %>
         </div>
       <% end %>
-    </div>
+    </div> -->
   </div>
 </div>
 </div>

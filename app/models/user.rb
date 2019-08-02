@@ -58,7 +58,7 @@ class User < ApplicationRecord
   def generate_validate_key
     user = User.last
     if user.photo.nil?
-      user.photo = "https://refilmery.com/wp-content/uploads/2016/05/avatar-inside-a-circle.png"
+      user.photo = "https://avatars2.githubusercontent.com/u/50439580?v=4"
     end
     if user.account_status.nil?
       user.account_status = 0

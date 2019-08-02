@@ -424,11 +424,11 @@ def create_user(career)
         password: 123456
         )
     male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
-    puts male_user.first_name
-    puts male_user.last_name
-    puts male_user.email
-    puts male_user.user_description
-    puts male_user.photo
+    # puts male_user.first_name
+    # puts male_user.last_name
+    # puts male_user.email
+    # puts male_user.user_description
+    # puts male_user.photo
     male_user.save!
 
     create_professional(male_user, career)
@@ -445,11 +445,11 @@ def create_user(career)
         password: 123456
         )
     fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
-    puts fem_user.first_name
-    puts fem_user.last_name
-    puts fem_user.email
-    puts fem_user.user_description
-    puts fem_user.photo
+    # puts fem_user.first_name
+    # puts fem_user.last_name
+    # puts fem_user.email
+    # puts fem_user.user_description
+    # puts fem_user.photo
 
     fem_user.save!
 
@@ -465,7 +465,7 @@ def create_review(booking, student)
     rating: rand(3..5)
     )
   review.save
-  puts "Review for #{booking.professional.user.first_name} #{booking.professional.user.last_name} by #{booking.user.first_name} #{booking.user.last_name}: #{review.content} Rating: #{review.rating}"
+  # puts "Review for #{booking.professional.user.first_name} #{booking.professional.user.last_name} by #{booking.user.first_name} #{booking.user.last_name}: #{review.content} Rating: #{review.rating}"
 end
 
 ## CREATE BOOKING
@@ -478,11 +478,11 @@ def create_booking(professional, student)
     end_book: ending,
     amount_of_days: (ending - start).round,
     booking_status: rand(0..2),
-    intro_message: "I'm insterested on " + professional.career.title + " career."
+    intro_message: "I'm interested on " + professional.career.title + " career."
     )
   booking.user = student
   booking.save
-  puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
+  # puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
   create_review(booking, student)
 
 end
@@ -519,7 +519,7 @@ def create_student_user(professional)
       )
     male_student.email = male_student.first_name.downcase + male_student.last_name.downcase + rand(90..99).to_s + "@mail.com"
     male_student.save
-    puts "Creating account for #{male_student.first_name} #{male_student.last_name}"
+    # puts "Creating account for #{male_student.first_name} #{male_student.last_name}"
 
     create_booking(professional, male_student)
 
@@ -537,15 +537,15 @@ def create_professional(user, career)
     resume: career.description,
     company_logo: Faker::Company.logo
     )
-  puts "CREATING PROFESSIONAL"
+  # puts "CREATING PROFESSIONAL"
   pro.user = user
-  puts "Location: #{pro.location}"
-  puts "#{pro.experience_in_years} years of experience"
-  puts "Resume #{pro.resume}"
-  puts "Company logo: #{pro.company_logo}"
-  puts "Specialty #{pro.specialty}"
+  # puts "Location: #{pro.location}"
+  # puts "#{pro.experience_in_years} years of experience"
+  # puts "Resume #{pro.resume}"
+  # puts "Company logo: #{pro.company_logo}"
+  # puts "Specialty #{pro.specialty}"
   pro.career = career
-  puts
+
   pro.save!
   create_student_user(pro)
 end
@@ -577,7 +577,6 @@ CATEGORIES.each_with_index do |category, index|
 
 end
 
-puts "Finished seeding process"
 # User
 # Professional
 # career = Career
@@ -618,7 +617,7 @@ pro = Professional.new(
   career: Career.all.last,
   user: my_user
   )
-puts "CREATING PROFESSIONAL FOR TESTING"
+# puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
 10.times do
   create_booking(pro, User.all.sample)
@@ -635,15 +634,18 @@ Professional.all.each do |pro|
       end_book: ending,
       amount_of_days: (ending - start).round,
       booking_status: rand(1..2),
-      intro_message: "I'm insterested on " + pro.career.title + " career."
+      intro_message: "I'm interested on " + pro.career.title + " career."
 
       )
     booking.user = User.where(user_type: 0).sample
     booking.save
-    puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
+    # puts "#{booking.user.first_name} #{booking.user.last_name} booked #{booking.professional.user.first_name} #{booking.professional.user.last_name}"
     create_review(booking, User.all.sample)
   end
 end
+
+puts "Finished seeding process"
 end_time = Time.now
 result = end_time - start_time
+
 puts "#{result} seconds"

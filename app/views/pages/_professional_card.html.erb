@@ -31,7 +31,7 @@
           <div class="pro_reviews">
             <span class="reviews_title"><%= pluralize(professional.reviews.count, 'Review') %></span>
             <div class="pro_review">
-              <% professional.reviews.last(2).each do |review| %>
+              <% professional.reviews.first(2).each do |review| %>
                 <div class="review_one">
                   <%= image_tag(review.user.photo, class:"review_avatar") %>
                   <span class="text_review"><%= review.content %></span>
