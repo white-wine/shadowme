@@ -23,7 +23,27 @@
   </div>
 </div>
 <% else %>
+<div class="container text-center">
 
-  <%= link_to "Login", new_user_session_path, class: "btn-login" %>
+<div class="row">
+  <div class="col-12 my-3 please-login">
+  <h1>                           </h1>
+  </div>
+  </div>
+<div class="row">
+  <div class='booking-wrapper'>
+  <div class="sign-up-word col-12 my-5">
+  <h1 class="sign-up-word">Please Sign up or Log in for booking</h1>
+  </div>
+  </div>
+  </div>
 
+  <div class="row">
+  <div class="col-12 my-5">
+
+  <span>  <%= link_to "Login", new_user_session_path, class: "btn-login" %></span>
+
+</div>
+</div>
+</div>
 <% end %>
