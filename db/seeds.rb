@@ -624,63 +624,6 @@ pro.save!
   create_booking(pro, User.all.sample)
 end
 
-my_user = User.new(
-  email: "faby@mail.com",
-  user_type: 1,
-  account_status: 1,
-  first_name: "Faby",
-  last_name: "Le Wagon",
-  birth: Faker::Date.backward(365 * 25),
-  user_description: "Ruby Fullstack Developer - Argentina",
-  photo: "https://avatars2.githubusercontent.com/u/50439580?v=4",
-  password: 123456
-  )
-my_user.save!
-pro = Professional.new(
-  address: "Niceto Vegas 4866",
-  location: "Argentina, Buenos Aires",
-  specialty: "Ruby Fullstack Developer - Le Wagon",
-  experience_in_years: 2,
-  resume: "Change your life, learn to code.",
-  company_logo: "https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-fe76916e1b923ade71e253ae6dc031d936e5e8eebac4e26b0fbac650ea6ee360.png",
-  career: Career.all.last,
-  user: my_user
-  )
-puts "CREATING PROFESSIONAL FOR TESTING"
-pro.save!
-10.times do
-  create_booking(pro, User.all.sample)
-end
-
-my_user = User.new(
-  email: "sole@mail.com",
-  user_type: 1,
-  account_status: 1,
-  first_name: "Sole",
-  last_name: "Le Wagon",
-  birth: Faker::Date.backward(365 * 25),
-  user_description: "Ruby Fullstack Developer - Argentina",
-  photo: "https://avatars0.githubusercontent.com/u/48864600?v=4",
-  password: 123456
-  )
-my_user.save!
-pro = Professional.new(
-  address: "Niceto Vegas 4866",
-  location: "Argentina, Buenos Aires",
-  specialty: "Ruby Fullstack Developer - Le Wagon",
-  experience_in_years: 2,
-  resume: "Change your life, learn to code.",
-  company_logo: "https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-fe76916e1b923ade71e253ae6dc031d936e5e8eebac4e26b0fbac650ea6ee360.png",
-  career: Career.all.last,
-  user: my_user
-  )
-puts "CREATING PROFESSIONAL FOR TESTING"
-pro.save!
-10.times do
-  create_booking(pro, User.all.sample)
-end
-
-
 
 Professional.all.each do |pro|
   5.times do
