@@ -85,9 +85,8 @@
   <% elsif booking.confirmed? && booking.professional.user == user %>
 
   <div class="req-content">
-    <h1>Request From <strong><%= booking.user.full_name %>!</strong></h1>
+    <h1>You confirmed request from <strong><%= booking.user.full_name %>!</strong></h1>
     <p>Hi, <strong><%= user.first_name %></strong> <%= user.last_name %></p>
-    <p>You confirmed the request from <%= booking.user.email.capitalize %></p>
     <p>From: <strong><%= booking.start_book.strftime("%b %d %Y") %></strong>  To: <strong><%= booking.end_book.strftime("%b %d %Y") %>.</strong></p>
     <p>If you have any questions or concerns feel free to reach us any time at <strong>shadow@me.com</strong></p>
   </div>
