@@ -48,6 +48,8 @@
   </h1>
 
   <h3 class="category-description"><%= @category.description %></h3>
+
+
   <% elsif @category.title == "Science" %>
   <h1 class="category-title">
     <i class="fas fa-flask"></i>
@@ -56,6 +58,25 @@
 
 
   <h3 class="category-description"><%= @category.description %></h3>
+  <% elsif @category.title == "Government and Public Administration" %>
+  <h1 class="category-title">
+    <i class="fas fa-landmark"></i>
+    <%= @category.title %>
+  </h1>
+
+
+  <h3 class="category-description"><%= @category.description %></h3>
+  <% elsif @category.title == "Human Services" %>
+  <h1 class="category-title">
+    <i class="fas fa-user-friends"></i>
+    <%= @category.title %>
+  </h1>
+
+
+  <h3 class="category-description"><%= @category.description %></h3>
+
+
+
   <% end %>
 </div>
 

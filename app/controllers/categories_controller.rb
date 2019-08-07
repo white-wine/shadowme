@@ -16,7 +16,9 @@ before_action :set_category, only: [:show]
             "health" => "Freelance, Executive, Office Worker, Part-time, Entrepreneur, Nutrition, Genetic, Lab, Healthcare, Biology,",
             "law" => "Freelance, Executive, Office Worker, Part-time, Entrepreneur, Criminally, Juridical, Legal, Politics, Courts",
             "science" => "Freelance, Executive, Office Worker, Part-time, Entrepreneur, Cell, Biology, Phisical, Theory, Electricity",
-            "technology" => "Freelance, Executive, Office Worker, Part-time, Entrepreneur, Date, Startup, Robotics, Software, Physic, Electricity"
+            "technology" => "Freelance, Executive, Office Worker, Part-time, Entrepreneur, Date, Startup, Robotics, Software, Physic, Electricity",
+            "government and public administration" => "Executive, Office Worker, Part-time, Entrepreneur, Criminally, Juridical, Legal, Politics, Courts",
+            "human services" => "Executive, Office Worker, Part-time, Entrepreneur, Juridical, Legal"
           }
   end
 
