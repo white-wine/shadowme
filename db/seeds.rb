@@ -50,7 +50,7 @@ CATEGORIES = [
   },
   {
     title: "Human Services",
-    description: "The human services career group covers all employment related to helping meet the needs of individuals and families. Helping people is the major goal of this career group, and in our modern society, these postiions play a very important role in the delivery of services and in the strengthening of communities."
+    description: "The human services career group covers all employment related to helping meet the needs of individuals and families. Helping people is the major goal of this career group, and in our modern society, these postiions play a very important role in the delivery of services and in the strengthening of communities.",
     image: "https://www.collegechoice.net/wp-content/uploads/2018/01/Best-Online-Masters-in-Human-Services-Degrees.jpg",
   },
   {
@@ -454,42 +454,42 @@ CAREERS = [
     {
       title:"Court, Municipal, and License Clerks",
       description:"Perform clerical duties for courts of law, municipalities, or governmental licensing agencies and bureaus. May prepare docket of cases to be called; secure information for judges and court; prepare draft agendas or bylaws for town or city council; answer official correspondence; keep fiscal records and accounts; issue licenses or permits; and record data, administer tests, or collect fees.",
-      image: ""
+      image: "http://townofpendleton.org/wp-content/uploads/2015/06/header37.jpg"
     },
     {
       title:"Economists",
       description:"Conduct research, prepare reports, or formulate plans to address economic problems related to the production and distribution of goods and services or monetary and fiscal policy. May collect and process economic and statistical data using sampling techniques and econometric methods.",
-      image: ""
+      image: "https://www.heritage.org/sites/default/files/styles/slide_cover_xl/public/images/2018-08/Economy.jpg?itok=BzAjL8xk"
     },
     {
       title:"Legislators",
       description:"Develop, introduce or enact laws and statutes at the local, tribal, State, or Federal level. Includes only workers in elected positions.",
-      image: ""
+      image: "https://www.thelundreport.org/sites/default/files/article-images/OregonLegislativeOpens_0.jpg"
     },
     {
       title:"Transportation Inspectors",
       description:"Inspect equipment or goods in connection with the safe transport of cargo or people. Includes rail transportation inspectors, such as freight inspectors; rail inspectors; and other inspectors of transportation vehicles, not elsewhere classified.",
-      image: ""
+      image: "http://www.businesspundit.com/wp-content/uploads/2016/05/Transportation-inspectors.jpg"
     },
     {
       title:"Statistical Assistants",
       description:"Compile and compute data according to statistical formulas for use in statistical studies. May perform actuarial computations and compile charts and graphs for use by actuaries. Includes actuarial clerks.",
-      image: ""
+      image: "https://beta.ctvnews.ca/national/sci-tech/2018/10/22/1_4143958/_jcr_content/root/responsivegrid/image.coreimg.jpg"
     },
     {
       title:"Tax Examiners and Collectors, and Revenue Agents",
       description:"Determine tax liability or collect taxes from individuals or business firms according to prescribed laws and regulations.",
-      image: ""
+      image: "https://cdn.careeronestop.org/OccVids/OccupationVideos/13-2081.00.jpg"
     },
     {
       title:"Licensing Examiners and Inspectors",
       description:"Examine, evaluate, and investigate eligibility for, conformity with, or liability under licenses or permits.",
-      image: ""
+      image: "https://videohive.img.customer.envatousercontent.com/files/142024393/27_22_15_Engineer_Setting_up_Lathe_Machine.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=7fc881a40cc84332df4d975392bfae62"
     },
     {
       title:"Financial Examiners",
       description:"Enforce or ensure compliance with laws and regulations governing financial and securities institutions and financial and real estate transactions. May examine, verify, or authenticate records.",
-      image: ""
+      image: "https://www.bls.gov/ooh/images/15126.jpg"
     }
   ]
 ]
@@ -597,7 +597,7 @@ def create_student_user(professional)
       )
     fem_student.email = fem_student.first_name.downcase + fem_student.last_name.downcase + rand(90..99).to_s + "@mail.com"
     fem_student.save
-    puts "Creating account for #{fem_student.first_name} #{fem_student.last_name}"
+    # puts "Creating account for #{fem_student.first_name} #{fem_student.last_name}"
     create_booking(professional, fem_student)
 
 
@@ -708,7 +708,7 @@ pro = Professional.new(
   experience_in_years: 2,
   resume: "Change your life, learn to code.",
   company_logo: "https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-fe76916e1b923ade71e253ae6dc031d936e5e8eebac4e26b0fbac650ea6ee360.png",
-  career: Career.all.last,
+  career: Career.where(title:"Software Engineer").first,
   user: my_user
   )
 # puts "CREATING PROFESSIONAL FOR TESTING"
