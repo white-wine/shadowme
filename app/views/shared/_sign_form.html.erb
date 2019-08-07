@@ -1,59 +1,57 @@
-
-
 <div id="sign-form">
   <div class="container" id="container">
-
-
-
     <div class="form-container sign-up-container">
       <div class='form'>
         <div class="form-sign-up">
-        <h1>Sign Up</h1>
-        <div class="social-container">
-          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          <h1>Sign Up</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your account</span>
+
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+
+            <div class="input">
+              <%= f.input :email,
+              required: true,
+              autofocus: true,
+              input_html: { autocomplete: "email" }%>
+
+            </div>
+            <div class="input">
+              <%= f.input :password,
+              required: true,
+              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+              input_html: { autocomplete: "new-password" } %>
+
+            </div>
+            <div class="input">
+              <%= f.input :password_confirmation,
+              required: true,
+              input_html: { autocomplete: "new-password" } %>
+
+            </div>
+
+            <div class="input">
+              <%= f.input :photo %>
+            </div>
+            <div class="input">
+              <%= f.input :user_type, :as => :select, :collection => User.user_types.keys.to_a,
+              prompt: "- SELECT ONE -", label: "Sign up as...", required: true%>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+          <% end %>
         </div>
-        <span>or use your account</span>
-
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-
-        <div class="form-inputs">
-
-          <div class="input">
-            <%= f.input :email,
-            required: true,
-            autofocus: true,
-            input_html: { autocomplete: "email" }%>
-
-          </div>
-          <div class="input">
-            <%= f.input :password,
-            required: true,
-            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-            input_html: { autocomplete: "new-password" } %>
-
-          </div>
-          <div class="input">
-            <%= f.input :password_confirmation,
-            required: true,
-            input_html: { autocomplete: "new-password" } %>
-
-          </div>
-
-          <div class="input">
-            <%= f.input :user_type, :as => :select, :collection => User.user_types.keys.to_a,
-            prompt: "- SELECT ONE -", label: "Sign up as...", required: true%>
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
-        </div>
-        <% end %>
       </div>
-    </div>
     </div>
 
 
