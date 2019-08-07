@@ -10,11 +10,13 @@ class ProfessionalsController < ApplicationController
 
   def new
     @professional = Professional.new
+    authorize @professional
     @user = User.new
   end
 
   def create
     @professional = Professional.new(professional_params)
+    authorize @professional
     @professional.user = current_user
     if @professional.save
       redirect_to professional_path(@professional)

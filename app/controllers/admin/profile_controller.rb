@@ -1,6 +1,7 @@
 class Admin::ProfileController < ApplicationController
   def index
     @user = current_user
+
     if @user.student?
       @bookings = @user.bookings
       @messages = @user.messages

@@ -2,8 +2,10 @@
 
 <div class="profile-container">
   <div class="professional-info">
-    <% if !@current_user.photo.nil? %>
+    <% if @current_user.photo != "" %>
     <%= image_tag current_user.photo, class:"pro-career-img rounded-circle" %>
+    <% else %>
+    <img src="http://localhost:3000/assets/default-avatar-105d90b04da0320bd5f096e2d9d1757b55b6317945ef8b65bb152f38d0427dba.jpg" alt="">
     <% end %>
     <p><strong>Name: </strong><%= current_user.first_name %> <%= current_user.last_name %></p>
   </div>
@@ -13,13 +15,13 @@
       <div class="pending-container">
 
         <div class="photoninfo d-flex justify-between">
-        <%= image_tag booking.professional.user.photo, class:"student-career-img" %>
+          <%= image_tag booking.professional.user.photo, class:"student-career-img" %>
 
-        <div class="pending-content">
-          <p><strong>Professional name:</strong> <%= booking.professional.user.first_name %> <%= booking.professional.user.last_name %></p>
-          <p><strong>Message:</strong> <%= booking.intro_message%></p>
+          <div class="pending-content">
+            <p><strong>Professional name:</strong> <%= booking.professional.user.first_name %> <%= booking.professional.user.last_name %></p>
+            <p><strong>Message:</strong> <%= booking.intro_message%></p>
+          </div>
         </div>
-</div>
         <div class="confirm-wrapper">
           <p><strong><i class="far fa-calendar-alt"></i> Booking:</strong> <%= booking.start_book.strftime("%b %d %Y") %> <i class="fas fa-minus"></i> <%= booking.end_book.strftime("%b %d %Y") %>
 
@@ -45,11 +47,18 @@
         <% if !@current_user.photo.nil? %>
         <%= image_tag current_user.photo, class:"pro-career-img rounded-circle" %>
         <% end %>
-        <p><strong>Name:</strong><%= current_user.first_name %> <%= current_user.last_name %></p>
+        <p><strong>Name: </strong><%= current_user.first_name %> <%= current_user.last_name %></p>
+        <% if current_user.professional %>
         <p><%= current_user.professional.specialty %></p>
+        <% end %>
+
         <div class="professional-tags">
           <p><strong>User email: </strong> <%= current_user.email %></p>
+          <% if current_user.professional && current_user.professional.bookings %>
+
           <p><strong>Amount of bookings: </strong> <%= current_user.professional.bookings.count %></p>
+          <% end %>
+
         </div>
       </div>
       <div class="tab-wrapper">
@@ -64,6 +73,7 @@
             <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">All Requests</a>
           </li>
         </ul>
+        <% if current_user.professional && current_user.professional.bookings %>
 
         <div class="tab-content">
           <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -76,6 +86,7 @@
             <%= render "/admin/profile/all_requests" %>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
     <script>
@@ -85,3 +96,4 @@
       })
     </script>
     <% end %>
+

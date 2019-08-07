@@ -53,7 +53,6 @@ button.addEventListener('click', get);
       <div class="col-xs-12 col-md-10 offset-md-1 col-10 offset-lg-1 pro-profile">
         <%= image_tag @professional.user.photo, alt: "alttext", class:"rounded-circle", :size => "60x60"%>
         <p> <br><strong>Name:</strong> <%= @professional.user.first_name %> <%= @professional.user.last_name %></p>
-        <p><strong>Description: </strong>
           <% if @professional.company_logo.nil? %>
 
           <%= image_tag @professional.company_logo, alt: "alttext", class:"avatar" %>
@@ -68,7 +67,6 @@ button.addEventListener('click', get);
           <p><strong>Age: </strong>26 Years old</p>
           <% end %>
           <p><strong>Career description: </strong><%= @professional.career.description %></p>
-
 
 
           <div class="inline">
@@ -364,3 +362,4 @@ button.addEventListener('click', get);
 -->
 
 <% end %>
+<%= console %>

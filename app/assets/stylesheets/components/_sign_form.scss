@@ -1,5 +1,13 @@
+.sign_container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    // height: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
 #sign-form {
-  margin-top: 15%;
+  margin-top: 10%;
   margin-bottom: 80px;
 
   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
@@ -107,7 +115,7 @@
     overflow: hidden;
     width: 768px;
     max-width: 100%;
-    min-height: 490px;
+    min-height: 600px;
   }
 
   .form-container {

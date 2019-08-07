@@ -43,11 +43,21 @@ CATEGORIES = [
 		description: "Science play a major role in applying the principles and theories of science and mathematics to solve problems occurring in research and development processes. They are responsible for setting up laboratory equipment and monitoring experiments. Science technicians monitoring manufacturing processes are also required to ensure product quality by carrying out random product tests.",
 		image: "https://cms.qut.edu.au/__data/assets/image/0006/776760/GettyImages-925324224.jpg"
 	},
-	{
-		title: "Technology",
-		description: "Degrees in information technology typically cover computer science and software engineering. ... There are a variety of different paths in the career field, including becoming a systems analyst, a programmer or a support specialist.",
-		image: "https://sloanreview.mit.edu/content/uploads/2016/08/FR-Winston-Technology-Business-World-Challenges-1200.jpg"
-	},
+  {
+    title: "Technology",
+    description: "Degrees in information technology typically cover computer science and software engineering. ... There are a variety of different paths in the career field, including becoming a systems analyst, a programmer or a support specialist.",
+    image: "https://sloanreview.mit.edu/content/uploads/2016/08/FR-Winston-Technology-Business-World-Challenges-1200.jpg"
+  },
+  {
+    title: "Human Services",
+    description: "The human services career group covers all employment related to helping meet the needs of individuals and families. Helping people is the major goal of this career group, and in our modern society, these postiions play a very important role in the delivery of services and in the strengthening of communities."
+    image: "https://www.collegechoice.net/wp-content/uploads/2018/01/Best-Online-Masters-in-Human-Services-Degrees.jpg",
+  },
+  {
+    title: "Government and Public Administration",
+    description: "Government work, more than a regular career path or group, can include almost any profession. Government touches almost every aspect of our lives. Specialized government agencies are responsible for everything from processing taxes and labor statistics, to developing and regulating new vaccines and medicines. Any career path, be it in finance, medicine, accounting, law, education, science, or construction has application in work for the government.",
+    image: "https://www.york.ac.uk/media/study/courses/postgraduate/politics/town-hall-meeting-credit-un-geneva-flickr-cc-by-nc-nd-2-0-1160.jpg"
+  },
 ]
 CAREERS = [
   [
@@ -396,7 +406,91 @@ CAREERS = [
       title:"Software Engineer",
       description:"While software developers design applications, it’s programmers who write the code needed for programs to function. Programmers also test software and update existing software. Many are employed by software companies. Necessary soft skills include problem solving, reading comprehension, active listening, attention to detail, and critical thinking. You might consider entering this field if you enjoy working with code for extended periods and testing the power of programming languages. As experience is an important asset, it’s helpful to do an internship or gain other hands-on experience while completing your formal education.",
       image: "https://blog.uwohoo.com/wp-content/uploads/2019/03/Good-programmer.jpeg"
+    }
+  ],
+  [
+    {
+      title:"Clergy",
+      description:"Conduct religious worship and perform other spiritual functions associated with beliefs and practices of religious faith or denomination. Provide spiritual and moral guidance and assistance to members.",
+      image: "https://ethicsdaily.com/wp-content/uploads/2019/07/priest-clergy-1000x556.jpg"
     },
+    {
+      title:"Costume Attendants",
+      description:"Select, fit, and take care of costumes for cast members, and aid entertainers. May assist with multiple costume changes during performances.",
+      image: "https://www.otis.edu/sites/default/files/DSC_5059.jpg"
+    },
+    {
+      title:"Credit Counselors",
+      description:"Advise and educate individuals or organizations on acquiring and managing debt. May provide guidance in determining the best type of loan and explaining loan requirements or restrictions. May help develop debt management plans, advise on credit issues, or provide budget, mortgage, and bankruptcy counseling.",
+      image: "http://d2e70e9yced57e.cloudfront.net/edu/images/posts/11686/consumer-credit-counseling.jpg"
+    },
+    {
+      title:"Embalmers",
+      description:"Prepare bodies for interment in conformity with legal requirements.",
+      image: "https://www.irishtimes.com/polopoly_fs/1.2453387.1449503201!/image/image.jpg"
+    },
+    {
+      title:"Fitness Trainers and Aerobics Instructors",
+      description:"Instruct or coach groups or individuals in exercise activities. Demonstrate techniques and form, observe participants, and explain to them corrective measures necessary to improve their skills.",
+      image: "https://24b3f6.medialib.edu.glogster.com/Srn0BhNOVDGiTmFE9oHp/media/55/553d660d20a8bb9e4adb0b338e3a375894b20c4f/poet-fitness-3.jpg"
+    },
+    {
+      title:"Massage Therapists",
+      description:"Perform therapeutic massages of soft tissues and joints. May assist in the assessment of range of motion and muscle strength, or propose client therapy plans.",
+      image: "https://spaspace.com/wp-content/uploads/2017/05/massageimage.jpg"
+    },
+    {
+      title:"Personal Care Aides",
+      description:"Assist the elderly, convalescents, or persons with disabilities with daily living activities at the person's home or in a care facility. Duties performed at a place of residence may include keeping house (making beds, doing laundry, washing dishes) and preparing meals. May provide assistance at non-residential care facilities. May advise families, the elderly, convalescents, and persons with disabilities regarding such things as nutrition, cleanliness, and household activities.",
+      image: "https://sectorready.org/wp-content/uploads/2017/06/ThinkstockPhotos-578806154.jpg"
+    },
+    {
+      title:"Sociologists",
+      description:"Study human society and social behavior by examining the groups and social institutions that people form, as well as various social, religious, political, and business organizations. May study the behavior and interaction of groups, trace their origin and growth, and analyze the influence of group activities on individual members.",
+      image: "https://www.snhu.edu/-/media/images/social/og/whatdosociologistsdoog.jpg?modified=20180201174916"
+    }
+  ],
+  [
+    {
+      title:"Court, Municipal, and License Clerks",
+      description:"Perform clerical duties for courts of law, municipalities, or governmental licensing agencies and bureaus. May prepare docket of cases to be called; secure information for judges and court; prepare draft agendas or bylaws for town or city council; answer official correspondence; keep fiscal records and accounts; issue licenses or permits; and record data, administer tests, or collect fees.",
+      image: ""
+    },
+    {
+      title:"Economists",
+      description:"Conduct research, prepare reports, or formulate plans to address economic problems related to the production and distribution of goods and services or monetary and fiscal policy. May collect and process economic and statistical data using sampling techniques and econometric methods.",
+      image: ""
+    },
+    {
+      title:"Legislators",
+      description:"Develop, introduce or enact laws and statutes at the local, tribal, State, or Federal level. Includes only workers in elected positions.",
+      image: ""
+    },
+    {
+      title:"Transportation Inspectors",
+      description:"Inspect equipment or goods in connection with the safe transport of cargo or people. Includes rail transportation inspectors, such as freight inspectors; rail inspectors; and other inspectors of transportation vehicles, not elsewhere classified.",
+      image: ""
+    },
+    {
+      title:"Statistical Assistants",
+      description:"Compile and compute data according to statistical formulas for use in statistical studies. May perform actuarial computations and compile charts and graphs for use by actuaries. Includes actuarial clerks.",
+      image: ""
+    },
+    {
+      title:"Tax Examiners and Collectors, and Revenue Agents",
+      description:"Determine tax liability or collect taxes from individuals or business firms according to prescribed laws and regulations.",
+      image: ""
+    },
+    {
+      title:"Licensing Examiners and Inspectors",
+      description:"Examine, evaluate, and investigate eligibility for, conformity with, or liability under licenses or permits.",
+      image: ""
+    },
+    {
+      title:"Financial Examiners",
+      description:"Enforce or ensure compliance with laws and regulations governing financial and securities institutions and financial and real estate transactions. May examine, verify, or authenticate records.",
+      image: ""
+    }
   ]
 ]
 
