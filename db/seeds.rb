@@ -1,6 +1,9 @@
 puts "Destroy all old seeds"
 Career.destroy_all
 Category.destroy_all
+Message.destroy_all
+Donation.destroy_all
+Professional.destroy_all
 User.destroy_all
 start_time = Time.now
 
