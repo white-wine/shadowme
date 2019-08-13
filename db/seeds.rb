@@ -10,6 +10,9 @@ start_time = Time.now
 REVIEWS = ["I found my passion through.", "Enjoyed my time with great Professionals.", "A great experience with very knowledgeable local guides, well organised and executed.", "Amazing career", "So interesting!", "I learnt a lot about the process", "Amazing experience!", "Best experience ever!", "I really think it's an amazing career!", "I learned a lot!", "I had a wonderful experience shadowing this professional", "I absolutely love this career", "Everything went very smoothly", "It was great, fast, easy experience.", "I would recommend you guys to anyone."]
 
 POSITIONS = ["assistant", "executive", "manager", "director", "chief", "supervisor", "coordinator", "specialist"]
+
+
+
 CATEGORIES = [
 	{
 		title: "Agriculture",
@@ -60,7 +63,7 @@ CATEGORIES = [
     title: "Government and Public Administration",
     description: "Government work, more than a regular career path or group, can include almost any profession. Government touches almost every aspect of our lives. Specialized government agencies are responsible for everything from processing taxes and labor statistics, to developing and regulating new vaccines and medicines. Any career path, be it in finance, medicine, accounting, law, education, science, or construction has application in work for the government.",
     image: "https://www.york.ac.uk/media/study/courses/postgraduate/politics/town-hall-meeting-credit-un-geneva-flickr-cc-by-nc-nd-2-0-1160.jpg"
-  },
+  }
 ]
 CAREERS = [
   [
