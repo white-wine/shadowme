@@ -1,6 +1,6 @@
 puts "Destroy all old seeds"
-Career.destroy_all
 Category.destroy_all
+Career.destroy_all
 Message.destroy_all
 Donation.destroy_all
 Professional.destroy_all
