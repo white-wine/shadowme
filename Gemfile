@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '2.5.1'
 gem 'letter_opener', group: :development
 gem 'postmark-rails'
 

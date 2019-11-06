@@ -519,10 +519,9 @@ def create_user(career)
       last_name: Faker::Name.last_name,
       birth: (Date.today - (365 * rand(25..50))),
       user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
-        user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
-        photo: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
-        password: 123456
-        )
+      photo: "https://randomuser.me/api/portraits/men/#{rand(1..99)}.jpg",
+      password: 123456
+      )
     male_user.email = male_user.first_name.downcase + male_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
     puts male_user.first_name
     puts male_user.last_name
@@ -540,10 +539,9 @@ def create_user(career)
       last_name: Faker::Name.last_name,
       birth: (Date.today - (365 * rand(25..50))),
       user_description: Faker::Company.name + " " + Faker::Company.industry + " " + POSITIONS.sample.capitalize,
-        user_description: Faker::Educator.university + ", " + Faker::Educator.degree,
-        photo: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
-        password: 123456
-        )
+      photo: "https://randomuser.me/api/portraits/women/#{rand(1..99)}.jpg",
+      password: 123456
+      )
     fem_user.email = fem_user.first_name.downcase + fem_user.last_name.downcase + rand(80..89).to_s + "@mail.com"
     puts fem_user.first_name
     puts fem_user.last_name
@@ -662,7 +660,7 @@ CATEGORIES.each_with_index do |category, index|
   puts " - created Category: #{c.title}"
 
 
-  CREATE CAREERS
+## CREATE CAREERS
   CAREERS[index].each do |career|
     car = Career.new(career)
     car.category = c
