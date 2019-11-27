@@ -26,17 +26,17 @@ gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'money-rails'
 gem 'stripe'
 
-# group :development do
-#   gem 'web-console', '>= 3.3.0'
-# end
+group :development do
+  gem 'web-console', '>= 3.3.0'
+end
 
-# gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test]
 
-# group :development, :test do
-#   gem 'pry-byebug'
-#   gem 'pry-rails'
-#   gem 'listen', '~> 3.0.5'
-#   gem 'spring'
-#   gem 'spring-watcher-listen', '~> 2.0.0'
-#   gem 'dotenv-rails'
-# end
+group :development, :test do
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'listen', '~> 3.0.5'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'dotenv-rails'
+end
