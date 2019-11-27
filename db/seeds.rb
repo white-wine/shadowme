@@ -14,59 +14,104 @@ POSITIONS = ["assistant", "executive", "manager", "director", "chief", "supervis
 
 
 CATEGORIES = [
-	{
-		title: "Agriculture",
-		description: "A program that focuses on the general principles and practice of agricultural research and production and that may prepare individuals to apply this knowledge to the solution of practical agricultural problems. Includes instruction in basic animal, plant, and soil science; animal husbandry and plant cultivation; soil conservation; and agricultural operations such as farming, ranching, and agricultural business. Is Agriculture the right major for you?",
-		image: "https://www.worldatlas.com/r/w728-h425-c728x425/upload/f2/03/7e/shutterstock-653708227.jpg"
-	},
-	{
-		title: "Arts",
-		description: "Art as a major encompasses many topics. Therefore, there is a wide range of individuals who will enjoy taking art as a major. Artistic individuals are able to draw, paint write or design are primary candidates for this major. They may also have a keen sense of music and know how to play an instrument. Hobbies for art students may involve playing music, painting, attending plays, attending the theater, analyzing movies, writing creatively, drawing, or reading.",
-		image: "https://www.youth.ie/wp-content/uploads/2019/03/NYCI-Youth-Arts-2.jpg"
-	},
-	{
-		title: "Education",
-		description: "Do you love helping people and spreading knowledge? Are you passionate about a specific academic subject (or subjects)? If so, an education major might be for you.",
-		image: "https://cdn.studyinternational.com/news/wp-content/uploads/2019/02/ChartervPrivate.jpg"
-	},
-	{
-		title: "Engineering",
-		description: "Combining mathematics, science and technology, engineers produce creative solutions to real world problems. ... In the past, engineering could be divided into four major branches: Mechanical, Chemical, Civil and Electrical, with sub branches of each discipline.",
-		image: "https://retos-operaciones-logistica.eae.es/wp-content/uploads/2018/05/iStock-869287090-600x426.jpg"
-	},
-	{
-		title: "Health",
-		description: "A program of study that prepares individuals to assume roles as health/wellness professionals in private business and industry, community organizations, and health care settings.",
-		image: "https://hhp-blog.s3.amazonaws.com/2018/02/iStock-639896942.jpg"
-	},
-	{
-		title: "Law",
-		description: "Although undergraduate majors such as political science, history, economics, communication, journalism and philosophy are traditionally associated with law school, the truth is that no single major qualifies or disqualifies a student.",
-		image: "https://www.sharda.ac.in/blog/wp-content/uploads/2017/08/4-Main-Types-of-Law-Which-One-Is-the-Best-For-You.jpg"
-	},
-	{
-		title: "Science",
-		description: "Science play a major role in applying the principles and theories of science and mathematics to solve problems occurring in research and development processes. They are responsible for setting up laboratory equipment and monitoring experiments. Science technicians monitoring manufacturing processes are also required to ensure product quality by carrying out random product tests.",
-		image: "https://cms.qut.edu.au/__data/assets/image/0006/776760/GettyImages-925324224.jpg"
-	},
   {
     title: "Technology",
     description: "Degrees in information technology typically cover computer science and software engineering. ... There are a variety of different paths in the career field, including becoming a systems analyst, a programmer or a support specialist.",
     image: "https://sloanreview.mit.edu/content/uploads/2016/08/FR-Winston-Technology-Business-World-Challenges-1200.jpg"
   },
   {
-    title: "Human Services",
-    description: "The human services career group covers all employment related to helping meet the needs of individuals and families. Helping people is the major goal of this career group, and in our modern society, these postiions play a very important role in the delivery of services and in the strengthening of communities.",
-    image: "https://www.collegechoice.net/wp-content/uploads/2018/01/Best-Online-Masters-in-Human-Services-Degrees.jpg",
+    title: "Agriculture",
+    description: "A program that focuses on the general principles and practice of agricultural research and production and that may prepare individuals to apply this knowledge to the solution of practical agricultural problems. Includes instruction in basic animal, plant, and soil science; animal husbandry and plant cultivation; soil conservation; and agricultural operations such as farming, ranching, and agricultural business. Is Agriculture the right major for you?",
+    image: "https://www.worldatlas.com/r/w728-h425-c728x425/upload/f2/03/7e/shutterstock-653708227.jpg"
   },
   {
-    title: "Government and Public Administration",
-    description: "Government work, more than a regular career path or group, can include almost any profession. Government touches almost every aspect of our lives. Specialized government agencies are responsible for everything from processing taxes and labor statistics, to developing and regulating new vaccines and medicines. Any career path, be it in finance, medicine, accounting, law, education, science, or construction has application in work for the government.",
-    image: "https://www.york.ac.uk/media/study/courses/postgraduate/politics/town-hall-meeting-credit-un-geneva-flickr-cc-by-nc-nd-2-0-1160.jpg"
+    title: "Arts",
+    description: "Art as a major encompasses many topics. Therefore, there is a wide range of individuals who will enjoy taking art as a major. Artistic individuals are able to draw, paint write or design are primary candidates for this major. They may also have a keen sense of music and know how to play an instrument. Hobbies for art students may involve playing music, painting, attending plays, attending the theater, analyzing movies, writing creatively, drawing, or reading.",
+    image: "https://www.youth.ie/wp-content/uploads/2019/03/NYCI-Youth-Arts-2.jpg"
+  },
+  {
+    title: "Education",
+    description: "Do you love helping people and spreading knowledge? Are you passionate about a specific academic subject (or subjects)? If so, an education major might be for you.",
+    image: "https://cdn.studyinternational.com/news/wp-content/uploads/2019/02/ChartervPrivate.jpg"
+  },
+  {
+    title: "Engineering",
+    description: "Combining mathematics, science and technology, engineers produce creative solutions to real world problems. ... In the past, engineering could be divided into four major branches: Mechanical, Chemical, Civil and Electrical, with sub branches of each discipline.",
+    image: "https://retos-operaciones-logistica.eae.es/wp-content/uploads/2018/05/iStock-869287090-600x426.jpg"
+  },
+  {
+    title: "Health",
+    description: "A program of study that prepares individuals to assume roles as health/wellness professionals in private business and industry, community organizations, and health care settings.",
+    image: "https://hhp-blog.s3.amazonaws.com/2018/02/iStock-639896942.jpg"
+  },
+  {
+    title: "Law",
+    description: "Although undergraduate majors such as political science, history, economics, communication, journalism and philosophy are traditionally associated with law school, the truth is that no single major qualifies or disqualifies a student.",
+    image: "https://www.sharda.ac.in/blog/wp-content/uploads/2017/08/4-Main-Types-of-Law-Which-One-Is-the-Best-For-You.jpg"
+  },
+  {
+    title: "Science",
+    description: "Science play a major role in applying the principles and theories of science and mathematics to solve problems occurring in research and development processes. They are responsible for setting up laboratory equipment and monitoring experiments. Science technicians monitoring manufacturing processes are also required to ensure product quality by carrying out random product tests.",
+    image: "https://cms.qut.edu.au/__data/assets/image/0006/776760/GettyImages-925324224.jpg"
   }
+
+  # ,
+  # {
+  #   title: "Human Services",
+  #   description: "The human services career group covers all employment related to helping meet the needs of individuals and families. Helping people is the major goal of this career group, and in our modern society, these postiions play a very important role in the delivery of services and in the strengthening of communities.",
+  #   image: "https://www.collegechoice.net/wp-content/uploads/2018/01/Best-Online-Masters-in-Human-Services-Degrees.jpg",
+  # },
+  # {
+  #   title: "Government and Public Administration",
+  #   description: "Government work, more than a regular career path or group, can include almost any profession. Government touches almost every aspect of our lives. Specialized government agencies are responsible for everything from processing taxes and labor statistics, to developing and regulating new vaccines and medicines. Any career path, be it in finance, medicine, accounting, law, education, science, or construction has application in work for the government.",
+  #   image: "https://www.york.ac.uk/media/study/courses/postgraduate/politics/town-hall-meeting-credit-un-geneva-flickr-cc-by-nc-nd-2-0-1160.jpg"
+  # }
 ]
 CAREERS = [
   [
+    {
+      title:"Systems Analyst",
+      description:"Computer systems analysts assist businesses with solving their computer needs. After assessing the requirements of the business and the resources available, they plan computer systems and networks tailored to serve the business' unique interests. This may include modifying existing software or creating new software to manage company functions. Many systems analysts stay competitive by specializing in computer systems that correlate to one particular area of employment, such as accounting and financial systems.",
+      image: "https://i.ytimg.com/vi/T0JdNufvn-o/maxresdefault.jpg"
+    },
+    {
+      title:"Computer Support Specialist",
+      description:"A computer support specialist provides technical assistance to many different types of organizations, including schools, government agencies and private sector businesses. Commonly, a computer support specialist will work in a help-desk service area or a call center work environment. The main duty of a computer support specialist is to respond to technical issues called in by a user or submitted by e-mail. They may guide the user through fixing the problem, run automatic software diagnostics to assess and fix the issue, or send a specialist to fix it on-site.",
+      image: "https://www.bls.gov/ooh/images/1799.jpg"
+    },
+    {
+      title:"Business Analyst",
+      description:"Business analysts examine an organisation (or part of a business) to determine how to better achieve goals. Almost always, there's a strong information technology component. That's because IT is integral to modern business operations. For example, analysts may scope out the potential effects of changing computer software. Analysts need to be adaptable because job requirements vary from company to company. To become a business analyst, you’ll probably need to obtain an entry-level position in the field and build a career from there. Business education in addition to advanced IT training confers an advantage.",
+      image: "https://c3.dq1.me/uploads/article/54700/analyst-working-computer.jpg"
+    },
+    {
+      title:"Computer Service Technician",
+      description:"Computer service technicians (also referred to as computer repair technicians) repair computer hardware and software. Some of the common tasks are replacing defective components, removing spyware and viruses, dissembling hardware, and running diagnostic tests. If a job in this field is your goal, start getting as much experience as you can in assembling and repairing computers. CompTIA A+ certification is a helpful qualification. Also consider completing a program at a tech school or college.",
+      image: "http://www.njbusinessreview.com/wp-content/uploads/2015/01/nj-computer-technician.jpg"
+    },
+    {
+      title:"Database Administrator",
+      description:"Database administrators (DBAs) handle database security, integrity, and performance. They ensure data standards are consistent, data is accessible by users as needed, and they solve any problems encountered by users. These professionals might also be involved in database planning and development. A degree in an IT-related field is usually required and it’s useful to have programming experience. Experienced DBAs have strong applied knowledge of database operating systems and technologies.",
+      image: "https://rismedia.com/wp-content/uploads/2019/04/database_923752568-1080x627.jpg"
+    },
+    {
+      title:"Hardware Engineer",
+      description:"Hardware engineers (also referred to as computer hardware engineers) oversee the manufacture and installation of computer systems, servers, circuit boards, and chips, as well as the testing of equipment. They also work with routers, printers, and keyboards. People wanting a career in this lucrative field require a degree in computer engineering. Depending on the employer, a degree in electrical engineering or computer science might be an acceptable alternative. Creativity and good communications skills are useful complements to technical skills.",
+      image: "https://www.online.colostate.edu/global/images/certificates/computer-systems-engineering-certificate_1200.jpg"
+    },
+    {
+      title:"Multimedia Developer",
+      description:"Multimedia developers are skilled in computer programming and visual artistry. They design software and create multimedia applications by generating and manipulating animations, graphic images, text, sound, and video. Some examples of applications include multimedia presentations, educational and entertainment products, and computer-based interactive training. You might consider this career if you’re an IT-graduate strong in visual arts. While a degree is useful, many people also start work in the field with only a relevant certificate.",
+      image: "https://www.elsiglodetorreon.com.mx/m/i/2018/03/1036585.jpeg"
+    },
+    {
+      title:"Software Engineer",
+      description:"While software developers design applications, it’s programmers who write the code needed for programs to function. Programmers also test software and update existing software. Many are employed by software companies. Necessary soft skills include problem solving, reading comprehension, active listening, attention to detail, and critical thinking. You might consider entering this field if you enjoy working with code for extended periods and testing the power of programming languages. As experience is an important asset, it’s helpful to do an internship or gain other hands-on experience while completing your formal education.",
+      image: "https://blog.uwohoo.com/wp-content/uploads/2019/03/Good-programmer.jpeg"
+    }
+  ],
+  [
+
     {
       title:"Agricultural Worker",
       description:"An agricultural worker is someone who works on a farm maintaining crops such as fruits, vegetables, grains, and nuts. Some agricultural workers only tend to livestock. They typically work under the supervision of an agricultural manager where they receive on-the-job training. They may work on farms of all sizes, from small, family-run businesses to large industrial agriculture operations.",
@@ -371,133 +416,92 @@ CAREERS = [
       description:"Studies the composition, structure, and other physical attributes of the earth, including rocks and minerals. They use physics, mathematics, and geological knowledge in exploration for oil, gas, minerals, or underground water.",
       image: "https://www.abdn.ac.uk/study/images/prospectus/11901-12000/11931/12_BSc_GPG_top_image_1.png"
     }
-  ],
-  [
-    {
-      title:"Systems Analyst",
-      description:"Computer systems analysts assist businesses with solving their computer needs. After assessing the requirements of the business and the resources available, they plan computer systems and networks tailored to serve the business' unique interests. This may include modifying existing software or creating new software to manage company functions. Many systems analysts stay competitive by specializing in computer systems that correlate to one particular area of employment, such as accounting and financial systems.",
-      image: "https://i.ytimg.com/vi/T0JdNufvn-o/maxresdefault.jpg"
-    },
-    {
-      title:"Computer Support Specialist",
-      description:"A computer support specialist provides technical assistance to many different types of organizations, including schools, government agencies and private sector businesses. Commonly, a computer support specialist will work in a help-desk service area or a call center work environment. The main duty of a computer support specialist is to respond to technical issues called in by a user or submitted by e-mail. They may guide the user through fixing the problem, run automatic software diagnostics to assess and fix the issue, or send a specialist to fix it on-site.",
-      image: "https://www.bls.gov/ooh/images/1799.jpg"
-    },
-    {
-      title:"Business Analyst",
-      description:"Business analysts examine an organisation (or part of a business) to determine how to better achieve goals. Almost always, there's a strong information technology component. That's because IT is integral to modern business operations. For example, analysts may scope out the potential effects of changing computer software. Analysts need to be adaptable because job requirements vary from company to company. To become a business analyst, you’ll probably need to obtain an entry-level position in the field and build a career from there. Business education in addition to advanced IT training confers an advantage.",
-      image: "https://c3.dq1.me/uploads/article/54700/analyst-working-computer.jpg"
-    },
-    {
-      title:"Computer Service Technician",
-      description:"Computer service technicians (also referred to as computer repair technicians) repair computer hardware and software. Some of the common tasks are replacing defective components, removing spyware and viruses, dissembling hardware, and running diagnostic tests. If a job in this field is your goal, start getting as much experience as you can in assembling and repairing computers. CompTIA A+ certification is a helpful qualification. Also consider completing a program at a tech school or college.",
-      image: "http://www.njbusinessreview.com/wp-content/uploads/2015/01/nj-computer-technician.jpg"
-    },
-    {
-      title:"Database Administrator",
-      description:"Database administrators (DBAs) handle database security, integrity, and performance. They ensure data standards are consistent, data is accessible by users as needed, and they solve any problems encountered by users. These professionals might also be involved in database planning and development. A degree in an IT-related field is usually required and it’s useful to have programming experience. Experienced DBAs have strong applied knowledge of database operating systems and technologies.",
-      image: "https://rismedia.com/wp-content/uploads/2019/04/database_923752568-1080x627.jpg"
-    },
-    {
-      title:"Hardware Engineer",
-      description:"Hardware engineers (also referred to as computer hardware engineers) oversee the manufacture and installation of computer systems, servers, circuit boards, and chips, as well as the testing of equipment. They also work with routers, printers, and keyboards. People wanting a career in this lucrative field require a degree in computer engineering. Depending on the employer, a degree in electrical engineering or computer science might be an acceptable alternative. Creativity and good communications skills are useful complements to technical skills.",
-      image: "https://www.online.colostate.edu/global/images/certificates/computer-systems-engineering-certificate_1200.jpg"
-    },
-    {
-      title:"Multimedia Developer",
-      description:"Multimedia developers are skilled in computer programming and visual artistry. They design software and create multimedia applications by generating and manipulating animations, graphic images, text, sound, and video. Some examples of applications include multimedia presentations, educational and entertainment products, and computer-based interactive training. You might consider this career if you’re an IT-graduate strong in visual arts. While a degree is useful, many people also start work in the field with only a relevant certificate.",
-      image: "https://www.elsiglodetorreon.com.mx/m/i/2018/03/1036585.jpeg"
-    },
-    {
-      title:"Software Engineer",
-      description:"While software developers design applications, it’s programmers who write the code needed for programs to function. Programmers also test software and update existing software. Many are employed by software companies. Necessary soft skills include problem solving, reading comprehension, active listening, attention to detail, and critical thinking. You might consider entering this field if you enjoy working with code for extended periods and testing the power of programming languages. As experience is an important asset, it’s helpful to do an internship or gain other hands-on experience while completing your formal education.",
-      image: "https://blog.uwohoo.com/wp-content/uploads/2019/03/Good-programmer.jpeg"
-    }
-  ],
-  [
-    {
-      title:"Clergy",
-      description:"Conduct religious worship and perform other spiritual functions associated with beliefs and practices of religious faith or denomination. Provide spiritual and moral guidance and assistance to members.",
-      image: "https://ethicsdaily.com/wp-content/uploads/2019/07/priest-clergy-1000x556.jpg"
-    },
-    {
-      title:"Costume Attendants",
-      description:"Select, fit, and take care of costumes for cast members, and aid entertainers. May assist with multiple costume changes during performances.",
-      image: "https://www.otis.edu/sites/default/files/DSC_5059.jpg"
-    },
-    {
-      title:"Credit Counselors",
-      description:"Advise and educate individuals or organizations on acquiring and managing debt. May provide guidance in determining the best type of loan and explaining loan requirements or restrictions. May help develop debt management plans, advise on credit issues, or provide budget, mortgage, and bankruptcy counseling.",
-      image: "http://d2e70e9yced57e.cloudfront.net/edu/images/posts/11686/consumer-credit-counseling.jpg"
-    },
-    {
-      title:"Embalmers",
-      description:"Prepare bodies for interment in conformity with legal requirements.",
-      image: "https://www.irishtimes.com/polopoly_fs/1.2453387.1449503201!/image/image.jpg"
-    },
-    {
-      title:"Fitness Trainers and Aerobics Instructors",
-      description:"Instruct or coach groups or individuals in exercise activities. Demonstrate techniques and form, observe participants, and explain to them corrective measures necessary to improve their skills.",
-      image: "https://24b3f6.medialib.edu.glogster.com/Srn0BhNOVDGiTmFE9oHp/media/55/553d660d20a8bb9e4adb0b338e3a375894b20c4f/poet-fitness-3.jpg"
-    },
-    {
-      title:"Massage Therapists",
-      description:"Perform therapeutic massages of soft tissues and joints. May assist in the assessment of range of motion and muscle strength, or propose client therapy plans.",
-      image: "https://spaspace.com/wp-content/uploads/2017/05/massageimage.jpg"
-    },
-    {
-      title:"Personal Care Aides",
-      description:"Assist the elderly, convalescents, or persons with disabilities with daily living activities at the person's home or in a care facility. Duties performed at a place of residence may include keeping house (making beds, doing laundry, washing dishes) and preparing meals. May provide assistance at non-residential care facilities. May advise families, the elderly, convalescents, and persons with disabilities regarding such things as nutrition, cleanliness, and household activities.",
-      image: "https://sectorready.org/wp-content/uploads/2017/06/ThinkstockPhotos-578806154.jpg"
-    },
-    {
-      title:"Sociologists",
-      description:"Study human society and social behavior by examining the groups and social institutions that people form, as well as various social, religious, political, and business organizations. May study the behavior and interaction of groups, trace their origin and growth, and analyze the influence of group activities on individual members.",
-      image: "https://www.snhu.edu/-/media/images/social/og/whatdosociologistsdoog.jpg?modified=20180201174916"
-    }
-  ],
-  [
-    {
-      title:"Court, Municipal, and License Clerks",
-      description:"Perform clerical duties for courts of law, municipalities, or governmental licensing agencies and bureaus. May prepare docket of cases to be called; secure information for judges and court; prepare draft agendas or bylaws for town or city council; answer official correspondence; keep fiscal records and accounts; issue licenses or permits; and record data, administer tests, or collect fees.",
-      image: "http://townofpendleton.org/wp-content/uploads/2015/06/header37.jpg"
-    },
-    {
-      title:"Economists",
-      description:"Conduct research, prepare reports, or formulate plans to address economic problems related to the production and distribution of goods and services or monetary and fiscal policy. May collect and process economic and statistical data using sampling techniques and econometric methods.",
-      image: "https://www.heritage.org/sites/default/files/styles/slide_cover_xl/public/images/2018-08/Economy.jpg?itok=BzAjL8xk"
-    },
-    {
-      title:"Legislators",
-      description:"Develop, introduce or enact laws and statutes at the local, tribal, State, or Federal level. Includes only workers in elected positions.",
-      image: "https://www.thelundreport.org/sites/default/files/article-images/OregonLegislativeOpens_0.jpg"
-    },
-    {
-      title:"Transportation Inspectors",
-      description:"Inspect equipment or goods in connection with the safe transport of cargo or people. Includes rail transportation inspectors, such as freight inspectors; rail inspectors; and other inspectors of transportation vehicles, not elsewhere classified.",
-      image: "http://www.businesspundit.com/wp-content/uploads/2016/05/Transportation-inspectors.jpg"
-    },
-    {
-      title:"Statistical Assistants",
-      description:"Compile and compute data according to statistical formulas for use in statistical studies. May perform actuarial computations and compile charts and graphs for use by actuaries. Includes actuarial clerks.",
-      image: "https://beta.ctvnews.ca/national/sci-tech/2018/10/22/1_4143958/_jcr_content/root/responsivegrid/image.coreimg.jpg"
-    },
-    {
-      title:"Tax Examiners and Collectors, and Revenue Agents",
-      description:"Determine tax liability or collect taxes from individuals or business firms according to prescribed laws and regulations.",
-      image: "https://cdn.careeronestop.org/OccVids/OccupationVideos/13-2081.00.jpg"
-    },
-    {
-      title:"Licensing Examiners and Inspectors",
-      description:"Examine, evaluate, and investigate eligibility for, conformity with, or liability under licenses or permits.",
-      image: "https://videohive.img.customer.envatousercontent.com/files/142024393/27_22_15_Engineer_Setting_up_Lathe_Machine.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=7fc881a40cc84332df4d975392bfae62"
-    },
-    {
-      title:"Financial Examiners",
-      description:"Enforce or ensure compliance with laws and regulations governing financial and securities institutions and financial and real estate transactions. May examine, verify, or authenticate records.",
-      image: "https://www.bls.gov/ooh/images/15126.jpg"
-    }
   ]
+  # ,
+  # [
+  #   {
+  #     title:"Clergy",
+  #     description:"Conduct religious worship and perform other spiritual functions associated with beliefs and practices of religious faith or denomination. Provide spiritual and moral guidance and assistance to members.",
+  #     image: "https://ethicsdaily.com/wp-content/uploads/2019/07/priest-clergy-1000x556.jpg"
+  #   },
+  #   {
+  #     title:"Costume Attendants",
+  #     description:"Select, fit, and take care of costumes for cast members, and aid entertainers. May assist with multiple costume changes during performances.",
+  #     image: "https://www.otis.edu/sites/default/files/DSC_5059.jpg"
+  #   },
+  #   {
+  #     title:"Credit Counselors",
+  #     description:"Advise and educate individuals or organizations on acquiring and managing debt. May provide guidance in determining the best type of loan and explaining loan requirements or restrictions. May help develop debt management plans, advise on credit issues, or provide budget, mortgage, and bankruptcy counseling.",
+  #     image: "http://d2e70e9yced57e.cloudfront.net/edu/images/posts/11686/consumer-credit-counseling.jpg"
+  #   },
+  #   {
+  #     title:"Embalmers",
+  #     description:"Prepare bodies for interment in conformity with legal requirements.",
+  #     image: "https://www.irishtimes.com/polopoly_fs/1.2453387.1449503201!/image/image.jpg"
+  #   },
+  #   {
+  #     title:"Fitness Trainers and Aerobics Instructors",
+  #     description:"Instruct or coach groups or individuals in exercise activities. Demonstrate techniques and form, observe participants, and explain to them corrective measures necessary to improve their skills.",
+  #     image: "https://24b3f6.medialib.edu.glogster.com/Srn0BhNOVDGiTmFE9oHp/media/55/553d660d20a8bb9e4adb0b338e3a375894b20c4f/poet-fitness-3.jpg"
+  #   },
+  #   {
+  #     title:"Massage Therapists",
+  #     description:"Perform therapeutic massages of soft tissues and joints. May assist in the assessment of range of motion and muscle strength, or propose client therapy plans.",
+  #     image: "https://spaspace.com/wp-content/uploads/2017/05/massageimage.jpg"
+  #   },
+  #   {
+  #     title:"Personal Care Aides",
+  #     description:"Assist the elderly, convalescents, or persons with disabilities with daily living activities at the person's home or in a care facility. Duties performed at a place of residence may include keeping house (making beds, doing laundry, washing dishes) and preparing meals. May provide assistance at non-residential care facilities. May advise families, the elderly, convalescents, and persons with disabilities regarding such things as nutrition, cleanliness, and household activities.",
+  #     image: "https://sectorready.org/wp-content/uploads/2017/06/ThinkstockPhotos-578806154.jpg"
+  #   },
+  #   {
+  #     title:"Sociologists",
+  #     description:"Study human society and social behavior by examining the groups and social institutions that people form, as well as various social, religious, political, and business organizations. May study the behavior and interaction of groups, trace their origin and growth, and analyze the influence of group activities on individual members.",
+  #     image: "https://www.snhu.edu/-/media/images/social/og/whatdosociologistsdoog.jpg?modified=20180201174916"
+  #   }
+  # ],
+  # [
+  #   {
+  #     title:"Court, Municipal, and License Clerks",
+  #     description:"Perform clerical duties for courts of law, municipalities, or governmental licensing agencies and bureaus. May prepare docket of cases to be called; secure information for judges and court; prepare draft agendas or bylaws for town or city council; answer official correspondence; keep fiscal records and accounts; issue licenses or permits; and record data, administer tests, or collect fees.",
+  #     image: "http://townofpendleton.org/wp-content/uploads/2015/06/header37.jpg"
+  #   },
+  #   {
+  #     title:"Economists",
+  #     description:"Conduct research, prepare reports, or formulate plans to address economic problems related to the production and distribution of goods and services or monetary and fiscal policy. May collect and process economic and statistical data using sampling techniques and econometric methods.",
+  #     image: "https://www.heritage.org/sites/default/files/styles/slide_cover_xl/public/images/2018-08/Economy.jpg?itok=BzAjL8xk"
+  #   },
+  #   {
+  #     title:"Legislators",
+  #     description:"Develop, introduce or enact laws and statutes at the local, tribal, State, or Federal level. Includes only workers in elected positions.",
+  #     image: "https://www.thelundreport.org/sites/default/files/article-images/OregonLegislativeOpens_0.jpg"
+  #   },
+  #   {
+  #     title:"Transportation Inspectors",
+  #     description:"Inspect equipment or goods in connection with the safe transport of cargo or people. Includes rail transportation inspectors, such as freight inspectors; rail inspectors; and other inspectors of transportation vehicles, not elsewhere classified.",
+  #     image: "http://www.businesspundit.com/wp-content/uploads/2016/05/Transportation-inspectors.jpg"
+  #   },
+  #   {
+  #     title:"Statistical Assistants",
+  #     description:"Compile and compute data according to statistical formulas for use in statistical studies. May perform actuarial computations and compile charts and graphs for use by actuaries. Includes actuarial clerks.",
+  #     image: "https://beta.ctvnews.ca/national/sci-tech/2018/10/22/1_4143958/_jcr_content/root/responsivegrid/image.coreimg.jpg"
+  #   },
+  #   {
+  #     title:"Tax Examiners and Collectors, and Revenue Agents",
+  #     description:"Determine tax liability or collect taxes from individuals or business firms according to prescribed laws and regulations.",
+  #     image: "https://cdn.careeronestop.org/OccVids/OccupationVideos/13-2081.00.jpg"
+  #   },
+  #   {
+  #     title:"Licensing Examiners and Inspectors",
+  #     description:"Examine, evaluate, and investigate eligibility for, conformity with, or liability under licenses or permits.",
+  #     image: "https://videohive.img.customer.envatousercontent.com/files/142024393/27_22_15_Engineer_Setting_up_Lathe_Machine.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=7fc881a40cc84332df4d975392bfae62"
+  #   },
+  #   {
+  #     title:"Financial Examiners",
+  #     description:"Enforce or ensure compliance with laws and regulations governing financial and securities institutions and financial and real estate transactions. May examine, verify, or authenticate records.",
+  #     image: "https://www.bls.gov/ooh/images/15126.jpg"
+  #   }
+  # ]
 ]
 
 
@@ -661,17 +665,17 @@ CATEGORIES.each_with_index do |category, index|
 
 
 ## CREATE CAREERS
-  CAREERS[index].each do |career|
-    car = Career.new(career)
-    car.category = c
-    car.save!
+CAREERS[index].each do |career|
+  car = Career.new(career)
+  car.category = c
+  car.save!
 
-    puts "   - added Career: #{car.title}"
-    create_user(car)
-    create_user(car)
-    puts "-------------------"
-  end
-  puts ""
+  puts "   - added Career: #{car.title}"
+  create_user(car)
+  create_user(car)
+  puts "-------------------"
+end
+puts ""
 
 end
 
