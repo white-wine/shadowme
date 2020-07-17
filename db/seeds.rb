@@ -11,8 +11,6 @@ REVIEWS = ["I found my passion through.", "Enjoyed my time with great Profession
 
 POSITIONS = ["assistant", "executive", "manager", "director", "chief", "supervisor", "coordinator", "specialist"]
 
-
-
 CATEGORIES = [
   {
     title: "Technology",
@@ -589,7 +587,6 @@ def create_booking(professional, student)
 
 end
 
-
 ## CREATE STUDENT USER
 def create_student_user(professional)
   2.times do
@@ -721,13 +718,13 @@ pro = Professional.new(
   )
 # puts "CREATING PROFESSIONAL FOR TESTING"
 pro.save!
-5.times do
+3.times do
   create_booking(pro, User.all.sample)
 end
 
 
 Professional.all.each do |pro|
-  5.times do
+  2.times do
     start = Faker::Date.backward(rand(20..100))
     ending = start + rand(7..19)
     booking = Booking.new(
