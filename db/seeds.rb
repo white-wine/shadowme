@@ -724,7 +724,7 @@ end
 
 
 Professional.all.each do |pro|
-  3.times do
+  2.times do
     start = Faker::Date.backward(rand(20..100))
     ending = start + rand(7..19)
     booking = Booking.new(
