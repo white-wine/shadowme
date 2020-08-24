@@ -25,6 +25,7 @@ gem 'google-api-client', require: 'google/apis/calendar_v3'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'money-rails'
 gem 'stripe'
+gem 'sqlite3', group: :development
 
 group :development do
   gem 'web-console', '>= 3.3.0'
